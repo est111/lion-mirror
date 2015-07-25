@@ -9,7 +9,7 @@
         
         
         
-        {% if form.source is defined %}
+        {% if form.destination is defined %}
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 well well-sm">
                 <p class="text-danger">
@@ -18,7 +18,7 @@
                 <p class="text-success">
                     <strong class="text-capitalize">{% trans %} KONSULTANT: {% endtrans %}</strong><br/> {% trans %} Proszę aby <strong> podał/a Pan/Pani </strong> swój numer telefonu w celu przedstawienia najlepszej oferty, numer jest potrzebny do złożenia zamówienia i uzyskania pozostałych informacji. {% endtrans %}
                 </p>            
-                {{ form_widget(form.source) }}
+                {{ form_widget(form.destination) }}
             </div>
         </div>
         {% endif %}
