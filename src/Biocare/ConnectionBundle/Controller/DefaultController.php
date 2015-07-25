@@ -32,10 +32,10 @@ class DefaultController extends Controller
         
         switch ($destination) {
             case null:
-                throw $this->createException('Where to go ...');
+                throw new \Exception('Where to go ...');
                 break;
             default:
-                throw $this->createException('I know where to go ...');
+                throw new \Exception('I know where to go ...');
                 break;
         }
         
