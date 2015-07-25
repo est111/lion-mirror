@@ -4,15 +4,13 @@ namespace Biocare\ConnectionBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template; 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+class DefaultController extends Controller {
 
-class DefaultController extends Controller
-{
     /**
      * @param Request $request
      * @return Response
@@ -21,25 +19,24 @@ class DefaultController extends Controller
      * 
      * @Template() 
      */
-    public function indexAction(Request $request)
-    {
-        
-        $source      = preg_replace('/\s+/', '', $request->get('source'));
+    public function indexAction(Request $request) {
+
+        $source = preg_replace('/\s+/', '', $request->get('source'));
         $destination = preg_replace('/\s+/', '', $request->get('destination'));
-        
-        
-        dump($source,$destination);
-        
-        
+
+
+        dump($source, $destination);
+
+
         switch ($source) {
             case null:
                 throw new \Exception('Who\'s there?');
                 break;
             default:
-                throw new \Exception('Hello '.$source);
+                throw new \Exception('Hello ' . $source);
                 break;
-        }    
-        
+        }
+
         switch ($destination) {
             case null:
                 throw new \Exception('Where to go ...');
@@ -48,27 +45,40 @@ class DefaultController extends Controller
                 throw new \Exception('I know where to go ...');
                 break;
         }
-        
-        
+
+
         exit;
         return array('name' => $name);
     }
-    
+
     /**
      * @param String $source Source for connexion
      * @param String $destination Destination for connexion
      * 
      * @return Response
      * 
-     * @Route("/")
+     * @Route("/", name="new_connection_form")
      * 
      * @Template() 
      */
-    public function newConnexionAction(String $source, String $destination)
-    {
+    public function newConnexionFormAction(Request $request) {
+        $defaultData = array('message' => 'Type your message here');
+        $form = $this->createFormBuilder($defaultData)
+                ->add('name', 'text')
+                ->add('email', 'email')
+                ->add('message', 'textarea')
+                ->getForm();
+
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+
+            // data is an array with "name", "email", and "message" keys
+            $data = $form->getData();
+        }
         
-        dump($source,$destination);
-        
+        return array(
+            'form' => $form->createView()
+        );
     }
-    
+
 }
