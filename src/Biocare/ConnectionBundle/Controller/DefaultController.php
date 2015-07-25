@@ -18,7 +18,7 @@ class DefaultController extends Controller {
      * @Method({"GET"})
      * 
      * @Template() 
-     */
+     *
     public function indexAction(Request $request) {
 
         $source = preg_replace('/\s+/', '', $request->get('source'));
@@ -50,7 +50,7 @@ class DefaultController extends Controller {
         exit;
         return array('name' => $name);
     }
-
+*/
     /**
      * @param String $source Source for connexion
      * @param String $destination Destination for connexion
