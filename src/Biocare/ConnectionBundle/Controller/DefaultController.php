@@ -24,16 +24,9 @@ class DefaultController extends Controller {
         $source = preg_replace('/\s+/', '', $request->get('source'));
         $destination = preg_replace('/\s+/', '', $request->get('destination'));
 
-
-
-
         $defaultData = array();
         $form = $this->createFormBuilder($defaultData);
-                
-                
-                
-        
-        
+         
         switch ($source) {
             case null:                
                 $form->add('source', 'text');                
@@ -53,8 +46,6 @@ class DefaultController extends Controller {
         }
 
         $form->getForm();
-
-       
 
         if ($request->isMethod('POST')) {
             $form->bind($request);
