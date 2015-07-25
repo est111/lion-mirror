@@ -15,12 +15,10 @@ class Connexion
     
     
     
-    public function __construct(String $source_string, String $destination_string) {
+    public function __construct(String $source, String $destination) {
         
         
         $createdAt =  new \DateTime('NOW', \DateTimeZone::UTC );
-        $source      = preg_replace('/\s+/', '', $source_string);
-        $destination = preg_replace('/\s+/', '', $destination_strings);
         
         $this->setCreatedAt($createdAt);
         $this->setSource($source);
@@ -69,7 +67,7 @@ class Connexion
     }
 
     /**
-     * @var String Source of connextion whitespace outed by constructor
+     * @var String Source of connextion
      * 
      * @ORM\Column(name="source", type="string", length=255)
      * 
@@ -87,7 +85,7 @@ class Connexion
 
     
     /**
-     * @var String Destination of connextion whitespace outed by constructor 
+     * @var String Destination of connextion 
      * 
      * @ORM\Column(name="destination", type="string", length=255)
      * 
