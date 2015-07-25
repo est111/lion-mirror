@@ -51,7 +51,16 @@ class DefaultController extends Controller {
         }
         
         if ($connexion==2){
-            return $this->redirect($this->generateUrl('connexion_new', $defaultData));
+           
+            $entity = new Connexion($source, $destination);
+
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('admin_connexion_show', array('id' => $entity->getId())));
+            }
         }
         
         $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
@@ -66,44 +75,6 @@ class DefaultController extends Controller {
         return array(
             'form' => $form->createView(),
         );
-    }
-
-    
-    /**
-     * Displays a form to create a new Connexion entity.
-     *
-     * @Route("/connexion/{source}/{destination}/", name="connexion_new")
-     * @Method("GET")
-     * @Template("BiocareConnectionBundle:Connexion:new.html.twig")
-     */
-    public function newAction($source, $destination)
-    {
-        $entity = new Connexion($source, $destination);
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-    
-    /**
-     * Creates a form to create a Connexion entity.
-     *
-     * @param Connexion $entity The entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createCreateForm(Connexion $entity)
-    {
-        $form = $this->createForm(new ConnexionType(), $entity, array(
-            'action' => $this->generateUrl('admin_connexion_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Create'));
-
-        return $form;
     }
     
 }
