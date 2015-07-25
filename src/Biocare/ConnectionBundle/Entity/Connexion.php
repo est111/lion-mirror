@@ -12,6 +12,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Connexion
 {
+    
+    public function __construct() {
+        
+        $createdAt =  new \DateTime('NOW', \DateTimeZone::UTC );
+        $this->setCreatedAt($createdAt);
+        
+        return $this;
+    }
+    
+    
+    
     /**
      * @var integer
      *
@@ -31,4 +42,24 @@ class Connexion
     {
         return $this->id;
     }
+    
+    /**
+     * @var \DateTime DataTime of Connextion [DATETIME WITH TIME ZONE]
+     * 
+     * @ORM\Column(name="createdAt", type="datetimetz")
+     * 
+     */
+    private $createdAt;
+    
+    public function getCreatedAt() {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTime $createdAt) {
+        $this->createdAt = $createdAt;
+        return $this;
+    }
+
+
+    
 }
