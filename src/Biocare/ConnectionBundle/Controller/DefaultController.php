@@ -49,7 +49,7 @@ class DefaultController extends Controller {
         }
         
         if ($connexion==2){
-            return $this->redirect($this->generateUrl('admin_connexion_new', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_connexion_new'));
         }
         
         $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
