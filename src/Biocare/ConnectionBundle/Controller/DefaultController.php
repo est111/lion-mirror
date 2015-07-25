@@ -24,7 +24,10 @@ class DefaultController extends Controller {
         $source = preg_replace('/\s+/', '', $request->get('source'));
         $destination = preg_replace('/\s+/', '', $request->get('destination'));
 
-        $defaultData = array();
+        $defaultData = array(
+            'source' => $source,
+            'destination' => $destination
+        );
         $options = array(
             'action' => $this->generateUrl('connexion_form'),
             'method' => 'POST',
