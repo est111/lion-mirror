@@ -37,13 +37,13 @@ class DefaultController extends Controller {
         if ($destination) {
                 $form->add('destination', 'text');
         } else {
-                $form->add('destination', 'text');
+                //$form->add('destination', 'text');
         }
         
         if ($source) {
                 $form->add('source', 'text');  
         } else {     
-                $form->add('source', 'text');
+                //$form->add('source', 'text');
         }
         
         $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
