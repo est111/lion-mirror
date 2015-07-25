@@ -15,22 +15,29 @@ class DefaultController extends Controller {
      * @param Request $request
      * @return Response
      * @Route("/")
-     * @Method({"GET"})
+     * @Method({"GET","POST"})
      * 
      * @Template() 
-     *
+     */
     public function indexAction(Request $request) {
 
         $source = preg_replace('/\s+/', '', $request->get('source'));
         $destination = preg_replace('/\s+/', '', $request->get('destination'));
 
 
-        dump($source, $destination);
 
 
+        $defaultData = array();
+        $form = $this->createFormBuilder($defaultData);
+                
+                
+                
+        
+        
         switch ($source) {
             case null:
-                throw new \Exception('Who\'s there?');
+                
+                $form->add('source', 'text');                
                 break;
             default:
                 throw new \Exception('Hello ' . $source);
@@ -39,35 +46,16 @@ class DefaultController extends Controller {
 
         switch ($destination) {
             case null:
-                throw new \Exception('Where to go ...');
+                $form->add('destination', 'text');
                 break;
             default:
                 throw new \Exception('I know where to go ...');
                 break;
         }
 
+        $form->getForm();
 
-        exit;
-        return array('name' => $name);
-    }
-*/
-    /**
-     * @param String $source Source for connexion
-     * @param String $destination Destination for connexion
-     * 
-     * @return Response
-     * 
-     * @Route("/", name="new_connection_form")
-     * 
-     * @Template() 
-     */
-    public function newConnexionFormAction(Request $request) {
-        $defaultData = array('message' => 'Type your message here');
-        $form = $this->createFormBuilder($defaultData)
-                ->add('name', 'text')
-                ->add('email', 'email')
-                ->add('message', 'textarea')
-                ->getForm();
+       
 
         if ($request->isMethod('POST')) {
             $form->bind($request);
@@ -75,7 +63,7 @@ class DefaultController extends Controller {
             // data is an array with "name", "email", and "message" keys
             $data = $form->getData();
         }
-        
+
         return array(
             'form' => $form->createView()
         );
