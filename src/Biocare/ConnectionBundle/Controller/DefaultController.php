@@ -53,4 +53,22 @@ class DefaultController extends Controller
         exit;
         return array('name' => $name);
     }
+    
+    /**
+     * @param String $source Source for connexion
+     * @param String $destination Destination for connexion
+     * 
+     * @return Response
+     * 
+     * @Route("/")
+     * 
+     * @Template() 
+     */
+    public function newConnexionAction(String $source, String $destination)
+    {
+        
+        dump($source,$destination);
+        
+    }
+    
 }
