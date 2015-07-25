@@ -74,7 +74,7 @@ class DefaultController extends Controller {
      *
      * @Route("/connexion/{source}/{destination}/", name="connexion_new")
      * @Method("GET")
-     * @Template("BiocareConnectionBundle:Default:new.html.twig")
+     * @Template("BiocareConnectionBundle:Connexion:new.html.twig")
      */
     public function newAction($source, $destination)
     {
