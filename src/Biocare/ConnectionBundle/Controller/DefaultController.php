@@ -31,22 +31,16 @@ class DefaultController extends Controller {
         );
         $form = $this->get('form.factory')->createNamedBuilder("check_connexion",'form',$defaultData,$options);
         
-        switch ($destination) {
-            case null:
+        if ($destination) {
                 $form->add('destination', 'text');
-                break;
-            default:
-                //throw new \Exception('I know where to go ...');
-                break;
+        } else {
+                $form->add('destination', 'text');
         }
         
-        switch ($source) {
-            case null:                
-                $form->add('source', 'text');                
-                break;
-            default:
-                //throw new \Exception('Hello ' . $source);
-                break;
+        if ($source) {
+                $form->add('source', 'text');  
+        } else {     
+                $form->add('source', 'text');
         }
         
         $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
