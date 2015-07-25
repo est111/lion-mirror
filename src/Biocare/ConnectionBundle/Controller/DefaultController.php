@@ -59,7 +59,7 @@ class DefaultController extends Controller {
             // data is an array with "name", "email", and "message" keys
             $data = $form->getData();
         }
-
+        dump($form);
         return array(
             'form' => $form->createView(),
         );
