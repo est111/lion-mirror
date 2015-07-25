@@ -3,7 +3,7 @@
     <div class="container">
         {% if form.source %}
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 well well-sm bg-info">
+            <div class="col-lg-8 col-lg-offset-2 well well-sm">
                 <p class="text-danger">
                 {% trans %} Klient ukrył numer telefonu. {% endtrans %}
                 </p>         
@@ -15,13 +15,13 @@
         </div>
         {% endif %}
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 well well-sm bg-info">
+            <div class="col-lg-8 col-lg-offset-2 well well-sm">
                 {{ form(form.destination) }}
             </div>
         </div>
             
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 well well-sm bg-info">
+            <div class="col-lg-8 col-lg-offset-2">
                 {{ form(form) }}
             </div>
         </div>
