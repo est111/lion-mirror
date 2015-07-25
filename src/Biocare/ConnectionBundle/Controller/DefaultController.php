@@ -39,7 +39,7 @@ class DefaultController extends Controller {
                 $form->add('destination', 'text');
                 break;
             default:
-                throw new \Exception('I know where to go ...');
+                //throw new \Exception('I know where to go ...');
                 break;
         }
         
@@ -48,11 +48,11 @@ class DefaultController extends Controller {
                 $form->add('source', 'text');                
                 break;
             default:
-                throw new \Exception('Hello ' . $source);
+                //throw new \Exception('Hello ' . $source);
                 break;
         }
         
-        $form->add('submit', 'submit', array('label' => 'Złóż zamówienie'));
+        $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
         $form = $form->getForm();
         if ($request->isMethod('POST')) {
             $form->bind($request);
