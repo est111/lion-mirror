@@ -14,7 +14,7 @@ class DefaultController extends Controller {
     /**
      * @param Request $request
      * @return Response
-     * @Route("/")
+     * @Route("/", name="connexion_form")
      * @Method({"GET","POST"})
      * 
      * @Template() 
@@ -25,7 +25,12 @@ class DefaultController extends Controller {
         $destination = preg_replace('/\s+/', '', $request->get('destination'));
 
         $defaultData = array();
-        $form = $this->createFormBuilder($defaultData);
+        $options = array(
+            'action' => $this->generateUrl('connexion_form'),
+            'method' => 'POST',
+        );
+        $form = $this->get('form.factory')->createNamedBuilder('check_connexion',$defaultData,$options);
+        
          
         switch ($source) {
             case null:                
@@ -45,6 +50,7 @@ class DefaultController extends Controller {
                 break;
         }
 
+        $form->add('submit', 'submit', array('label' => 'Złóż zamówienie'));
         $form->getForm();
 
         if ($request->isMethod('POST')) {
