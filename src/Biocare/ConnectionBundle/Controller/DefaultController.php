@@ -59,7 +59,7 @@ class DefaultController extends Controller {
 
             // data is an array with "name", "email", and "message" keys
             $data = $form->getData();
-            return $this->redirect($this->generateUrl('connexion_new', array('source'=>$source,'destination'=>$destination) ));
+            return $this->redirect($this->generateUrl('connexion_new', array('source'=>$data['source'],'destination'=>$data['destination']) ));
         }
         return array(
             'form' => $form->createView(),
