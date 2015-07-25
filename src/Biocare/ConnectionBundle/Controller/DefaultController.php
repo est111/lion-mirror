@@ -23,7 +23,11 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        dump($request->get('source'));
+        
+        $source      = preg_replace('/\s+/', '', $request->get('source'));
+        $destination = preg_replace('/\s+/', '', $request->get('destination'));
+        
+        dump($source,$destination);
         exit;
         return array('name' => $name);
     }
