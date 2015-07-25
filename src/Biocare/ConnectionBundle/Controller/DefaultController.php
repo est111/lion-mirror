@@ -23,8 +23,8 @@ class DefaultController extends Controller {
      */
     public function indexAction(Request $request) {
 
-        $source =       preg_replace('/\s+/', '', $request->get('source'));
-        $destination =  preg_replace('/\s+/', '', $request->get('destination'));
+        $source = preg_replace('/\s+/', '', $request->get('source'));
+        $destination = preg_replace('/\s+/', '', $request->get('destination'));
 
         $defaultData = array(
             'source' => $source,
@@ -34,24 +34,24 @@ class DefaultController extends Controller {
             'action' => $this->generateUrl('connexion_form'),
             'method' => 'POST',
         );
-        $form = $this->get('form.factory')->createNamedBuilder("check_connexion",'form',$defaultData,$options);
-        
+        $form = $this->get('form.factory')->createNamedBuilder("check_connexion", 'form', $defaultData, $options);
+
         $connexion = 0;
-        
+
         if ($destination) {
-                $connexion++;
+            $connexion++;
         } else {
-                $form->add('destination', 'text');
+            $form->add('destination', 'text');
         }
-        
+
         if ($source) {
-                $connexion++;
-        } else {     
-                $form->add('source', 'text');
+            $connexion++;
+        } else {
+            $form->add('source', 'text');
         }
-        
-        if ($connexion==2){
-           
+
+        if ($connexion == 2) {
+
             $entity = new Connexion($source, $destination);
 
             if ($form->isValid()) {
@@ -62,7 +62,7 @@ class DefaultController extends Controller {
                 return $this->redirect($this->generateUrl('admin_connexion_show', array('id' => $entity->getId())));
             }
         }
-        
+
         $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
         $form = $form->getForm();
         if ($request->isMethod('POST')) {
@@ -70,11 +70,20 @@ class DefaultController extends Controller {
 
             // data is an array with "name", "email", and "message" keys
             $data = $form->getData();
-            return $this->redirect($this->generateUrl('connexion_new', array('source'=>$data['source'],'destination'=>$data['destination']) ));
+
+            $entity = new Connexion($source, $destination);
+
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('admin_connexion_show', array('id' => $entity->getId())));
+            }
         }
         return array(
             'form' => $form->createView(),
         );
     }
-    
+
 }
