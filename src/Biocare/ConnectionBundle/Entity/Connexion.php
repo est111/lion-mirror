@@ -18,7 +18,7 @@ class Connexion
     public function __construct( $source, $destination) {
         
         
-        $createdAt =  new \DateTime('NOW', \DateTimeZone::UTC );
+        $createdAt =  new \DateTime('NOW', new \DateTimeZone('UTC') );
         
         $this->setCreatedAt($createdAt);
         $this->setSource($source);
