@@ -21,8 +21,6 @@ class DefaultController extends Controller
      * 
      * @Template() 
      */
-    
-    
     public function indexAction(Request $request)
     {
         dump($request);
