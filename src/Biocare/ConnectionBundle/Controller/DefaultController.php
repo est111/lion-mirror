@@ -31,9 +31,6 @@ class DefaultController extends Controller {
         );
         $form = $this->get('form.factory')->createNamedBuilder("check_connexion",'form',$defaultData,$options);
         
-         
-
-
         switch ($destination) {
             case null:
                 $form->add('destination', 'text');
