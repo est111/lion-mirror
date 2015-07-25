@@ -49,7 +49,7 @@ class DefaultController extends Controller {
         }
         
         if ($connexion==2){
-            return $this->redirect($this->generateUrl('admin_connexion_new', $defaultData));
+            return $this->redirect($this->generateUrl('connexion_new', $defaultData));
         }
         
         $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
@@ -65,4 +65,24 @@ class DefaultController extends Controller {
         );
     }
 
+    
+    /**
+     * Displays a form to create a new Connexion entity.
+     *
+     * @Route("/connexion/{source}/{destination}/", name="connexion_new")
+     * @Method("GET")
+     * @Template()
+     */
+    public function newAction($source, $destination)
+    {
+        $entity = new Connexion($source, $destination);
+        $form   = $this->createCreateForm($entity);
+
+        return array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        );
+    }
+    
+    
 }
