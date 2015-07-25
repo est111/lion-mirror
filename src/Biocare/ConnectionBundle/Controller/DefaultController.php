@@ -34,7 +34,7 @@ class DefaultController extends Controller {
          
         switch ($source) {
             case null:                
-                $form->add('source', 'text');                
+            //    $form->add('source', 'text');                
                 break;
             default:
                 throw new \Exception('Hello ' . $source);
@@ -43,7 +43,7 @@ class DefaultController extends Controller {
 
         switch ($destination) {
             case null:
-                $form->add('destination', 'text');
+            //    $form->add('destination', 'text');
                 break;
             default:
                 throw new \Exception('I know where to go ...');
@@ -61,7 +61,7 @@ class DefaultController extends Controller {
         }
 
         return array(
-            'form' => $form,
+            'form' => $form->,
         );
     }
 
