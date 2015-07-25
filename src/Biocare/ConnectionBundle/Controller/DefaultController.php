@@ -6,14 +6,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
-     * @Template()
+     * @param Request $request
+     * @return Response
+     * @Route("/")
+     * @Method({"GET"})
+     * 
+     * @Template() 
      */
-    public function indexAction($name)
+    
+    
+    public function indexAction(Request $request)
     {
+        dump($request);
+        exit;
         return array('name' => $name);
     }
 }
