@@ -21,8 +21,8 @@ class DefaultController extends Controller {
      */
     public function indexAction(Request $request) {
 
-        $source = preg_replace('/\s+/', '', $request->get('source'));
-        $destination = preg_replace('/\s+/', '', $request->get('destination'));
+        $source =       preg_replace('/\s+/', '', $request->get('source'));
+        $destination =  preg_replace('/\s+/', '', $request->get('destination'));
 
         $defaultData = array(
             'source' => $source,
@@ -49,7 +49,7 @@ class DefaultController extends Controller {
         }
         
         if ($connexion==2){
-            return $this->redirect($this->generateUrl('admin_connexion_new'));
+            return $this->redirect($this->generateUrl('admin_connexion_new', $defaultData));
         }
         
         $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
