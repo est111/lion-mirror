@@ -27,7 +27,19 @@ class DefaultController extends Controller
         $source      = preg_replace('/\s+/', '', $request->get('source'));
         $destination = preg_replace('/\s+/', '', $request->get('destination'));
         
+        
         dump($source,$destination);
+        
+        switch ($destination) {
+            case null:
+                throw $this->createException('Where to go ...');
+                break;
+            default:
+                throw $this->createException('I know where to go ...');
+                break;
+        }
+        
+        
         exit;
         return array('name' => $name);
     }
