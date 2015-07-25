@@ -30,6 +30,16 @@ class DefaultController extends Controller
         
         dump($source,$destination);
         
+        
+        switch ($source) {
+            case null:
+                throw new \Exception('Who\'s there?');
+                break;
+            default:
+                throw new \Exception('Hello '.$source);
+                break;
+        }    
+        
         switch ($destination) {
             case null:
                 throw new \Exception('Where to go ...');
