@@ -32,14 +32,7 @@ class DefaultController extends Controller {
         $form = $this->get('form.factory')->createNamedBuilder("check_connexion",'form',$defaultData,$options);
         
          
-        switch ($source) {
-            case null:                
-                $form->add('source', 'text');                
-                break;
-            default:
-                throw new \Exception('Hello ' . $source);
-                break;
-        }
+
 
         switch ($destination) {
             case null:
@@ -49,7 +42,16 @@ class DefaultController extends Controller {
                 throw new \Exception('I know where to go ...');
                 break;
         }
-
+        
+        switch ($source) {
+            case null:                
+                $form->add('source', 'text');                
+                break;
+            default:
+                throw new \Exception('Hello ' . $source);
+                break;
+        }
+        
         $form->add('submit', 'submit', array('label' => 'Złóż zamówienie'));
         $form = $form->getForm();
         if ($request->isMethod('POST')) {
