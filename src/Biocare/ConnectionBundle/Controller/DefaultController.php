@@ -61,7 +61,7 @@ class DefaultController extends Controller {
         }
 
         return array(
-            'form' => $form->createView()
+            'form' => $form,
         );
     }
 
