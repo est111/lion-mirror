@@ -29,7 +29,7 @@ class DefaultController extends Controller {
             'action' => $this->generateUrl('connexion_form'),
             'method' => 'POST',
         );
-        $form = $this->get('form.factory')->createNamedBuilder("check_connexion",$defaultData,$options);
+        $form = $this->get('form.factory')->createNamedBuilder("check_connexion",'form',$defaultData,$options);
         
          
         switch ($source) {
