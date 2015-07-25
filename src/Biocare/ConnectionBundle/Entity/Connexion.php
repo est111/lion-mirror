@@ -15,7 +15,7 @@ class Connexion
     
     
     
-    public function __construct(String $source, String $destination) {
+    public function __construct(\String $source, \String $destination) {
         
         
         $createdAt =  new \DateTime('NOW', \DateTimeZone::UTC );
@@ -67,7 +67,7 @@ class Connexion
     }
 
     /**
-     * @var String Source of connextion
+     * @var String $source Source of connextion
      * 
      * @ORM\Column(name="source", type="string", length=255)
      * 
@@ -78,7 +78,7 @@ class Connexion
         return $this->source;
     }
 
-    public function setSource(String $source) {
+    public function setSource(\String $source) {
         $this->source = $source;
         return $this;
     }
@@ -96,7 +96,7 @@ class Connexion
         return $this->destination;
     }
 
-    public function setDestination(String $destination) {
+    public function setDestination(\String $destination) {
         $this->destination = $destination;
         return $this;
     }
