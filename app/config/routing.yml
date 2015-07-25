@@ -1,0 +1,5 @@
+biocare_connection:
+    resource: "@BiocareConnectionBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
