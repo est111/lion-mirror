@@ -35,8 +35,7 @@ class DefaultController extends Controller {
         
         
         switch ($source) {
-            case null:
-                
+            case null:                
                 $form->add('source', 'text');                
                 break;
             default:
