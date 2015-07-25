@@ -51,7 +51,7 @@ class DefaultController extends Controller {
         }
 
         $form->add('submit', 'submit', array('label' => 'Złóż zamówienie'));
-
+        $form = $form->getForm();
         if ($request->isMethod('POST')) {
             $form->bind($request);
 
@@ -59,7 +59,7 @@ class DefaultController extends Controller {
             $data = $form->getData();
         }
         return array(
-            'form' => $form->getForm()->createView(),
+            'form' => $form->createView(),
         );
     }
 
