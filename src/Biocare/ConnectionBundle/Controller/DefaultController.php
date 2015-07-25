@@ -23,7 +23,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        dump($request);
+        dump($request->get('source'));
         exit;
         return array('name' => $name);
     }
