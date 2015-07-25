@@ -17,7 +17,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('admin_connexion_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.createdAt }}</td>
+                <td>{{ entity.createdAt|date('Y-m-d H:i') }}</td>
                 <td>{{ entity.source }}</td>
                 <td>{{ entity.destination }}</td>
                 <td>
