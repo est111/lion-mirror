@@ -34,16 +34,22 @@ class DefaultController extends Controller {
         );
         $form = $this->get('form.factory')->createNamedBuilder("check_connexion",'form',$defaultData,$options);
         
+        $connexion = 0;
+        
         if ($destination) {
-                //$form->add('destination', 'text');
+                $connexion++;
         } else {
                 $form->add('destination', 'text');
         }
         
         if ($source) {
-                //$form->add('source', 'text');  
+                $connexion++;
         } else {     
                 $form->add('source', 'text');
+        }
+        
+        if ($connexion==2){
+            return $this->redirect($this->generateUrl('admin_connexion_new', array('id' => $entity->getId())));
         }
         
         $form->add('submit', 'submit', array('label' => 'Potwierdź dane klienta'));
