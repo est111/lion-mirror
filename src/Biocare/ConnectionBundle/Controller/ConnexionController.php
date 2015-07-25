@@ -84,13 +84,13 @@ class ConnexionController extends Controller
     /**
      * Displays a form to create a new Connexion entity.
      *
-     * @Route("/new", name="admin_connexion_new")
+     * @Route("/new/{source}/{destination}/", name="admin_connexion_new")
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
+    public function newAction($source, $destination)
     {
-        $entity = new Connexion();
+        $entity = new Connexion($source, $destination);
         $form   = $this->createCreateForm($entity);
 
         return array(
