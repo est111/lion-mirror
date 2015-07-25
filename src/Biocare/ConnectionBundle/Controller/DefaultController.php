@@ -87,5 +87,23 @@ class DefaultController extends Controller {
         );
     }
     
+    /**
+     * Creates a form to create a Connexion entity.
+     *
+     * @param Connexion $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateForm(Connexion $entity)
+    {
+        $form = $this->createForm(new ConnexionType(), $entity, array(
+            'action' => $this->generateUrl('admin_connexion_create'),
+            'method' => 'POST',
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Create'));
+
+        return $form;
+    }
     
 }
