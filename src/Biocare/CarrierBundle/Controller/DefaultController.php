@@ -26,6 +26,7 @@ class DefaultController extends Controller
         
         dump($resp->delivery_ways);
         exit;
+        
         $response = new Response();
         $response->setContent("dupa".$html);
         $response->setStatusCode(Response::HTTP_OK);
