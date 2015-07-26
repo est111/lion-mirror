@@ -21,7 +21,7 @@ class DefaultController extends Controller
         $resp = mb_convert_encoding($resp, "utf-8", "windows-1251");
         $response = json_decode($resp);
         echo "<pre>";
-        print_r($response);
+        print_r($response->delivery_ways);
         echo "</pre>";
         //$resp = $response->delivery_ways;
         exit;
