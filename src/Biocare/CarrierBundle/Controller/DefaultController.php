@@ -14,7 +14,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        new \Biocare\CarrierBundle\Entity\HttpApi();
-        return array();
+        $th = new \Biocare\CarrierBundle\Entity\HttpApi();
+        return array('th'=>$th);
     }
 }
