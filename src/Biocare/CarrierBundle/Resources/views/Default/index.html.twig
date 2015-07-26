@@ -1,9 +1,9 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    {{ dump(resp) }}
-{% for r in resp %}
-{{ r }}
-{% endfor %}
-
+    
+    {% for item in resp %}
+    {{ dump(item) }}    
+    {% endfor %}
+    
 {% endblock %}
