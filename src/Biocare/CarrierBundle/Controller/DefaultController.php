@@ -24,7 +24,7 @@ class DefaultController extends Controller
         }
         $html +="</select>";
         
-        dump($resp->delivery_ways);
+        dump($resp->delivery_ways[0]);
         exit;
         
         $response = new Response();
