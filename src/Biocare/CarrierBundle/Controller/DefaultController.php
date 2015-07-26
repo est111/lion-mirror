@@ -21,7 +21,7 @@ class DefaultController extends Controller
         $response = json_decode($resp);
         $html ="<select>";
         foreach ($response->delivery_ways as $dw){
-        $html +="<option value='".$dw['Стоимость']."'>".$dw['Наименование']." - ".$dw['Стоимость']." - ".$dw['Код']."</option>";
+        $html +="<option value='".$dw->Стоимость."'>".$dw->Наименование." - ".$dw->Стоимость." - ".$dw->Код."</option>";
         }
         $html +="</select>";
         $response->setContent($html);
