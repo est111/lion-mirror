@@ -19,7 +19,6 @@ class DefaultController extends Controller
         $resp_conv = mb_convert_encoding($resp_raw, "utf-8", "windows-1251");
         $resp = json_decode($resp_conv);
         $html ="<select>";
-        dump($html);
         foreach ($resp->delivery_ways as $dw){ 
             $html .="<option value='".$dw->Стоимость."'>".$dw->Наименование." - ".$dw->Стоимость." - ".$dw->Код."</option>";
         }
@@ -31,6 +30,6 @@ class DefaultController extends Controller
         $response->headers->set('Content-Type', 'text/html');
 
         // prints the HTTP headers followed by the content
-        return $response->send();
+        return $response;
     }
 }
