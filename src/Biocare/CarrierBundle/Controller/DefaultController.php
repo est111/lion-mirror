@@ -17,13 +17,12 @@ class DefaultController extends Controller
     {
         $httpapi = new \Biocare\CarrierBundle\Entity\HttpApi();
         $resp = $httpapi->info_zip();
-        print_r($resp-setCharset('Windows-1251'));
         
         $response = new Response();
         $response->setContent($resp);
         $response->setStatusCode(Response::HTTP_OK);
         $response->headers->set('Content-Type', 'text/json');
-
+        $response-setCharset('Windows-1251');
         // prints the HTTP headers followed by the content
         $response->send();
         return array('resp'=>  $response->send());
