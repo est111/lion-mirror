@@ -23,10 +23,10 @@ class DefaultController extends Controller
         foreach ($resp->delivery_ways as $dw){ 
             
             dump($dw->Стоимость);
-            $html =+"<option value='".$dw->Стоимость."'>".$dw->Наименование." - ".$dw->Стоимость." - ".$dw->Код."</option>";
+            $html .="<option value='".$dw->Стоимость."'>".$dw->Наименование." - ".$dw->Стоимость." - ".$dw->Код."</option>";
             dump($html);
         }
-        $html =+"</select>";
+        $html .="</select>";
         print_r($html);
         $response = new Response();
         $response->setContent("dupa".$html);
