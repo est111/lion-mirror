@@ -24,7 +24,7 @@ class DefaultController extends Controller
         }
         $html +="</select>";
         
-        dump($resp);
+        dump($resp->delivery_ways);
         exit;
         $response = new Response();
         $response->setContent("dupa".$html);
