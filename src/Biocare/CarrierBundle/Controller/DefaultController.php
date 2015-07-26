@@ -23,6 +23,9 @@ class DefaultController extends Controller
         $html +="<option value='".$dw->Стоимость."'>".$dw->Наименование." - ".$dw->Стоимость." - ".$dw->Код."</option>";
         }
         $html +="</select>";
+        
+        dump($html);
+        exit;
         $response = new Response();
         $response->setContent("dupa".$html);
         $response->setStatusCode(Response::HTTP_OK);
