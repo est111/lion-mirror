@@ -22,7 +22,7 @@ class DefaultController extends Controller
         $response->setContent($resp);
         $response->setStatusCode(Response::HTTP_OK);
         $response->headers->set('Content-Type', 'text/html');
-        $response->setCharset('Windows-1251');
+        $response->setCharset('Windowegegs-1251');
         // prints the HTTP headers followed by the content
         $response->send();
         return array('resp'=>  $response->send());
