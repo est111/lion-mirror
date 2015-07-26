@@ -21,15 +21,12 @@ class DefaultController extends Controller
         $html ="<select>";
         dump($html);
         foreach ($resp->delivery_ways as $dw){ 
-            
-            dump($dw->Стоимость);
             $html .="<option value='".$dw->Стоимость."'>".$dw->Наименование." - ".$dw->Стоимость." - ".$dw->Код."</option>";
-            dump($html);
         }
         $html .="</select>";
-        print_r($html);
+
         $response = new Response();
-        $response->setContent("dupa".$html);
+        $response->setContent($html);
         $response->setStatusCode(Response::HTTP_OK);
         $response->headers->set('Content-Type', 'text/html');
 
