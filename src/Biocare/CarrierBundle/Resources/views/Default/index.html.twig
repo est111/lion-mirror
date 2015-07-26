@@ -2,6 +2,8 @@
 
 {% block body -%}
 
-{{ dump(resp) }}
+{% for r in resp %}
+{{ r }}
+{% endfor %}
 
 {% endblock %}
