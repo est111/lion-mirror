@@ -29,6 +29,6 @@ class DefaultController extends Controller
         $response->headers->set('Content-Type', 'text/html');
 
         // prints the HTTP headers followed by the content
-        $response->send();
+        return $response->send();
     }
 }
