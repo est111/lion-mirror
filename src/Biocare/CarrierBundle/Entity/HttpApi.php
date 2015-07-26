@@ -20,7 +20,7 @@ class HttpApi {
     }
 
     public function __construct() {
-        $url = "http://is.b2cpl.ru/portal/client_api.ashx?client=test&key=test&func=info_zip&zip=101000";
+        $url = "http://is.b2cpl.ru/portal/client_api.ashx";
 
         $this->setUrl($url);
     }
