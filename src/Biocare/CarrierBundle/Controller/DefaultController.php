@@ -20,7 +20,7 @@ class DefaultController extends Controller
         $resp = $httpapi->tariff('191001');
         $resp = mb_convert_encoding($resp, "utf-8", "windows-1251");
         $response = json_decode($resp);
-        $resp = $response['delivery_ways'];
+        $resp = $response->delivery_ways;
         
         return array('resp'=>  $resp);
     }
