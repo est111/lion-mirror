@@ -19,6 +19,7 @@ class DefaultController extends Controller
         $resp_conv = mb_convert_encoding($resp_raw, "utf-8", "windows-1251");
         $resp = json_decode($resp_conv);
         $html ="<select>";
+        print_r($html);
         foreach ($resp->delivery_ways as $dw){ 
             
             dump($dw->Код);
