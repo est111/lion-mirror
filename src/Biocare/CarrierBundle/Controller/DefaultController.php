@@ -19,13 +19,7 @@ class DefaultController extends Controller
         $httpapi = new \Biocare\CarrierBundle\Entity\HttpApi();
         $resp = $httpapi->info_zip();
         $resp = mb_convert_encoding($resp, "utf-8", "windows-1251");
-        $response = new Response();
-        $response->setContent($resp);
-        $response->setStatusCode(Response::HTTP_OK);
-        $response->headers->set('Content-Type', 'text/html');
-        $response->setCharset('UTF-8');
-        // prints the HTTP headers followed by the content
-        $response->send();
-        return array('resp'=>  $response->send());
+        $response = json_decode($resp);
+        return array('resp'=>  $response);
     }
 }
