@@ -22,7 +22,7 @@ class DefaultController extends Controller
         dump($html);
         foreach ($resp->delivery_ways as $dw){ 
             
-            
+            dump($dw->Стоимость);
             $html =+"<option value='".$dw->Стоимость."'>".$dw->Наименование." - ".$dw->Стоимость." - ".$dw->Код."</option>";
             dump($html);
         }
