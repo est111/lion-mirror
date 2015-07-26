@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
 
+
 class DefaultController extends Controller
 {
     /**
@@ -22,7 +23,7 @@ class DefaultController extends Controller
         $response->setContent($resp);
         $response->setStatusCode(Response::HTTP_OK);
         $response->headers->set('Content-Type', 'text/html');
-        $response->setCharset('Windowegegs-1251');
+        $response->setCharset('UTF-8');
         // prints the HTTP headers followed by the content
         $response->send();
         return array('resp'=>  $response->send());
