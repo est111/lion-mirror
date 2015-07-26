@@ -12,7 +12,6 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/httpapi/{zip}")
-     * @Template()
      */
     public function indexAction($zip)
     {
@@ -20,11 +19,16 @@ class DefaultController extends Controller
         $resp = $httpapi->tariff('191001');
         $resp = mb_convert_encoding($resp, "utf-8", "windows-1251");
         $response = json_decode($resp);
-        $response ="<select>";
+        $html ="<select>";
         foreach ($response->delivery_ways as $dw){
-        $response +="<option value='".$dw['Стоимость']."'>".$dw['Наименование']." - ".$dw['Стоимость']." - ".$dw['Код']."</option>";
+        $html +="<option value='".$dw['Стоимость']."'>".$dw['Наименование']." - ".$dw['Стоимость']." - ".$dw['Код']."</option>";
         }
-        $response +="</select>";
-        return array('resp'=>  $response->delivery_ways);
+        $html +="</select>";
+        $response->setContent($html);
+        $response->setStatusCode(Response::HTTP_OK);
+        $response->headers->set('Content-Type', 'text/html');
+
+        // prints the HTTP headers followed by the content
+        $response->send();
     }
 }
