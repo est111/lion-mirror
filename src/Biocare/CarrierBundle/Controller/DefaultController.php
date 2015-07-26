@@ -21,7 +21,7 @@ class DefaultController extends Controller
         $response = new Response();
         $response->setContent($resp);
         $response->setStatusCode(Response::HTTP_OK);
-        $response->headers->set('Content-Type', 'text/json');
+        $response->headers->set('Content-Type', 'text/html');
         $response->setCharset('Windows-1251');
         // prints the HTTP headers followed by the content
         $response->send();
