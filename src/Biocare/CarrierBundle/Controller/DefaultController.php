@@ -24,9 +24,6 @@ class DefaultController extends Controller
         }
         $html +="</select>";
         
-       
-        exit;
-        
         $response = new Response();
         $response->setContent("dupa".$html);
         $response->setStatusCode(Response::HTTP_OK);
