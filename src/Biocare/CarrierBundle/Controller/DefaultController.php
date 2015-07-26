@@ -16,7 +16,7 @@ class DefaultController extends Controller
     {
         $httpapi = new \Biocare\CarrierBundle\Entity\HttpApi();
         $resp = $httpapi->info_zip();
-        json_decode($resp);
+        print_r($resp);
         return array('resp'=>  $resp);
     }
 }
