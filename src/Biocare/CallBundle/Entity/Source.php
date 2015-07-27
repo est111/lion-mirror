@@ -46,4 +46,37 @@ class Source
     private $callregister;
     
 
+
+    /**
+     * Add callregister
+     *
+     * @param \Biocare\CallBundle\Entity\CallRegister $callregister
+     * @return Source
+     */
+    public function addCallregister(\Biocare\CallBundle\Entity\CallRegister $callregister)
+    {
+        $this->callregister[] = $callregister;
+
+        return $this;
+    }
+
+    /**
+     * Remove callregister
+     *
+     * @param \Biocare\CallBundle\Entity\CallRegister $callregister
+     */
+    public function removeCallregister(\Biocare\CallBundle\Entity\CallRegister $callregister)
+    {
+        $this->callregister->removeElement($callregister);
+    }
+
+    /**
+     * Get callregister
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCallregister()
+    {
+        return $this->callregister;
+    }
 }
