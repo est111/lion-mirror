@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Biocare\ConnectionBundle\BiocareConnectionBundle(),
             new \Yellowknife\BowerBundle\YellowknifeBowerBundle(),
             new Biocare\CarrierBundle\BiocareCarrierBundle(),
+            new Biocare\PanelBundle\BiocarePanelBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
