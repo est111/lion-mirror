@@ -34,7 +34,7 @@ class DefaultController extends Controller {
         $em->persist($callregister);
         $em->flush();
         
-        
+        exit;
         $source_get = preg_replace('/\s+/', '', $request->get('source'));
         
         if($source_get){
