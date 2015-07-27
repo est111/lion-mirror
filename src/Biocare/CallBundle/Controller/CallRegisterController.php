@@ -13,7 +13,7 @@ use Biocare\CallBundle\Form\CallRegisterType;
 /**
  * CallRegister controller.
  *
- * @Route("/admin/callregister/")
+ * @Route("/admin/callregister")
  */
 class CallRegisterController extends Controller
 {
