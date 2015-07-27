@@ -1,6 +1,6 @@
 <?php
 
-namespace Biocare\CallBundle\Listener;
+namespace Biocare\CallBundle\Service;
 
 use Biocare\CallBundle\Entity\CallRegister;
 
