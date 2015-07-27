@@ -44,7 +44,12 @@ class CallRegisterController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity = new CallRegister();
+        
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $ip = $this->container->get('request')->getClientIp();
+                
+        
+        $entity = new CallRegister($user,$ip);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -90,7 +95,11 @@ class CallRegisterController extends Controller
      */
     public function newAction()
     {
-        $entity = new CallRegister();
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $ip = $this->container->get('request')->getClientIp();
+                
+        
+        $entity = new CallRegister($user,$ip);
         $form   = $this->createCreateForm($entity);
 
         return array(
