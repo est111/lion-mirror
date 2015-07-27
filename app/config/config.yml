@@ -82,7 +82,7 @@ swiftmailer:
     spool:     { type: memory }
 
 
-stof_doctrine_extensions:
-    orm:
-        default:
-            timestampable: true
+#stof_doctrine_extensions:
+#    orm:
+#        default:
+#            timestampable: true
