@@ -16,7 +16,7 @@ class CallService {
         $this->em = $entityManager;
     }
 
-    static function register() {
+    public function register() {
         $entities = $this->em->getRepository('BiocareCallBundle:CallRegister')->findAll();
         dump($entities);
     }
