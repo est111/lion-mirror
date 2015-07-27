@@ -47,7 +47,10 @@ class SourceController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BiocareCallBundle:Source')->findOneById($callregister);
+        $entity = $em->getRepository('BiocareCallBundle:Source')->findOneBy(
+                array(
+                    'callregister' => $callregister,
+                ));
 
         return array(
             'entity' => $entity,
