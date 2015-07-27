@@ -10,7 +10,7 @@ use Biocare\CallBundle\Entity\CallRegister;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/}")
+     * @Route("/")
      * @Template()
      */
     public function indexAction() {
