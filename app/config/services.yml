@@ -9,8 +9,6 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
     callregister:
         class: Biocare\CallBundle\Entity\CallRegister
-        tags:
-            - { name: doctrine.event_subscriber, connection: default }
         arguments: [ 'karol-gontarski','127.0.0.1' ]
 
     gedmo.listener.timestampable:
