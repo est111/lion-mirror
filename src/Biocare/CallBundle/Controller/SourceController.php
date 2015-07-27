@@ -49,7 +49,7 @@ class SourceController extends Controller
 
         $entity = $em->getRepository('BiocareCallBundle:Source')->findOneBy(
                 array(
-                    'callregister' => $callregister->getId(),
+                    'callregister' => $callregister,
                 ));
 
         return array(
