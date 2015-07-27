@@ -21,7 +21,9 @@ class DefaultController extends Controller
         $ip = $this->get('request')->getClientIp();
         
         $callregister = new CallRegister($user,$ip);
-        
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($callregister);
+        $em->flush();
         $name = $callregister->getCreatedBy();   
         
         dump($callregister);
