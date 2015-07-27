@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Source
 {
+    
+    public function __construct() {
+        $this->callregister = new \Doctrine\Common\Collections\ArrayCollection();
+    }
     /**
      * @var integer
      *
@@ -32,13 +36,14 @@ class Source
         return $this->id;
     }
     
-    /** 
-     * @ORM/OneToOne(targetEntity="CallRegister")
-     * @ORM/JoinColumn(name="callregister_id", referencedColumnName="id")
+    /**
+     * @ManyToMany(targetEntity="CallRegister")
+     * @JoinTable(name="source_callregister",
+     *      joinColumns={@JoinColumn(name="source_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="callregister_id", referencedColumnName="id", unique=true)}
+     *      )
      **/
     private $callregister;
     
-    
-    
-    
+
 }
