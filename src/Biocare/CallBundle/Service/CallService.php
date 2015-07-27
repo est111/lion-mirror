@@ -19,8 +19,10 @@ class CallService {
     }
 
     public function register() {
-        $entities = $this->em->getRepository('BiocareCallBundle:CallRegister')->findById($id);
-        
+        //$entity = $this->em->getRepository('BiocareCallBundle:CallRegister')->findById($id);
+        $register = new CallRegister();
+        $this->em->persist($register);
+        $this->flush;
     }
 
 }
