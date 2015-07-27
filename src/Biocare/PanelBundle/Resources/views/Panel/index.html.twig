@@ -20,7 +20,7 @@
                 </div>
             </div>
 {#            {{ render(url('destination')) }}#}
-            {% render 'BiocareCallBundle:Source:oneById' with {'callregister':callregister} %}
+            {{ render(url('admin_source_one_by_callregister',{'callregister':callregister})) }}
         </div>
     </div>
 {% endblock %}
