@@ -18,13 +18,14 @@ class CallService {
         $this->em = $entityManager;
     }
 
-    public function register() {
+    public function register($user,$ip) {
         if (isset($this->id)){
-            $entity = $this->em->getRepository('BiocareCallBundle:CallRegister')->findById($this->id);
+            $register = $this->em->getRepository('BiocareCallBundle:CallRegister')->findById($this->id);
+        } else  {            
+            $register = new CallRegister($user,$ip);
         }
-        $register = new CallRegister();
         $this->em->persist($register);
-        $this->flush;
+        $this->em->flush();
     }
 
 }
