@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-
+use Biocare\CallBundle\Entity\CallRegister;
 
 class DefaultController extends Controller
 {
@@ -16,7 +16,7 @@ class DefaultController extends Controller
      */
     public function indexAction($name)
     {
-        $callregister = $this->get('callregister');
+        $callregister = $this->get('calllistener');
         $name = $callregister->getCreatedBy();        
         return array('name' => $name);
     }
