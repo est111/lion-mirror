@@ -10,10 +10,10 @@ use Biocare\CallBundle\Entity\CallRegister;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/hello/{name}")
+     * @Route("/}")
      * @Template()
      */
-    public function indexAction($name) {
+    public function indexAction() {
 
 
         $session = $this->get('session');
