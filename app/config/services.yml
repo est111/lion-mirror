@@ -9,7 +9,6 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
     calllistener:
         class: Biocare\CallBundle\Service\CallService
-        scope: prototype
         arguments: [ "@doctrine.orm.entity_manager" ,'karol-gontarski','127.0.0.1' ]
 
     gedmo.listener.timestampable:
