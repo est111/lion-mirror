@@ -71,7 +71,6 @@ class CallRegister
     public function setCreatedFromIp($createdFromIp)
     {
         $this->createdFromIp = $createdFromIp;
-
         return $this;
     }
 
@@ -116,7 +115,6 @@ class CallRegister
     public function setCreatedBy($createdBy)
     {
         $this->createdBy = $createdBy;
-
         return $this;
     }
 
