@@ -14,7 +14,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class CallRegister
 {
     public function __construct() {
-         $this->setCreatedBy($createdBy) = $this->get('security.token_storage')->getToken()->getUser();
+         $this->setCreatedBy( $this->get('security.token_storage')->getToken()->getUser() );
     }
     
     /**
