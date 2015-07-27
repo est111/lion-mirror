@@ -16,17 +16,17 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('admin_callregister__show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('admin_callregister_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.createdFromIp }}</td>
                 <td>{{ entity.created|date('Y-m-d H:i') }}</td>
                 <td>{{ entity.createdBy|default('null') }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('admin_callregister__show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('admin_callregister_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('admin_callregister__edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('admin_callregister_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -37,7 +37,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('admin_callregister__new') }}">
+            <a href="{{ path('admin_callregister_new') }}">
                 Create a new entry
             </a>
         </li>
