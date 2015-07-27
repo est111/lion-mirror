@@ -2,7 +2,7 @@
 
 namespace Biocare\CallBundle\Listener;
 
-use Biocare\CallBundle\BiocareCallBundle\Entity\CallRegister;
+use Biocare\CallBundle\Entity\CallRegister;
 
 /**
  * Description of CallRegister
@@ -12,7 +12,7 @@ use Biocare\CallBundle\BiocareCallBundle\Entity\CallRegister;
 class CallRegister {
    
     static function register($user, $ip){
-        new \Biocare\CallBundle\Entity\CallRegister($user, $ip);
+        new CallRegister($user, $ip);
     }
     
 }
