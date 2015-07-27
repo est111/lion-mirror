@@ -10,7 +10,8 @@ services:
     calllistener:
         class: Biocare\CallBundle\Listener\CallListener
         scope: prototype
-        arguments: [ 'karol-gontarski','127.0.0.1' ]
+        calls: 
+            - [ register, [ 'karol-gontarski','127.0.0.1' ]]
 
     gedmo.listener.timestampable:
         class: Gedmo\Timestampable\TimestampableListener
