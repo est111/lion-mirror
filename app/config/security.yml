@@ -12,6 +12,9 @@ security:
                 users:
                     gontarski:
                         password: 123123
+                        roles: 'ROLE_ADMIN'                        
+                    filip:
+                        password: 123123
                         roles: 'ROLE_ADMIN'
     firewalls:
         dev:
