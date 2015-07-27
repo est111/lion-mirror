@@ -9,24 +9,14 @@
                         <strong>Debug</strong>
                     </div>
                     <div class="panel-body">
-                        It's all about call at <strong>{{ callregister.created|date('Y-m-d H:i') }}</strong> !<br/>
+                        It's all about call at:<br/> <strong>{{ callregister.created|date('Y-m-d H:i') }}</strong> !<br/>
                         Hello <strong>{{ callregister.createdBy }}</strong> !<br/>
                         You are logged on <strong>{{ callregister.createdFromIp }}</strong> !<br/>
                     </div>
                 </div>
             </div>
-            <div class='col-lg-9'>
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <strong>Debug</strong>
-                    </div>
-                    <div class="panel-body">
-                        It's all about call at <strong>{{ callregister.created|date('Y-m-d H:i') }}</strong> !<br/>
-                        Hello <strong>{{ callregister.createdBy }}</strong> !<br/>
-                        You are logged on <strong>{{ callregister.createdFromIp }}</strong> !<br/>
-                    </div>
-                </div>
-            </div>
+            {{ render(url('destination')) }}
+            {{ render(url('source')) }}
         </div>
     </div>
 {% endblock %}
