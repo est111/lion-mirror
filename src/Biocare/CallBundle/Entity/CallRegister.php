@@ -65,7 +65,7 @@ class CallRegister
      */
     public function setCreatedFromIp($createdFromIp)
     {
-        $this->createdFromIp = $createdFromIp;
+        $this->createdFromIp = $this->get('request')->getClientIp();
 
         return $this;
     }
@@ -111,7 +111,7 @@ class CallRegister
      */
     public function setCreatedBy($createdBy)
     {
-        $this->createdBy = $createdBy;
+        $this->createdBy = $this->get('security.token_storage')->getToken()->getUser();
 
         return $this;
     }
