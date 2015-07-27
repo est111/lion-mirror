@@ -15,9 +15,9 @@ class CallRegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            //->add('createdFromIp')
-            //->add('created')
-            //->add('createdBy')
+            ->add('createdFromIp')
+            ->add('created')
+            ->add('createdBy')
         ;
     }
     
