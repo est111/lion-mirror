@@ -21,7 +21,7 @@ class DefaultController extends Controller
         $ip = $this->get('request')->getClientIp();
     
         $session = $this->get('session');
-        if(isset($session->get('callregister')))
+        if(!isset($session->get('callregister')))
         {   
         $callregister = new CallRegister($user,$ip);
         $em = $this->getDoctrine()->getManager();
