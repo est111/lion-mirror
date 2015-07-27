@@ -43,13 +43,13 @@ class SourceController extends Controller
      * @Method("GET")
      * @Template("BiocareCallBundle:Source:show.html.twig")
      */
-    public function oneByIdAction(CallRegister $callregister)
+    public function oneByIdAction($callregister)
     {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareCallBundle:Source')->findOneBy(
                 array(
-                    'callregister' => $callregister,
+                    'id' => $callregister,
                 ));
 
         return array(
