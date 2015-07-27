@@ -22,10 +22,10 @@ services:
              - [ setAnnotationReader, [ @annotation_reader ] ]
              - [ setIpValue, [ "127.0.0.1" ] ]
                           
-#    gedmo.listener.blameable:
-#        class: Gedmo\Blameable\BlameableListener
-#        tags:
-#            - { name: doctrine.event_subscriber, connection: default }
-#        calls:
-#             - [ setAnnotationReader, [ @annotation_reader ] ] 
-#             - [ setUserValue, [ @security.token_storage ] ]
+    gedmo.listener.blameable:
+        class: Gedmo\Blameable\BlameableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+             - [ setAnnotationReader, [ @annotation_reader ] ] 
+             - [ setUserValue, [ 'nobody' ] ]
