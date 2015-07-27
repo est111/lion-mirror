@@ -4,7 +4,7 @@ namespace Biocare\CallBundle\Service;
 
 use Doctrine\ORM\EntityManager;
 use Biocare\CallBundle\Entity\CallRegister;
-        use Symfony\Component\Security\Core\Util\SecureRandom;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
  * Description of CallRegister
