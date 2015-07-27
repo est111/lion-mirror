@@ -19,13 +19,18 @@ class DefaultController extends Controller
         $user = $this->get('security.token_storage')->getToken()->getUser();
         
         $ip = $this->get('request')->getClientIp();
-        
+    
+        $session = $this->get('session');
+        if(isset($session->get('callregister')))
+        {   
         $callregister = new CallRegister($user,$ip);
         $em = $this->getDoctrine()->getManager();
         $em->persist($callregister);
         $em->flush();
         
-        dump($this->get('session'));
+        $session = $this->get('session');
+        $session->set('callregister', $callregister->getId());
+    }
         
         $name = $callregister->getCreatedBy();   
         
