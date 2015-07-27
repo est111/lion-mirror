@@ -13,8 +13,8 @@ biocare_panel:
 #    type:     annotation
 #    prefix:   /
 
-biocare_connection:
-    resource: "@BiocareConnectionBundle/Controller/"
-    type:     annotation
-    prefix:   /
+#biocare_connection:
+#    resource: "@BiocareConnectionBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
 
