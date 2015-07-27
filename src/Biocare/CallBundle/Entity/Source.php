@@ -31,4 +31,14 @@ class Source
     {
         return $this->id;
     }
+    
+    /** 
+     * @ORM/OneToOne(targetEntity="CallRegister")
+     * @ORM/JoinColumn(name="callregister_id", referencedColumnName="id")
+     **/
+    private $callregister;
+    
+    
+    
+    
 }
