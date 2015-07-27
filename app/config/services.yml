@@ -8,7 +8,7 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
     calllistener:
-        class: Biocare\CallBundle\Listener\CallListener
+        class: Biocare\CallBundle\Entity\CallRegister
         scope: prototype
         calls: 
             - [ register, [ 'karol-gontarski','127.0.0.1' ]]
