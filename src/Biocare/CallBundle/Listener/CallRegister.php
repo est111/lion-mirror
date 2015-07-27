@@ -9,7 +9,7 @@ use Biocare\CallBundle\Entity\CallRegister;
  *
  * @author Karol Gontarski
  */
-class CallRegister {
+class CallListner {
    
     static function register($user, $ip){
         new CallRegister($user, $ip);
