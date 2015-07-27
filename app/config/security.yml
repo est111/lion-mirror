@@ -18,7 +18,7 @@ security:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
             security: false
         default:
-            pattern:  ^/heloo
+            pattern:  ^/hello
             anonymous: ~
             http_basic: ~
 
