@@ -19,7 +19,6 @@ security:
             security: false
         default:
             pattern:  ^/hello
-            anonymous: ~
             http_basic: ~
 
     access_control:
