@@ -1,7 +1,12 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
+    <div>
+        
+    Hello {{ callregister.created|date('Y-m-d H:i') }}!
+    Hello {{ callregister.createdBy }}!
+    Hello {{ callregister.createdFromIp }}!
 
-    Hello {{ name|date('Y-m-d H:i') }}!
-
+    
+    </div>
 {% endblock %}
