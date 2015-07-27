@@ -21,7 +21,7 @@ class CallRegisterController extends Controller
     /**
      * Lists all CallRegister entities.
      *
-     * @Route("/", name="admin_callregister_")
+     * @Route("/", name="admin_callregister")
      * @Method("GET")
      * @Template()
      */
@@ -38,7 +38,7 @@ class CallRegisterController extends Controller
     /**
      * Creates a new CallRegister entity.
      *
-     * @Route("/", name="admin_callregister__create")
+     * @Route("/", name="admin_callregister_create")
      * @Method("POST")
      * @Template("BiocareCallBundle:CallRegister:new.html.twig")
      */
@@ -53,7 +53,7 @@ class CallRegisterController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_callregister__show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_callregister_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -72,7 +72,7 @@ class CallRegisterController extends Controller
     private function createCreateForm(CallRegister $entity)
     {
         $form = $this->createForm(new CallRegisterType(), $entity, array(
-            'action' => $this->generateUrl('admin_callregister__create'),
+            'action' => $this->generateUrl('admin_callregister_create'),
             'method' => 'POST',
         ));
 
@@ -84,7 +84,7 @@ class CallRegisterController extends Controller
     /**
      * Displays a form to create a new CallRegister entity.
      *
-     * @Route("/new", name="admin_callregister__new")
+     * @Route("/new", name="admin_callregister_new")
      * @Method("GET")
      * @Template()
      */
@@ -102,7 +102,7 @@ class CallRegisterController extends Controller
     /**
      * Finds and displays a CallRegister entity.
      *
-     * @Route("/{id}", name="admin_callregister__show")
+     * @Route("/{id}", name="admin_callregister_show")
      * @Method("GET")
      * @Template()
      */
@@ -127,7 +127,7 @@ class CallRegisterController extends Controller
     /**
      * Displays a form to edit an existing CallRegister entity.
      *
-     * @Route("/{id}/edit", name="admin_callregister__edit")
+     * @Route("/{id}/edit", name="admin_callregister_edit")
      * @Method("GET")
      * @Template()
      */
@@ -161,7 +161,7 @@ class CallRegisterController extends Controller
     private function createEditForm(CallRegister $entity)
     {
         $form = $this->createForm(new CallRegisterType(), $entity, array(
-            'action' => $this->generateUrl('admin_callregister__update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('admin_callregister_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -172,7 +172,7 @@ class CallRegisterController extends Controller
     /**
      * Edits an existing CallRegister entity.
      *
-     * @Route("/{id}", name="admin_callregister__update")
+     * @Route("/{id}", name="admin_callregister_update")
      * @Method("PUT")
      * @Template("BiocareCallBundle:CallRegister:edit.html.twig")
      */
@@ -193,7 +193,7 @@ class CallRegisterController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_callregister__edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_callregister_edit', array('id' => $id)));
         }
 
         return array(
@@ -205,7 +205,7 @@ class CallRegisterController extends Controller
     /**
      * Deletes a CallRegister entity.
      *
-     * @Route("/{id}", name="admin_callregister__delete")
+     * @Route("/{id}", name="admin_callregister_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -238,7 +238,7 @@ class CallRegisterController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_callregister__delete', array('id' => $id)))
+            ->setAction($this->generateUrl('admin_callregister_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
