@@ -24,6 +24,9 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($callregister);
         $em->flush();
+        
+        dump($this->get('session'));
+        
         $name = $callregister->getCreatedBy();   
         
         dump($callregister);
