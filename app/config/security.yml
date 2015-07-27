@@ -18,10 +18,10 @@ security:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
             security: false
         default:
-            pattern:  ^/hello
+            pattern:  ^/
             http_basic: ~
 
     access_control:
         - { path: ^/,               roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/hello,          roles: ROLE_ADMIN }
+        - { path: ^/,          roles: ROLE_ADMIN }
         
