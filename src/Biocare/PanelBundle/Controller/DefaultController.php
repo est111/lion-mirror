@@ -20,6 +20,7 @@ class DefaultController extends Controller
         $ip = $this->get('request')->getClientIp();
         $callregister = new CallRegister($user,$ip);
         $name = $callregister->getCreatedBy();      
+        $name .= $callregister->getId();      
         return array('name' => $name);
     }
 }
