@@ -37,10 +37,7 @@ class SourceController extends Controller
     }
     
     /**
-     * Lists all Source entities.
      *
-     * @Route("/oneById/{callregister}", name="admin_source_one_by_callregister")
-     * @Method("GET")
      * @Template("BiocareCallBundle:Source:show.html.twig")
      */
     public function oneByIdAction(CallRegister $callregister)
