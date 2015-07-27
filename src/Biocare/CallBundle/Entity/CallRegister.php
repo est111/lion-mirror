@@ -49,13 +49,13 @@ class CallRegister
      */
     private $created;
     
-//    /**
-//     * @var string $createdBy
-//     *
-//     * @Gedmo\Blameable(on="create")
-//     * @ORM\Column(type="string")
-//     */
-//    private $createdBy;
+    /**
+     * @var string $createdBy
+     *
+     * @Gedmo\Blameable(on="create")
+     * @ORM\Column(type="string")
+     */
+    private $createdBy;
 
     /**
      * Set createdFromIp
@@ -103,26 +103,26 @@ class CallRegister
         return $this->created;
     }
 
-//    /**
-//     * Set createdBy
-//     *
-//     * @param string $createdBy
-//     * @return CallRegister
-//     */
-//    public function setCreatedBy($createdBy)
-//    {
-//        $this->createdBy = $createdBy;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get createdBy
-//     *
-//     * @return string 
-//     */
-//    public function getCreatedBy()
-//    {
-//        return $this->createdBy;
-//    }
+    /**
+     * Set createdBy
+     *
+     * @param string $createdBy
+     * @return CallRegister
+     */
+    public function setCreatedBy($createdBy)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return string 
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
 }
