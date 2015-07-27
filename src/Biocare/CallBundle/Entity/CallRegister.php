@@ -13,6 +13,10 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class CallRegister
 {
+    public function __construct() {
+         $this->setCreatedBy($createdBy) = $this->get('security.token_storage')->getToken()->getUser();
+    }
+    
     /**
      * @var integer
      *
@@ -65,7 +69,7 @@ class CallRegister
      */
     public function setCreatedFromIp($createdFromIp)
     {
-        $this->createdFromIp = $this->get('request')->getClientIp();
+        $this->createdFromIp = $createdFromIp;
 
         return $this;
     }
@@ -111,7 +115,7 @@ class CallRegister
      */
     public function setCreatedBy($createdBy)
     {
-        $this->createdBy = $this->get('security.token_storage')->getToken()->getUser();
+        $this->createdBy = $createdBy;
 
         return $this;
     }
