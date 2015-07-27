@@ -15,15 +15,14 @@
             </tr>
             <tr>
                 <th>Created</th>
-                <td>{{ entity.created }}</td>
+                <td>{{ entity.created|date('Y-m-d H:i') }}</td>
             </tr>
             <tr>
                 <th>Createdby</th>
-                <td>{{ entity.createdBy }}</td>
+                <td>{{ entity.createdBy|default('null') }}</td>
             </tr>
         </tbody>
     </table>
-
         <ul class="record_actions">
     <li>
         <a href="{{ path('admin_callregister_') }}">
