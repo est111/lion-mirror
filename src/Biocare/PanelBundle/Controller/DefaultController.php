@@ -17,7 +17,7 @@ class DefaultController extends Controller
     public function indexAction($name)
     {
         $callregister = $this->get('calllistener');
-               return array('name' => $callregister->getId($callregister));
+        return array('name' => $callregister->getId($callregister));
         /*$name = $callregister->getCreatedBy();      
         return array('name' => $name);*/
     }
