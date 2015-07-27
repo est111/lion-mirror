@@ -2,6 +2,7 @@
 
 namespace Biocare\CallBundle\Service;
 
+use Doctrine\ORM\EntityManager;
 use Biocare\CallBundle\Entity\CallRegister;
 
 /**
