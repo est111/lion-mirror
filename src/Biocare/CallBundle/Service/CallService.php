@@ -12,13 +12,15 @@ use Biocare\CallBundle\Entity\CallRegister;
  */
 class CallService {
 
+    private $id;
+    
     public function __construct(EntityManager $entityManager) {
         $this->em = $entityManager;
     }
 
     public function register() {
-        $entities = $this->em->getRepository('BiocareCallBundle:CallRegister')->findAll();
-        dump($entities);
+        $entities = $this->em->getRepository('BiocareCallBundle:CallRegister')->findById($id);
+        
     }
 
 }
