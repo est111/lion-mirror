@@ -29,14 +29,8 @@
                                         <td>{{ entity.created|date('Y-m-d H:i') }}</td>
                                         <td>{{ entity.createdBy|default('null') }}</td>
                                         <td>
-                                            <ul>
-                                                <li>
-                                                    <a class="btn btn-primary btn-xs" href="{{ path('admin_callregister_show', { 'id': entity.id }) }}">show</a>
-                                                </li>
-                                                <li>
-                                                    <a class="btn btn-primary btn-xs" href="{{ path('admin_callregister_edit', { 'id': entity.id }) }}">edit</a>
-                                                </li>
-                                            </ul>
+                                            <a class="btn btn-primary btn-xs" href="{{ path('admin_callregister_show', { 'id': entity.id }) }}">show</a>
+                                            <a class="btn btn-primary btn-xs" href="{{ path('admin_callregister_edit', { 'id': entity.id }) }}">edit</a>
                                         </td>
                                     </tr>
                                 {% endfor %}
