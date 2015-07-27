@@ -16,7 +16,7 @@ class DefaultController extends Controller
      */
     public function indexAction($name)
     {
-        $this->get('callregister');
+        dump($this->get('callregister'));
         return array('name' => $name);
     }
 }
