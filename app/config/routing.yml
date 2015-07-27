@@ -1,3 +1,8 @@
+biocare_call:
+    resource: "@BiocareCallBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 biocare_panel:
     resource: "@BiocarePanelBundle/Controller/"
     type:     annotation
