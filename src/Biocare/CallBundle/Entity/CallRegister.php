@@ -56,4 +56,73 @@ class CallRegister
      * @ORM\Column(type="string")
      */
     private $createdBy;
+
+    /**
+     * Set createdFromIp
+     *
+     * @param string $createdFromIp
+     * @return CallRegister
+     */
+    public function setCreatedFromIp($createdFromIp)
+    {
+        $this->createdFromIp = $createdFromIp;
+
+        return $this;
+    }
+
+    /**
+     * Get createdFromIp
+     *
+     * @return string 
+     */
+    public function getCreatedFromIp()
+    {
+        return $this->createdFromIp;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return CallRegister
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param string $createdBy
+     * @return CallRegister
+     */
+    public function setCreatedBy($createdBy)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return string 
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
 }
