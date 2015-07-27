@@ -7,9 +7,10 @@ services:
 #    service_name: 
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
-    callregister:
-        class: Biocare\CallBundle\Entity\CallRegister
-        arguments: [ 'karol-gontarski','127.0.0.1' ]
+    calllistener:
+        class: Biocare\CallBundle\Listener\CallListener
+        calls: 
+            - [ register, [ 'karol-gontarski','127.0.0.1' ]]
 
     gedmo.listener.timestampable:
         class: Gedmo\Timestampable\TimestampableListener
