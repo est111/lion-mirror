@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Biocare\ConnectionBundle\BiocareConnectionBundle(),
-            new \Yellowknife\BowerBundle\YellowknifeBowerBundle(),
+            new Yellowknife\BowerBundle\YellowknifeBowerBundle(),
             //new Biocare\CarrierBundle\BiocareCarrierBundle(),
             new Biocare\PanelBundle\BiocarePanelBundle(),
             new Biocare\CallBundle\BiocareCallBundle(),
