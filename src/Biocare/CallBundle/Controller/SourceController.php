@@ -39,7 +39,7 @@ class SourceController extends Controller
     /**
      * Lists all Source entities.
      *
-     * @Route("/oneById/{id}", name="admin_source_one_by_callregister")
+     * @Route("/oneById/{id}", name="admin_source_one_by_id")
      * @Method("GET")
      * @Template("BiocareCallBundle:Source:show.html.twig")
      */
