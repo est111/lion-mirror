@@ -11,7 +11,7 @@ services:
         class: Biocare\CallBundle\Listener\CallListener
         scope: prototype
         calls: 
-            - [ register, [ 'karol-gontarski','127.0.0.1' ]]
+            - [ register ]
 
     gedmo.listener.timestampable:
         class: Gedmo\Timestampable\TimestampableListener
