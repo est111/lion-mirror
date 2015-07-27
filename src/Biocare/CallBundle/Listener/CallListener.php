@@ -11,8 +11,8 @@ use Biocare\CallBundle\Entity\CallRegister;
  */
 class CallListener {
    
-    static function register(){
-        new CallRegister();
+    static function register($user, $ip){
+        new CallRegister($user, $ip);
     }
     
 }
