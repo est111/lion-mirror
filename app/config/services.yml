@@ -14,7 +14,7 @@ services:
         calls:
              - [ setAnnotationReader, [ @annotation_reader ] ]
              
-    gedmo.listener.ip_traceable:
+    gedmo.listener.iptraceable:
         class: Gedmo\IpTraceable\IpTraceableListener
         tags:
             - { name: doctrine.event_subscriber, connection: default }
