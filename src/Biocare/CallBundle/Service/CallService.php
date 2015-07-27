@@ -24,7 +24,7 @@ class CallService {
         return $this;
     }
 
-    public function __construct(EntityManager $entityManager, $user, $ip) {
+    public function __construct() {
 
         $generator = new SecureRandom();
         $this->setId($generator->nextBytes(10));
