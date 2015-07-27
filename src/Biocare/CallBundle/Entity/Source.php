@@ -39,8 +39,8 @@ class Source
     /**
      * @ORM\ManyToMany(targetEntity="CallRegister")
      * @ORM\JoinTable(name="source_callregister",
-     *      joinColumns={@JoinColumn(name="source_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@JoinColumn(name="callregister_id", referencedColumnName="id", unique=true)}
+     *      joinColumns={@ORM\JoinColumn(name="source_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="callregister_id", referencedColumnName="id", unique=true)}
      *      )
      **/
     private $callregister;
