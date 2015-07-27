@@ -14,7 +14,7 @@ class DefaultController extends Controller {
      * @Route("/")
      * @Template()
      */
-    public function indexAction() {
+    public function indexAction(Request $request) {
 
 
         $session = $this->get('session');
