@@ -37,7 +37,7 @@ class CallRegister
      * @var string $createdFromIp
      *
      * @Gedmo\IpTraceable(on="create")
-     * @ORM\Column(type="string", length=45, nullable=false)
+     * @ORM\Column(type="string", length=45, nullable=true)
      */
     private $createdFromIp;
     
