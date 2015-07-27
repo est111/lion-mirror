@@ -34,7 +34,7 @@ class DefaultController extends Controller {
             $session->set('callregister',$callregister);
         } 
 
-        $name = dump($callregister);
+        $name = $callregister->getCreated();
 
         return array('name' => $name);
     }
