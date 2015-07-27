@@ -234,7 +234,7 @@ class CallRegisterController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('admin_callregister_'));
+        return $this->redirect($this->generateUrl('admin_callregister'));
     }
 
     /**
