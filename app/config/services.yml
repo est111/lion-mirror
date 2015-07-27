@@ -12,8 +12,7 @@ services:
         
     calllistenerr:
         class: Biocare\CallBundle\Service\CallService 
-        calls: 
-            - [getId]
+        
     gedmo.listener.timestampable:
         class: Gedmo\Timestampable\TimestampableListener
         tags:
