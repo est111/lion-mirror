@@ -35,6 +35,27 @@ class SourceController extends Controller
             'entities' => $entities,
         );
     }
+    
+        /**
+     * Lists all Source entities.
+     *
+     * @Route("/oneById/{id}", name="admin_source_one_by_id")
+     * @Method("GET")
+     * @Template()
+     */
+    public function oneByIdAction(CallRegister $callregister)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('BiocareCallBundle:Source')->findOneById($callregister);
+
+        return array(
+            'entity' => $entity,
+        );
+    }
+    
+    
+    
     /**
      * Creates a new Source entity.
      *
