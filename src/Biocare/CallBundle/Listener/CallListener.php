@@ -11,8 +11,10 @@ use Biocare\CallBundle\Entity\CallRegister;
  */
 class CallListener {
    
-    static function register($user, $ip){
-        new CallRegister($user, $ip);
+    static function register(){
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('BiocareCallBundle:CallRegister')->findAll();
+        dump($entities);
     }
     
 }
