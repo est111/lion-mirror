@@ -3,6 +3,7 @@
 namespace Biocare\CallBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * CallRegister
@@ -31,4 +32,28 @@ class CallRegister
     {
         return $this->id;
     }
+    
+    /**
+     * @var string $createdFromIp
+     *
+     * @Gedmo\IpTraceable(on="create")
+     * @ORM\Column(type="string", length=45, nullable=false)
+     */
+    private $createdFromIp;
+    
+    /**
+     * @var \DateTime $created
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetimetz")
+     */
+    private $created;
+    
+    /**
+     * @var string $createdBy
+     *
+     * @Gedmo\Blameable(on="create")
+     * @ORM\Column(type="string")
+     */
+    private $createdBy;
 }
