@@ -10,7 +10,11 @@ services:
     calllistener:
         class: Biocare\CallBundle\Service\CallService 
         arguments: [ "@doctrine.orm.entity_manager" ,'karol-gontarski','127.0.0.1' ]
-
+        
+    calllistenerr:
+        class: Biocare\CallBundle\Service\CallService 
+        calls: 
+            - [getId]
     gedmo.listener.timestampable:
         class: Gedmo\Timestampable\TimestampableListener
         tags:
