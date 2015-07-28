@@ -66,8 +66,7 @@ class CustomerController extends Controller
     {
         $entity = new Customer();
         $callregister = $this->get('session')->get('callregister');
-        dump($callregister);
-        exit;
+
         if($callregister){
             $entity->setCallregister($callregister);
         }
@@ -118,6 +117,8 @@ class CustomerController extends Controller
     {
         $entity = new Customer();        
         $callregister = $this->get('session')->get('callregister');
+                dump($callregister);
+        exit;
         if($callregister){
             $entity->setCallregister($callregister);
         }
