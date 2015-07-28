@@ -35,7 +35,7 @@ class Address
     /**
      * var $country String
      * 
-     * @ORM\Column(name="country", type="country")
+     * @ORM\Column(name="country", type="string",length=100)
      */
     
     private $country;
