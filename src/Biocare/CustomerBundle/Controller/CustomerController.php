@@ -60,6 +60,9 @@ class CustomerController extends Controller {
      * @Template("BiocareCustomerBundle:Customer:new.html.twig")
      */
     public function createAction(Request $request) {
+        
+        $em = $this->getDoctrine()->getManager();
+        
         $entity = new Customer();
         $callregister_entity = $this->get('session')->get('callregister');
 
@@ -111,6 +114,10 @@ class CustomerController extends Controller {
      * @Template()
      */
     public function newAction() {
+        
+        
+        $em = $this->getDoctrine()->getManager();
+        
         $entity = new Customer();
         $callregister_entity = $this->get('session')->get('callregister');
 
