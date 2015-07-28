@@ -25,8 +25,8 @@
                             </thead>
                             <tbody>
                                 {% for entity in entities %}
-                                    <tr>
-                                        <td class="text-right"><a class="btn btn-xs btn-link btn-danger" href="{{ path('admin_callregister_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                    <tr class="text-right">
+                                        <td><a class="btn btn-xs btn-link" href="{{ path('admin_callregister_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                         <td>{{ entity.createdFromIp }}</td>
                                         <td>{{ entity.created|date('Y-m-d H:i') }}</td>
                                         <td>{{ entity.createdBy|default('null') }}</td>
