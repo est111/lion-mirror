@@ -31,4 +31,23 @@ class Address
     {
         return $this->id;
     }
+    
+    /**
+     * var $country String
+     * 
+     * @ORM\Column(name="country", type="country")
+     */
+    
+    private $country;
+    
+    public function getCountry() {
+        return $this->country;
+    }
+
+    public function setCountry($country) {
+        $this->country = $country;
+        return $this;
+    }
+
+
 }
