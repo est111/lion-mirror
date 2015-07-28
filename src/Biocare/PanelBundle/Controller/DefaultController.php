@@ -9,14 +9,13 @@ use Biocare\CallBundle\Entity\CallRegister;
 use Biocare\CallBundle\Entity\Source;
 use Symfony\Component\HttpFoundation\Request;
 
-
 class DefaultController extends Controller {
 
     /**
-     * @Route("/")
+     * @Route("/call/{info}", name="call")
      * @Template()
      */
-    public function indexAction(Request $request) {
+    public function indexAction(Request $request, $info = null) {
 
 
         $session = $this->get('session');
@@ -25,26 +24,24 @@ class DefaultController extends Controller {
 
         $ip = $this->get('request')->getClientIp();
 
-        $callregister = new CallRegister($user, $ip);
+        if(!$info){
+            $info = preg_replace('/\s+/', '', $request->get('info'));
+        }
+        // ZOPIER PL
+        $info = explode('-', $info);
+        
+        $source         = $info[0] ? $info[0] : null;
+        $destination    = $info[1] ? $info[1] : null;
+
+        $callregister = new CallRegister($user, $ip, $destination, $source);
 
         $em = $this->getDoctrine()->getManager();
-        
-        
-        
+
+
+
         $em->persist($callregister);
         $em->flush();
-        
-        exit;
-        $source_get = preg_replace('/\s+/', '', $request->get('source'));
-        
-        if($source_get){
-            $source = new Source();
-            $source->addCallregister($callregister);
-            $em->persist($source);
-        }
-        
-        
-        
+
 
         $session->set('callregister', $callregister);
 
