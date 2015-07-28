@@ -61,7 +61,7 @@ class Customer
         return $this->callregister;
     }
 
-    public function setCallregister(\CallRegister $callregister) {
+    public function setCallregister(Biocare\CallBundle\Entity\CallRegister $callregister) {
         $this->callregister = $callregister;
         return $this;
     }
