@@ -30,8 +30,10 @@
                             <td>{{ entity.email }}</td>
                             <td class="text-center">
                                 {% for address in entity.address %}
-                                    <button class='btn btn-xs btn-info'>{{ address.postcode }}, {{ address.city }}
-                                    {{ address.country|country(app.request.locale) }}</button>
+                                    <button class='btn btn-xs btn-info btn-block'>
+                                        {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}</br>
+                                        <small>Nizinna 12/A2</small>
+                                    </button>
                                 {% endfor %}
                             </td>
                             <td>
