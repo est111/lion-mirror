@@ -119,7 +119,7 @@ class CustomerController extends Controller
         $callregister = $this->get('session')->get('callregister');
 
         if($callregister){
-            $entity->setCallregister($callregister->getId());
+            $entity->setCallregister($callregister);
         }
         $form   = $this->createCreateForm($entity);
 
