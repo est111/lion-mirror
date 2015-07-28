@@ -30,7 +30,8 @@
                             <td>{{ entity.email }}</td>
                             <td class="text-center">
                                 {% for address in entity.address %}
-                                {{ address.country|country(app.request.locale) }}<br/>
+                                    <span class='label label-info'>{{ address.postcode }}, {{ address.city }}<br/>
+                                    {{ address.country|country(app.request.locale) }}</span>
                                 {% endfor %}
                             </td>
                             <td>
