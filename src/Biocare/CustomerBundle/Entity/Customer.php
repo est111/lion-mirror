@@ -53,7 +53,7 @@ class Customer
     
     /**
      *
-     * @ORM\OneToOne(targetEntity="Biocare\CallBundle\Entity\CallRegister")
+     * @ORM\OneToOne(targetEntity="\Biocare\CallBundle\Entity\CallRegister")
      */
     private $callregister;
 
@@ -61,7 +61,7 @@ class Customer
         return $this->callregister;
     }
 
-    public function setCallregister(Biocare\CallBundle\Entity\CallRegister $callregister) {
+    public function setCallregister(\Biocare\CallBundle\Entity\CallRegister $callregister) {
         $this->callregister = $callregister;
         return $this;
     }
