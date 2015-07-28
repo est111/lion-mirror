@@ -18,6 +18,8 @@ class CallRegisterType extends AbstractType
             ->add('createdFromIp')
             ->add('created')
             ->add('createdBy')
+            ->add('source')
+            ->add('destination')
         ;
     }
     
