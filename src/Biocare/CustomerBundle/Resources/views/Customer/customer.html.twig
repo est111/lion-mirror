@@ -5,7 +5,7 @@
     {% set callregister_flag = 1 %}
     <div class="panel panel-info">
         <div class="panel-heading">
-            <strong>{% trans %}Customers{% endtrans %}</strong>
+            <strong>{% trans %}Customers who call from same source {% endtrans %}  {{entity.callregister|default('')}}</strong>
         </div>
         <div class="panel-body">
             <table class="table table-condensed">
