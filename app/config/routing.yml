@@ -1,3 +1,8 @@
+biocare_address:
+    resource: "@BiocareAddressBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 biocare_customer:
     resource: "@BiocareCustomerBundle/Controller/"
     type:     annotation
