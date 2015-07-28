@@ -19,7 +19,7 @@
                 <tbody>
                     {% for entity in entities %}
                         <tr>
-                            <td><a href="{{ path('admin_customer_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                            <td>{{ entity.id }}</td>
                             <td>{{ entity.firstname }}</td>
                             <td>{{ entity.lastname }}</td>
                             <td>{{ entity.phonenumber }}</td>
@@ -34,9 +34,7 @@
 
         </div>
         <div class="panel-footer">
-            <a class="btn-sm btn btn-success" href="{{ path('admin_customer_new') }}">
-                Create a new entry
-            </a>
+           
         </div>
     </div>
 {% endblock %}
