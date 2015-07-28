@@ -15,7 +15,7 @@ class DefaultController extends Controller {
      * @Route("/router/{info}", name="call")
      * @Template()
      */
-    public function indexAction(Request $request,$info = NULL) {
+    public function indexAction(Request $request, $info = NULL) {
 
 
         $session = $this->get('session');
@@ -24,16 +24,16 @@ class DefaultController extends Controller {
 
         $ip = $this->get('request')->getClientIp();
 
-        if(!$info){
-           $info = preg_replace('/\s+/', '', $request->get('info'));
+        if (!$info) {
+            $info = preg_replace('/\s+/', '', $request->get('info'));
         }
         // ZOPIER PL
-        
-        $info = explode('-', $info);
-        
-        $source         = $info[0] ? $info[0] : null;
-        $destination    = $info[1] ? $info[1] : null;
 
+        $info = explode('-', $info);
+        if (is_array($info)) {
+            $source = $info[0] ? $info[0] : null;
+            $destination = $info[1] ? $info[1] : null;
+        }
         $callregister = new CallRegister();
         $callregister->setCreatedBy($user);
         $callregister->setCreatedFromIp($ip);
