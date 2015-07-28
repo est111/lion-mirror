@@ -40,6 +40,25 @@ class Address
     
     private $country;
     
+    /**
+     * var $city String
+     * 
+     * @ORM\Column(name="city", type="string",length=100)
+     */
+    
+    private $city;   
+    
+    /**
+     * var $postcode String
+     * 
+     * @ORM\Column(name="postcode", type="string",length=10)
+     */
+    
+    private $postcode;   
+    
+    
+    
+    
     public function getCountry() {
         return $this->country;
     }
