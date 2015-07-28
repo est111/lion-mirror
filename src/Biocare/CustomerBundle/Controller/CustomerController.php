@@ -115,12 +115,7 @@ class CustomerController extends Controller
      */
     public function newAction()
     {
-        $entity = new Customer();        
-        $callregister = $this->get('session')->get('callregister');
-
-        if($callregister){
-            $entity->setCallregister($callregister);
-        }
+        $entity = new Customer(); 
         $form   = $this->createCreateForm($entity);
 
         return array(
