@@ -15,7 +15,6 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Callregister</th>
                                     <th>Createdfromip</th>
                                     <th>Created</th>
                                     <th>Createdby</th>
@@ -28,7 +27,6 @@
                                 {% for entity in entities %}
                                     <tr class="text-right">
                                         <td><a class="btn btn-xs btn-link" href="{{ path('admin_callregister_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                                        <td>{{ entity.callregister|default('null') }}</td>
                                         <td>{{ entity.createdFromIp }}</td>
                                         <td>{{ entity.created|date('Y-m-d H:i') }}</td>
                                         <td>{{ entity.createdBy|default('null') }}</td>
