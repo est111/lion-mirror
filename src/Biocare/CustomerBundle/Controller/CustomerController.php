@@ -46,11 +46,11 @@ class CustomerController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $callregister_entity = $this->get('session')->get('callregister');
         $calls = $em->getRepository('BiocareCallBundle:CallRegister')->findBy(array(
-            'source'=>$callregister_entity->getSource()
-                ));
+            'source' => $callregister_entity->getSource()
+        ));
         $entities = $em->getRepository('BiocareCustomerBundle:Customer')->findBy(array(
-            'callregister'=>$calls
-                ));
+            'callregister' => $calls
+        ));
 
         return array(
             'entities' => $entities,
@@ -65,9 +65,9 @@ class CustomerController extends Controller {
      * @Template("BiocareCustomerBundle:Customer:new.html.twig")
      */
     public function createAction(Request $request) {
-        
+
         $em = $this->getDoctrine()->getManager();
-        
+
         $entity = new Customer();
         $callregister_entity = $this->get('session')->get('callregister');
 
@@ -78,6 +78,11 @@ class CustomerController extends Controller {
         }
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
+
+        if (!$callregister->getSource()&&$entity->getPhonenumber()) {
+            $callregister->setSource($entity->getPhonenumber());
+            $em->persist($callregister);
+        }
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -119,10 +124,10 @@ class CustomerController extends Controller {
      * @Template()
      */
     public function newAction() {
-        
-        
+
+
         $em = $this->getDoctrine()->getManager();
-        
+
         $entity = new Customer();
         $callregister_entity = $this->get('session')->get('callregister');
 
