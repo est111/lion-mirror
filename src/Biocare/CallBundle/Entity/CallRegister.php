@@ -159,7 +159,7 @@ class CallRegister
     }
 
     public function __toString() {
-        return ''.$this->getId();
+        return $this->getCreatedBy().' '.$this->getId();
     }
     
 }
