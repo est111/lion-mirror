@@ -51,7 +51,7 @@ class Customer
     
     /**
      *
-     * @ORM\OneToOne(targetEntity="phonenumber")
+     * @ORM\OneToOne(targetEntity="callregister")
      */
     private $callregister;
 
