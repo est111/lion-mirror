@@ -15,7 +15,9 @@ class PanelController extends Controller {
     public function indexAction() {
 
         $callregister = $this->get('session')->get('callregister');
-        
+        if (!$callregister) {
+            return $this->redirectToRoute('call');
+        }
         return array(
             'callregister' => $callregister
                 );
