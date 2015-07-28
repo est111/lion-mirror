@@ -126,7 +126,7 @@ class CallRegister
      */
     public function setCreatedBy($createdBy)
     {
-        $this->createdBy = $createdBy;
+        $this->createdBy = $createdBy->getUsername();
         return $this;
     }
 
