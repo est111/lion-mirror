@@ -52,11 +52,29 @@ class Customer
     private $phonenumber;
     
     /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=50)
+     */
+    private $email; 
+    
+    /**
      *
      * @ORM\OneToOne(targetEntity="\Biocare\CallBundle\Entity\CallRegister")
      */
     private $callregister;
-
+    
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="\Biocare\AddressBundle\Entity\Address")
+     */
+    private $address;
+    
+    
+    
+    
+    
+    
     public function getCallregister() {
         return $this->callregister;
     }
