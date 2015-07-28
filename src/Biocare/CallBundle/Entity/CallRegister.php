@@ -63,14 +63,14 @@ class CallRegister
     /**
      * @var string $source
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $source;
 
     /**
      * @var string $destination
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $destination;    
     
