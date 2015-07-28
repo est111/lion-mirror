@@ -6,10 +6,10 @@
             <div class='col-lg-3'>
                 <div class="panel panel-danger">
                     <div class="panel-heading">
-                        <strong>Debug</strong>
+                        <strong>Debug [{{ callregister.id}}]</strong>
                     </div>
                     <div class="panel-body">
-                        It's all about call at:<br/> <strong>[{{ callregister.id}}] {{ callregister.created|date('Y-m-d H:i') }}</strong>
+                        It's all about call at:<br/> <strong> {{ callregister.created|date('Y-m-d H:i') }}</strong>
                         <br/><br/>
                         Hello <strong>{{ callregister.createdBy }}</strong>
                         <br/><br/>
