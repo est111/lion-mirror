@@ -27,15 +27,17 @@
                             <td>{{ entity.lastname }}</td>
                             <td>{{ entity.phonenumber }}</td>
                             <td>
-                                <div class="btn-group-vertical btn-group-sm btn-block" data-toggle="buttons">
+                                <div class="btn-group-vertical btn-group-sm btn-block" role="group" data-toggle="buttons">
                                     <label class="btn btn-success text-capitalize">
                                         Add new address
                                     </label>
-                                    <label class="btn-info btn active">
-                                        <input type="radio" name="options" id="option1" autocomplete="off" checked="checked"/>
+                                    <div class="btn-group btn-group-sm btn-block" role="group" data-toggle="buttons">
+                                    <button class="btn-info btn active">                                        
                                         Gdynia, Polska<br/> 
-                                        <small>Wrocławska</small> <a href="#" class="btn-primary btn btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-                                    </label>
+                                        <small>Wrocławska</small> 
+                                    </button>
+                                    <a href="#" class="btn-primary btn btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
+                                    </div>
                                     <label class="btn btn-info">
                                         <input type="radio" name="options" id="option2" autocomplete="off"/>
                                         Warszawa, Polska <br/> 
