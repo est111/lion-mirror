@@ -15,6 +15,7 @@ class CustomerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('callregister')
             ->add('firstname')
             ->add('lastname')
             ->add('fathername')
