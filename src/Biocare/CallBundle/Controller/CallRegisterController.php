@@ -49,7 +49,9 @@ class CallRegisterController extends Controller
         $ip = $this->container->get('request')->getClientIp();
                 
         
-        $entity = new CallRegister($user,$ip);
+        $entity = new CallRegister();
+        $entity->setCreatedBy($user);
+        $entity->setCreatedFromIp($ip);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -99,7 +101,10 @@ class CallRegisterController extends Controller
         $ip = $this->container->get('request')->getClientIp();
                 
         
-        $entity = new CallRegister($user,$ip);
+        $entity = new CallRegister();
+        
+        $entity->setCreatedBy($user);
+        $entity->setCreatedFromIp($ip);
         $form   = $this->createCreateForm($entity);
 
         return array(
