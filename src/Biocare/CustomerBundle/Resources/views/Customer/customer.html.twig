@@ -20,7 +20,7 @@
                 <tbody>
                     {% for entity in entities %}
                         <tr>
-                            <td>{{ entity.id }}</td>
+                            <td>{{ entity.id }} ({{ entity.callregister.id|default('null') }})</td>
                             <td>{{ entity.firstname }}</td>
                             <td>{{ entity.lastname }}</td>
                             <td>{{ entity.phonenumber }}</td>
