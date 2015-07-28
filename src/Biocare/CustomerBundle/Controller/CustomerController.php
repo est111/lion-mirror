@@ -35,6 +35,26 @@ class CustomerController extends Controller
             'entities' => $entities,
         );
     }
+    
+    /**
+     * Lists all Customer entities.
+     *
+     * @Route("/customer/", name="customer")
+     * @Method("GET")
+     * @Template()
+     */
+    public function customerAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('BiocareCustomerBundle:Customer')->findAll();
+
+        return array(
+            'entities' => $entities,
+        );
+    }
+    
+    
     /**
      * Creates a new Customer entity.
      *
