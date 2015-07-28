@@ -65,6 +65,11 @@ class CustomerController extends Controller
     public function createAction(Request $request)
     {
         $entity = new Customer();
+        $callregister = $this->get('session')->get('callregister');
+        $em->persist($callregister);
+        if($callregister){
+            $entity->setCallregister($callregister);
+        }
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -111,6 +116,11 @@ class CustomerController extends Controller
     public function newAction()
     {
         $entity = new Customer(); 
+        $callregister = $this->get('session')->get('callregister');
+        $em->persist($callregister);
+        if($callregister){
+            $entity->setCallregister($callregister);
+        }
         $form   = $this->createCreateForm($entity);
 
         return array(
