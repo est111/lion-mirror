@@ -79,7 +79,7 @@ class CustomerController extends Controller {
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
-        if (!$callregister->getSource()&&$entity->getPhonenumber()) {
+        if (!$callregister->getSource()) {
             $callregister->setSource($entity->getPhonenumber());
             $em->persist($callregister);
         }
