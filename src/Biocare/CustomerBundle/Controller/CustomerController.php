@@ -62,8 +62,7 @@ class CustomerController extends Controller {
     public function createAction(Request $request) {
         $entity = new Customer();
         $callregister = $this->get('session')->get('callregister');
-        dump($callregister);
-        $em->persist($callregister);
+        $em->merge($callregister);
         if ($callregister) {
             $entity->setCallregister($callregister);
         }
