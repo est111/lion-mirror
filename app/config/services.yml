@@ -7,6 +7,12 @@ services:
 #    service_name: 
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    yellowknife_bower.twig.country_extension:
+        class: Yellowknife\BowerBundle\Twig\CountryExtension
+        tags:
+            - { name: twig.extension }
+            
     gedmo.listener.timestampable:
         class: Gedmo\Timestampable\TimestampableListener
         tags:
