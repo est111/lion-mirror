@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/}", name="call")
+     * @Route("/", name="call")
      * @Template()
      */
     public function indexAction(Request $request) {
@@ -24,9 +24,9 @@ class DefaultController extends Controller {
 
         $ip = $this->get('request')->getClientIp();
 
-//        if(!$info){
-//            $info = preg_replace('/\s+/', '', $request->get('info'));
-//        }
+       // if(!$info){
+       //     $info = preg_replace('/\s+/', '', $request->get('info'));
+        //}
         // ZOPIER PL
         
         $info = explode('-', $info);
