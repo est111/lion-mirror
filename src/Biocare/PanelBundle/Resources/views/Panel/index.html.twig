@@ -1,8 +1,6 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    {% if callregister %}{% else %}
-    {% set callregister = app.session.get('callregister') %} {% endif %}
     <div class='container'>
         <div class='row'>
             <div class='col-lg-3'>
