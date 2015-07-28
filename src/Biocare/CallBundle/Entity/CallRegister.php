@@ -13,9 +13,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class CallRegister
 {
-    public function __construct($user,$ip) {
-         $this->setCreatedBy($user);
-         $this->setCreatedFromIp($ip);
+    public function __construct() {
     }
     
     /**
@@ -61,7 +59,21 @@ class CallRegister
      * @ORM\Column(type="string")
      */
     private $createdBy;
+    
+    /**
+     * @var string $source
+     *
+     * @ORM\Column(type="string")
+     */
+    private $source;
 
+    /**
+     * @var string $destination
+     *
+     * @ORM\Column(type="string")
+     */
+    private $destination;    
+    
     /**
      * Set createdFromIp
      *
@@ -127,4 +139,25 @@ class CallRegister
     {
         return $this->createdBy;
     }
+    
+    public function getSource() {
+        return $this->source;
+    }
+
+    public function getDestination() {
+        return $this->destination;
+    }
+
+    public function setSource($source) {
+        $this->source = $source;
+        return $this;
+    }
+
+    public function setDestination($destination) {
+        $this->destination = $destination;
+        return $this;
+    }
+
+
+    
 }
