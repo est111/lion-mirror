@@ -18,6 +18,8 @@
                                     <th>Createdfromip</th>
                                     <th>Created</th>
                                     <th>Createdby</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -28,6 +30,8 @@
                                         <td>{{ entity.createdFromIp }}</td>
                                         <td>{{ entity.created|date('Y-m-d H:i') }}</td>
                                         <td>{{ entity.createdBy|default('null') }}</td>
+                                        <td>{{ entity.source|default('null') }}</td>
+                                        <td>{{ entity.destination|default('null') }}</td>
                                         <td>
                                             <a class="btn btn-primary btn-xs" href="{{ path('admin_callregister_show', { 'id': entity.id }) }}">show</a>
                                             <a class="btn btn-primary btn-xs" href="{{ path('admin_callregister_edit', { 'id': entity.id }) }}">edit</a>
