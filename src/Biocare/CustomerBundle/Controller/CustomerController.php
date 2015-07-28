@@ -80,6 +80,8 @@ class CustomerController extends Controller {
         $form->handleRequest($request);
 
         if (!$callregister->getSource()) {
+            $callregister_entity->setSource($entity->getPhonenumber());
+            $this->get('session')->set('callregister',$callregister_entity);
             $callregister->setSource($entity->getPhonenumber());
             $em->persist($callregister);
         }
