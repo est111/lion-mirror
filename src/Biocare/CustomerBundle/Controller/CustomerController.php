@@ -44,8 +44,13 @@ class CustomerController extends Controller {
      */
     public function customerAction() {
         $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('BiocareCustomerBundle:Customer')->findAll();
+        $callregister_entity = $this->get('session')->get('callregister');
+        $calls = $em->getRepository('BiocareCallBundle:CallRegister')->findAllBy(array(
+            'source'=>$callregister_entity->getSource()
+                ));
+        $entities = $em->getRepository('BiocareCustomerBundle:Customer')->findAllBy(array(
+            'callregister'=>$calls
+                ));
 
         return array(
             'entities' => $entities,
