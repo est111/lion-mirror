@@ -15,12 +15,13 @@
                         Hello <strong>{{ callregister.createdBy }}</strong> !
                         <br/><br/>
                         You are logged on <strong>{{ callregister.createdFromIp }}</strong> !
-                        <br/>
+                        <br/><br/>
+                        Call source: <strong>{{ callregister.source }}</strong> !
+                        <br/><br/>
+                        You are representing: <strong>{{ callregister.destination }}</strong> !
                     </div>
                 </div>
             </div>
-{#            {{ render(url('destination')) }}#}
-            {{ render(url('admin_source_one_by_id',{'id':callregister.id})) }}
         </div>
     </div>
 {% endblock %}
