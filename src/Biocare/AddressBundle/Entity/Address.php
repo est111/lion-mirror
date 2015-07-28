@@ -50,4 +50,8 @@ class Address
     }
 
 
+    public function __toString() {
+        return '['.$this->getId().'] '.$this->getCountry();
+    }
+    
 }
