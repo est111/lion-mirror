@@ -15,7 +15,7 @@ class CustomerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('callregister')
+            ->add('callregister','entity',array('class'=>'BiocareCallBundle:CallRegister'))
             ->add('firstname')
             ->add('lastname')
             ->add('fathername')
