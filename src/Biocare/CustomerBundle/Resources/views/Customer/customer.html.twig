@@ -2,6 +2,7 @@
 
 {% block body -%}
     {% set callregister = app.session.get('callregister') %}
+    {% set callregister_flag = 1 %}
     <div class="panel panel-info">
         <div class="panel-heading">
             <strong>{% trans %}Customers{% endtrans %}</strong>
@@ -20,7 +21,7 @@
                 </thead>
                 <tbody>
                     {% for entity in entities %}
-                        <tr {% if callregister.id==entity.callregister.id %} class="bg-success" {% endif %}>
+                        <tr {% if callregister.id==entity.callregister.id %} {% set callregister_flag = 0 %} class="bg-success" {% endif %}>
                             <td>{{ entity.id }} ({{ entity.callregister.id|default('null') }})</td>
                             <td>{{ entity.firstname }}</td>
                             <td>{{ entity.lastname }}</td>
@@ -36,10 +37,12 @@
             </table>
 
         </div>
-        <div class="panel-footer">
-            <a href="{{ path('admin_customer_new') }}">
-                Create a new entry
-            </a>
-        </div>
+        {% if callregister_flag %}
+            <div class="panel-footer">
+                <a href="{{ path('admin_customer_new') }}">
+                    Create a new entry
+                </a>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
