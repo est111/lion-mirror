@@ -104,7 +104,7 @@ class CallRegister
      */
     public function setCreated($created)
     {
-        $this->created = $created::setTimezone(new \DateTimeZone('UTC'));
+        $this->created = $created;
         return $this;
     }
 
