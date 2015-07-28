@@ -53,7 +53,7 @@ class Customer
     
     /**
      *
-     * @ORM\OneToOne(targetEntity="CallRegister")
+     * @ORM\OneToOne(targetEntity="Biocare\CallBundle\Entity\CallRegister")
      */
     private $callregister;
 
