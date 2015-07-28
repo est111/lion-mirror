@@ -185,4 +185,67 @@ class Customer
     {
         return $this->phonenumber;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->address = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Customer
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Add address
+     *
+     * @param \Biocare\AddressBundle\Entity\Address $address
+     * @return Customer
+     */
+    public function addAddress(\Biocare\AddressBundle\Entity\Address $address)
+    {
+        $this->address[] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Remove address
+     *
+     * @param \Biocare\AddressBundle\Entity\Address $address
+     */
+    public function removeAddress(\Biocare\AddressBundle\Entity\Address $address)
+    {
+        $this->address->removeElement($address);
+    }
+
+    /**
+     * Get address
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
 }
