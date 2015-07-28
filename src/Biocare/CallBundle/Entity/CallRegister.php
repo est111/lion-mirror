@@ -105,7 +105,7 @@ class CallRegister
     public function setCreated($created)
     {
         $this->created = $created;
-        return $this;
+        return $this; 
     }
 
     /**
