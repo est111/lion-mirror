@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Biocare\CustomerBundle\Entity\Customer;
 use Biocare\CustomerBundle\Form\CustomerType;
-
+use Symfony\Component\HttpFoundation\Session;
 /**
  * Customer controller.
  *
