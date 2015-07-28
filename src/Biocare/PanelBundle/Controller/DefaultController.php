@@ -30,10 +30,10 @@ class DefaultController extends Controller {
         // ZOPIER PL
 
         $info = explode('-', $info);
-        if (is_array($info)) {
-            $source = $info[0] ? $info[0] : null;
-            $destination = $info[1] ? $info[1] : null;
-        }
+        
+            $source = @$info[0] ? $info[0] : null;
+            $destination = @$info[1] ? $info[1] : null;
+        
         $callregister = new CallRegister();
         $callregister->setCreatedBy($user);
         $callregister->setCreatedFromIp($ip);
