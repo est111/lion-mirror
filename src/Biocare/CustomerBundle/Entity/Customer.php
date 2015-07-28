@@ -3,6 +3,8 @@
 namespace Biocare\CustomerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Biocare\CallBundle\Entity\CallRegister as CallRegister;
+
 
 /**
  * Customer
@@ -51,7 +53,7 @@ class Customer
     
     /**
      *
-     * @ORM\OneToOne(targetEntity="callregister")
+     * @ORM\OneToOne(targetEntity="CallRegister")
      */
     private $callregister;
 
