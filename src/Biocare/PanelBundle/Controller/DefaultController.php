@@ -12,10 +12,10 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/", name="call")
+     * @Route("/router/{info}", name="call")
      * @Template()
      */
-    public function indexAction(Request $request) {
+    public function indexAction(Request $request,$info = NULL) {
 
 
         $session = $this->get('session');
@@ -24,9 +24,9 @@ class DefaultController extends Controller {
 
         $ip = $this->get('request')->getClientIp();
 
-       // if(!$info){
+        if(!$info){
            $info = preg_replace('/\s+/', '', $request->get('info'));
-        //}
+        }
         // ZOPIER PL
         
         $info = explode('-', $info);
@@ -37,6 +37,8 @@ class DefaultController extends Controller {
         $callregister = new CallRegister();
         $callregister->setCreatedBy($user);
         $callregister->setCreatedFromIp($ip);
+        $callregister->setSource($source);
+        $callregister->setDestination($destination);
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($callregister);
