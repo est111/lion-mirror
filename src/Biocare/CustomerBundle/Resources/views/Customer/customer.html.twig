@@ -26,24 +26,9 @@
                             <td>{{ entity.firstname }}</td>
                             <td>{{ entity.lastname }}</td>
                             <td>{{ entity.phonenumber }}</td>
+                            <td>{{ entity.email }}</td>
                             <td class="text-center">
-                                    <button class="btn btn-xs btn-success"> Add new address&nbsp;&nbsp;<i class="glyphicon glyphicon-plus"></i></button>
-                                    <br/><br/> 
-                                    <div class="btn-group btn-group-sm" role="group" data-toggle="buttons">
-                                    <button class="btn-info btn">                                        
-                                        Gdynia, Polska
-                                        <small>Wrocławska</small> 
-                                    </button>
-                                    <button class="btn-primary btn"><i class="glyphicon glyphicon-edit"></i><br/> </button>
-                                    </div>     
-                                    <br/><br/>                                
-                                    <div class="btn-group btn-group-sm" role="group" data-toggle="buttons">
-                                    <button class="btn-info btn">                                        
-                                        Poznań, Polska
-                                        <small>Drobnicowa</small> 
-                                    </button>
-                                    <button class="btn-primary btn"><i class="glyphicon glyphicon-edit"></i><br/> </button>
-                                    </div>     
+                                {{ entity.address|join('/') }}
                             </td>
                             <td>
                                 <a class="btn btn-xs btn-primary" href="{{ path('admin_customer_show', { 'id': entity.id }) }}">show</a>
