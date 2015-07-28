@@ -57,8 +57,25 @@ class Address
     private $postcode;   
     
     
-    
-    
+    public function getCity() {
+        return $this->city;
+    }
+
+    public function getPostcode() {
+        return $this->postcode;
+    }
+
+    public function setCity($city) {
+        $this->city = $city;
+        return $this;
+    }
+
+    public function setPostcode($postcode) {
+        $this->postcode = $postcode;
+        return $this;
+    }
+
+        
     public function getCountry() {
         return $this->country;
     }
