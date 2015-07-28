@@ -65,9 +65,12 @@ class Customer
     private $callregister;
     
     /**
-     *
-     * @ORM\OneToMany(targetEntity="\Biocare\AddressBundle\Entity\Address")
-     */
+     * @ORM\ManyToMany(targetEntity="\Biocare\AddressBundle\Entity\Address")
+     * @ORM\JoinTable(name="customers_addresses",
+     *      joinColumns={@ORM\JoinColumn(name="customer_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="address_id", referencedColumnName="id", unique=true)}
+     *      )
+     **/
     private $address;
     
     
