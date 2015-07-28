@@ -28,7 +28,9 @@
                             <td>{{ entity.phonenumber }}</td>
                             <td>{{ entity.email }}</td>
                             <td class="text-center">
-                                {{ entity.address|join('/') }}
+                                {% for address in entity.address %}
+                                {{ address.country }}
+                                {% endfor %}
                             </td>
                             <td>
                                 <a class="btn btn-xs btn-primary" href="{{ path('admin_customer_show', { 'id': entity.id }) }}">show</a>
