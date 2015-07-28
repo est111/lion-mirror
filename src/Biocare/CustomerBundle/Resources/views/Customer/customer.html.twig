@@ -1,6 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
+    {% set callregister = app.session.get('callregister') %}
     <div class="panel panel-info">
         <div class="panel-heading">
             <strong>{% trans %}Customers{% endtrans %}</strong>
@@ -19,7 +20,7 @@
                 </thead>
                 <tbody>
                     {% for entity in entities %}
-                        <tr>
+                        <tr {% if callregister.id==entity.callregister.id %} class="bg-success" {% endif %}>
                             <td>{{ entity.id }} ({{ entity.callregister.id|default('null') }})</td>
                             <td>{{ entity.firstname }}</td>
                             <td>{{ entity.lastname }}</td>
