@@ -48,8 +48,23 @@ class Customer
      * @ORM\Column(name="phonenumber", type="string", length=20)
      */
     private $phonenumber;
+    
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="phonenumber")
+     */
+    private $callregister;
 
+    public function getCallregister() {
+        return $this->callregister;
+    }
 
+    public function setCallregister($callregister) {
+        $this->callregister = $callregister;
+        return $this;
+    }
+
+        
     /**
      * Get id
      *
