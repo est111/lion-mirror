@@ -10,13 +10,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Biocare\CustomerBundle\Entity\Customer;
 use Biocare\CustomerBundle\Form\CustomerType;
 use Symfony\Component\HttpFoundation\Session;
+
 /**
  * Customer controller.
  *
  * @Route("/admin/customer")
  */
-class CustomerController extends Controller
-{
+class CustomerController extends Controller {
 
     /**
      * Lists all Customer entities.
@@ -25,8 +25,7 @@ class CustomerController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('BiocareCustomerBundle:Customer')->findAll();
@@ -35,7 +34,7 @@ class CustomerController extends Controller
             'entities' => $entities,
         );
     }
-    
+
     /**
      * Lists all Customer entities.
      *
@@ -43,8 +42,7 @@ class CustomerController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function customerAction()
-    {
+    public function customerAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('BiocareCustomerBundle:Customer')->findAll();
@@ -53,8 +51,7 @@ class CustomerController extends Controller
             'entities' => $entities,
         );
     }
-    
-    
+
     /**
      * Creates a new Customer entity.
      *
@@ -62,13 +59,12 @@ class CustomerController extends Controller
      * @Method("POST")
      * @Template("BiocareCustomerBundle:Customer:new.html.twig")
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $entity = new Customer();
         $callregister = $this->get('session')->get('callregister');
         dump($callregister);
         $em->persist($callregister);
-        if($callregister){
+        if ($callregister) {
             $entity->setCallregister($callregister);
         }
         $form = $this->createCreateForm($entity);
@@ -84,7 +80,7 @@ class CustomerController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -95,8 +91,7 @@ class CustomerController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Customer $entity)
-    {
+    private function createCreateForm(Customer $entity) {
         $form = $this->createForm(new CustomerType(), $entity, array(
             'action' => $this->generateUrl('admin_customer_create'),
             'method' => 'POST',
@@ -114,19 +109,19 @@ class CustomerController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
-    {
-        $entity = new Customer(); 
+    public function newAction() {
+        $entity = new Customer();
         $callregister = $this->get('session')->get('callregister');
+        dump($callregister);
         $em->persist($callregister);
-        if($callregister){
+        if ($callregister) {
             $entity->setCallregister($callregister);
         }
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -137,8 +132,7 @@ class CustomerController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function showAction($id)
-    {
+    public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareCustomerBundle:Customer')->find($id);
@@ -150,7 +144,7 @@ class CustomerController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -162,8 +156,7 @@ class CustomerController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
-    {
+    public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareCustomerBundle:Customer')->find($id);
@@ -176,21 +169,20 @@ class CustomerController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
 
     /**
-    * Creates a form to edit a Customer entity.
-    *
-    * @param Customer $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Customer $entity)
-    {
+     * Creates a form to edit a Customer entity.
+     *
+     * @param Customer $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Customer $entity) {
         $form = $this->createForm(new CustomerType(), $entity, array(
             'action' => $this->generateUrl('admin_customer_update', array('id' => $entity->getId())),
             'method' => 'PUT',
@@ -200,6 +192,7 @@ class CustomerController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Customer entity.
      *
@@ -207,8 +200,7 @@ class CustomerController extends Controller
      * @Method("PUT")
      * @Template("BiocareCustomerBundle:Customer:edit.html.twig")
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareCustomerBundle:Customer')->find($id);
@@ -228,19 +220,19 @@ class CustomerController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Customer entity.
      *
      * @Route("/{id}", name="admin_customer_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -266,13 +258,13 @@ class CustomerController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_customer_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
+                        ->setAction($this->generateUrl('admin_customer_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->getForm()
         ;
     }
+
 }
