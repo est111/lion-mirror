@@ -61,8 +61,10 @@ class CustomerController extends Controller {
      */
     public function createAction(Request $request) {
         $entity = new Customer();
-        $callregister = $this->get('session')->get('callregister');
-        $em->merge($callregister);
+        $callregister_entity = $this->get('session')->get('callregister');
+
+        $callregister = $em->getRepository('BiocareCallBundle:CallRegister')->find($callregister_entity->getId());
+
         if ($callregister) {
             $entity->setCallregister($callregister);
         }
@@ -110,9 +112,10 @@ class CustomerController extends Controller {
      */
     public function newAction() {
         $entity = new Customer();
-        $callregister = $this->get('session')->get('callregister');
-        dump($callregister);
-        $em->merge($callregister);
+        $callregister_entity = $this->get('session')->get('callregister');
+
+        $callregister = $em->getRepository('BiocareCallBundle:CallRegister')->find($callregister_entity->getId());
+
         if ($callregister) {
             $entity->setCallregister($callregister);
         }
