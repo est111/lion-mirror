@@ -25,7 +25,7 @@ class DefaultController extends Controller {
         $ip = $this->get('request')->getClientIp();
 
        // if(!$info){
-       //     $info = preg_replace('/\s+/', '', $request->get('info'));
+           $info = preg_replace('/\s+/', '', $request->get('info'));
         //}
         // ZOPIER PL
         
