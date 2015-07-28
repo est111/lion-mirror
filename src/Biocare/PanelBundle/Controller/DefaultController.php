@@ -28,6 +28,7 @@ class DefaultController extends Controller {
             $info = preg_replace('/\s+/', '', $request->get('info'));
         }
         // ZOPIER PL
+        
         $info = explode('-', $info);
         
         $source         = $info[0] ? $info[0] : null;
@@ -36,9 +37,6 @@ class DefaultController extends Controller {
         $callregister = new CallRegister($user, $ip, $destination, $source);
 
         $em = $this->getDoctrine()->getManager();
-
-
-
         $em->persist($callregister);
         $em->flush();
 
