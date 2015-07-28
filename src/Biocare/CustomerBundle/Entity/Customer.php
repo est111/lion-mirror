@@ -61,7 +61,7 @@ class Customer
         return $this->callregister;
     }
 
-    public function setCallregister($callregister) {
+    public function setCallregister(\CallRegister $callregister) {
         $this->callregister = $callregister;
         return $this;
     }
