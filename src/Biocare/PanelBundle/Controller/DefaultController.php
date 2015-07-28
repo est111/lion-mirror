@@ -34,7 +34,9 @@ class DefaultController extends Controller {
         $source         = $info[0] ? $info[0] : null;
         $destination    = $info[1] ? $info[1] : null;
 
-        $callregister = new CallRegister($user, $ip, $destination, $source);
+        $callregister = new CallRegister();
+        $callregister->setCreatedBy($user);
+        $callregister->setCreatedFromIp($ip);
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($callregister);
