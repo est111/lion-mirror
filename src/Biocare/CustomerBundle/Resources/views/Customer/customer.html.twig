@@ -27,27 +27,13 @@
                             <td>{{ entity.lastname }}</td>
                             <td>{{ entity.phonenumber }}</td>
                             <td>
-                                    <label class="btn btn-success text-capitalize">
-                                        Add new address
-                                    </label>
                                     <div class="btn-group btn-group-sm" role="group" data-toggle="buttons">
                                     <button class="btn-info btn">                                        
                                         Gdynia, Polska
                                         <small>Wrocławska</small> 
                                     </button>
                                     <button class="btn-primary btn"><i class="glyphicon glyphicon-edit"></i><br/> </button>
-                                    </div>
-                                    <label class="btn btn-info">
-                                        <input type="radio" name="options" id="option2" autocomplete="off"/>
-                                        Warszawa, Polska <br/> 
-                                        <small>Jana Sebastana Bacha</small>
-                                    </label>
-                                    <label class="btn btn-info">
-                                        <input type="radio" name="options" id="option3" autocomplete="off"/>
-                                        Tarnów, Polska <br/> 
-                                        <small>Trockistów</small>
-                                    </label>
-                                                       
+                                    </div>             
                             </td>
                             <td>
                                 <a class="btn btn-xs btn-primary" href="{{ path('admin_customer_show', { 'id': entity.id }) }}">show</a>
