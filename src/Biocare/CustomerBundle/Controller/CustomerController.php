@@ -120,7 +120,7 @@ class CustomerController extends Controller
                 dump($callregister);
         exit;
         if($callregister){
-            $entity->setCallregister($callregister);
+            $entity->setCallregister($callregister->getId());
         }
         $form   = $this->createCreateForm($entity);
 
