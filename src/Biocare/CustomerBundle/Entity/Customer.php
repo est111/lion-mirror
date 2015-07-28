@@ -71,10 +71,6 @@ class Customer
     private $address;
     
     
-    
-    
-    
-    
     public function getCallregister() {
         return $this->callregister;
     }
