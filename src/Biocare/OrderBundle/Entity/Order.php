@@ -12,9 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Order
 {
     
-    
-    
-    
+        
     /**
      * @var integer
      *
