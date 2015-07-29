@@ -14,15 +14,15 @@ class CustomerType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-                ->add('callregister', 'entity', array(
-                    'class' => 'BiocareCallBundle:CallRegister'
-                ))
+//                ->add('callregister', 'entity', array(
+//                    'class' => 'BiocareCallBundle:CallRegister'
+//                ))
                 ->add('firstname')
-                ->add('lastname')
                 ->add('fathername')
+                ->add('lastname')
                 ->add('phonenumber')
                 ->add('email','email')
-                ->add('address')
+//                ->add('address')
         ;
     }
 
