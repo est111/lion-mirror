@@ -12,12 +12,10 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
+                        <th>Name</th>
                         <th>Phonenumber</th>
                         <th>E-mail</th>
                         <th>Address</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +27,7 @@
                                 </a>
 
                             </td>
-                            <td>{{ entity.firstname }} {{ entity.lastname }}</td>
+                            <td>{{ entity.firstname }} {{ entity.fathername }} {{ entity.lastname }}</td>
                             <td>{{ entity.phonenumber }}</td>
                             <td>{{ entity.email }}</td>
                             <td class="text-center">
