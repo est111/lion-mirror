@@ -47,7 +47,7 @@
                                     <br/>
                                     <br/>
                                 {% endfor %}
-                                <a href="{{ path('address_new') }}" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus-sign"></i>  Add new address  </a>
+                                <a href="{{ path('address_new') }}" class="btn btn-success btn-xs" data-target=".modal-address_new"><i class="glyphicon glyphicon-plus-sign"></i>  Add new address  </a>
                             </td>
                             <td>
                                 {#                                <a class="btn btn-xs btn-primary" href="{{ path('admin_customer_show', { 'id': entity.id }) }}">show</a>#}
@@ -66,6 +66,12 @@
                 </a>
             </div>
         {% endif %}
+    </div>
+    
+    <div class="modal fade modal-address_new" tabindex="-1" role="dialog" aria-labelledby="modal-address_new">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content"></div>
+        </div>
     </div>
     <div class="modal fade modal-address_edit" tabindex="-1" role="dialog" aria-labelledby="modal-address_edit">
         <div class="modal-dialog modal-lg">
