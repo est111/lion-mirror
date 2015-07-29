@@ -18,6 +18,18 @@
             body {
                 background-color: #ddd;
             }
+            .vertical-align {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .vertical-align > [class^="col-"],
+            .vertical-align > [class*=" col-"] {
+                display: flex;
+                align-items: center;     /* Align the flex-items vertically */
+                justify-content: center; /* Optional, to align inner flex-items 
+                                            horizontally within the column  */
+            }
         </style>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -27,7 +39,7 @@
                 <div class="row"> 
                     <div class="col-xs-10 col-xs-offset-1"> 
                         <div class="navbar-text navbar-left">
-                            
+
                         </div>
                         <div class="navbar-text navbar-right">
 
@@ -85,22 +97,22 @@
                 $(e.target).removeData("bs.modal").find(".modal-content").empty();
             });
 
- 
 
-    </script>
-                <script>
-                    function changePrice(fm){
-                        console.log(fm);
-            var price   = parseFloat($('#'+fm+'price').text());
-            var qty     = parseInt  ($('#'+fm+'_qty') .val());
-            
-                    console.log(price,qty,$('#'+fm+'_qty') .val());
-                    
-            $('#'+fm+'qtyxprice').text(price * qty);
-         
-            
-}
-                </script>
+
+        </script>
+        <script>
+            function changePrice(fm) {
+                console.log(fm);
+                var price = parseFloat($('#' + fm + 'price').text());
+                var qty = parseInt($('#' + fm + '_qty').val());
+
+                console.log(price, qty, $('#' + fm + '_qty').val());
+
+                $('#' + fm + 'qtyxprice').text(price * qty);
+
+
+            }
+        </script>
     {% endblock %}
 </body>
 </html>
