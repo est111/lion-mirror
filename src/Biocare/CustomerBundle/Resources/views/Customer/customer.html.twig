@@ -35,14 +35,14 @@
                             <td class="col-lg-4 text-right">
                                 {% for address in entity.address %}
                                     <div class="btn-group btn-group-xs" role="group"/>
-                                    <a data-toggle="modal" class="btn btn-xs btn-warning" href="{{ path('address_edit', {'id':address.id}) }}" data-target=".modal-address_edit">
-                                        <br/>
-                                        <i class="glyphicon glyphicon-pencil"></i>
-                                    </a>
                                     <button class='btn btn-info'>
                                         {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
                                         <small>Nizinna 12/A2</small>
                                     </button>  
+                                    <a data-toggle="modal" class="btn btn-xs btn-warning" href="{{ path('address_edit', {'id':address.id}) }}" data-target=".modal-address_edit">
+                                        <br/>
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
                                     </div>
                                     <br/>
                                     <br/>
