@@ -152,6 +152,34 @@ class AddressController extends Controller
     }
 
     /**
+     * Displays a form to edit an existing Address entity.
+     *
+     * @Route("/{id}/editmodal", name="admin_address_edit")
+     * @Method("GET")
+     * @Template("BiocareAddressBundle:Address:address_edit.html.twig")
+     */
+    public function editModalAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('BiocareAddressBundle:Address')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Address entity.');
+        }
+
+        $editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id);
+
+        return array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        );
+    }    
+    
+    
+    /**
     * Creates a form to edit a Address entity.
     *
     * @param Address $entity The entity
