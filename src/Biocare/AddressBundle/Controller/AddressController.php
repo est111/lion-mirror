@@ -80,7 +80,26 @@ class AddressController extends Controller
 
         return $form;
     }
+    
+    /**
+     * Creates a form to create a Address entity.
+     *
+     * @param Address $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateModalForm(Address $entity)
+    {
+        $form = $this->createForm(new AddressType(), $entity, array(
+            'action' => $this->generateUrl('address_create'),
+            'method' => 'POST',
+        ));
 
+        $form->add('submit', 'submit', array('label' => 'Create'));
+
+        return $form;
+    }
+    
     /**
      * Displays a form to create a new Address entity.
      *
@@ -98,7 +117,23 @@ class AddressController extends Controller
             'form'   => $form->createView(),
         );
     }
+    /**
+     * Displays a form to create a new Address entity.
+     *
+     * @Route("/newModal", name="address_new")
+     * @Method("GET")
+     * @Template()
+     */
+    public function newModalAction()
+    {
+        $entity = new Address();
+        $form   = $this->createCreateModalForm($entity);
 
+        return array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        );
+    }
     /**
      * Finds and displays a Address entity.
      *
