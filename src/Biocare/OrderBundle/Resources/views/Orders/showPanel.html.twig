@@ -7,7 +7,11 @@
             <strong>Customer:</strong> <br/> 
             {{ entity.customer|default('Brak') }} <br/> 
             <strong>Address:</strong> <br/>
-            {{ entity.address|default('Brak') }} <br/> 
+            {% if entity.address is defined %}
+           
+            {% else %}
+                Brak
+            {% endif %}
         </div>
     </div>
 {% endblock %}
