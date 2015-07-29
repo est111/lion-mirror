@@ -10,12 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Biocare\OrderBundle\Entity\OrdersRepository")
  */
-class Orders
-{
+class Orders {
+
     public function __construct() {
-       
+        
     }
-    
+
     /**
      * @var integer
      *
@@ -25,17 +25,15 @@ class Orders
      */
     private $id;
 
-
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
-    
+
     /**
      * @var \DateTime DataTime when Connextion were created Datatime with UTC  
      * 
@@ -43,7 +41,7 @@ class Orders
      * 
      */
     private $savedAt;
-    
+
     public function getSavedAt() {
         return $this->savedAt;
     }
@@ -52,13 +50,13 @@ class Orders
         $this->savedAt = $savedAt;
         return $this;
     }
-    
+
     /**
      *
      * @ORM\OneToOne(targetEntity="\Biocare\CallBundle\Entity\CallRegister")
      */
     private $callregister;
-    
+
     public function getCallregister() {
         return $this->callregister;
     }
@@ -67,16 +65,35 @@ class Orders
         $this->callregister = $callregister;
         return $this;
     }
-    
+
     /**
      *
      * @ORM\OneToOne(targetEntity="\Biocare\CustomerBundle\Entity\Customer")
      */
-    private $customer;    
+    private $customer;
+
+    public function getCustomer() {
+        return $this->customer;
+    }
+
+    public function setCustomer($customer) {
+        $this->customer = $customer;
+        return $this;
+    }
 
     /**
      *
      * @ORM\OneToOne(targetEntity="\Biocare\AddressBundle\Entity\Address")
      */
-    private $address;  
+    private $address;
+
+    public function getAddress() {
+        return $this->address;
+    }
+
+    public function setAddress($address) {
+        $this->address = $address;
+        return $this;
+    }
+
 }
