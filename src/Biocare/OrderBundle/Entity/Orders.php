@@ -39,7 +39,7 @@ class Orders
     /**
      * @var \DateTime DataTime when Connextion were created Datatime with UTC  
      * 
-     * @ORM\Column(name="savedAt", type="datetimetz")
+     * @ORM\Column(name="savedAt", type="datetimetz", nullable=true)
      * 
      */
     private $savedAt;
