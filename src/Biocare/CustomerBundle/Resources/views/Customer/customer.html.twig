@@ -47,7 +47,7 @@
                                     <br/>
                                     <br/>
                                 {% endfor %}
-                                <a href="{{ path('address_new') }}" class="btn btn-success btn-xs" data-toggle="modal" data-target=".modal-address_new"><i class="glyphicon glyphicon-plus-sign"></i>  Add new address  </a>
+                                <a href="{{ path('address_new',{'id':entity.id}) }}" class="btn btn-success btn-xs" data-toggle="modal" data-target=".modal-address_new"><i class="glyphicon glyphicon-plus-sign"></i>  Add new address  </a>
                             </td>
                             <td>
                                 {#                                <a class="btn btn-xs btn-primary" href="{{ path('admin_customer_show', { 'id': entity.id }) }}">show</a>#}
