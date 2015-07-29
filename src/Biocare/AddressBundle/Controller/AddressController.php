@@ -142,7 +142,7 @@ class AddressController extends Controller
      *
      * @Route("/newModal", name="address_new")
      * @Method("GET")
-     * @Template()
+     * @Template("BiocareAddressBundle:Address:address_new.html.twig")
      */
     public function newModalAction()
     {
