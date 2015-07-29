@@ -33,17 +33,16 @@
                             </td>
                             <td class="text-center">
                                 {% for address in entity.address %}
-                                    <button class='btn btn-xs btn-info btn-block'>
-                                        <div class="col-lg-2 text-left" >  
-                                            <a class="btn btn-xs btn-default" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
-                                                <i class="glyphicon glyphicon-edit"></i>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-10">  
+                                    <div class="btn-group" role="group"/>
+                                        <a class="btn btn-xs btn-default" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
+                                            <i class="glyphicon glyphicon-edit"></i>
+                                        </a>
+                                        <button class='btn btn-xs btn-info btn-block'>
                                             {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
                                             <small>Nizinna 12/A2</small>
-                                        </div>
-                                    </button>
+
+                                        </button>  
+                                    </div>
                                 {% endfor %}
                             </td>
                             <td>
