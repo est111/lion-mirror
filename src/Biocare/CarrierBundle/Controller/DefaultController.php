@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/httpapi/{zip}")
+     * @Route("/httpapi/{zip}",name="httpapi_zip")
      */
     public function indexAction($zip)
     {
