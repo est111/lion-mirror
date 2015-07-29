@@ -77,6 +77,7 @@ class AddressController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);           
+            $em->flush();
             
             $customer = $em->getRepository('BiocareCustomerBundle:Customer')->find($id);
             $customer->addAddress($entity->getId());
