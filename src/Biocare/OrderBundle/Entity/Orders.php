@@ -11,8 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Orders
 {
-    
-        
+            
     /**
      * @var integer
      *
@@ -50,7 +49,4 @@ class Orders
         return $this;
     }
 
-  
-
-    
 }
