@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Orders
 {
+    public function __construct() {
+        
+        $this->setCreatedAt(new \DateTime('NOW', new \DateTimeZone('UTC')));
+    }
+    
     /**
      * @var integer
      *
@@ -32,7 +37,7 @@ class Orders
         return $this->id;
     }
     
-        /**
+    /**
      * @var \DateTime DataTime when Connextion were created Datatime with UTC  
      * 
      * @ORM\Column(name="createdAt", type="datetimetz")
@@ -49,7 +54,7 @@ class Orders
         return $this;
     }
     
-     /**
+    /**
      *
      * @ORM\OneToOne(targetEntity="\Biocare\CallBundle\Entity\CallRegister")
      */
@@ -59,7 +64,7 @@ class Orders
         return $this->callregister;
     }
 
-    public function setCallregister($callregister) {
+    public function setCallregister(\Biocare\CallBundle\Entity\CallRegister $callregister) {
         $this->callregister = $callregister;
         return $this;
     }
