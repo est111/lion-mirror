@@ -119,6 +119,26 @@ class OrdersController extends Controller
         );
     }
 
+    
+    /**
+     * Displays a form to create a new Orders entity.
+     *
+     * @Route("/new", name="orders_new")
+     * @Method("GET")
+     * @Template("BiocareOrderBundle:Orders:order_new.html.twig")
+     */
+    public function newPanelAction()
+    {
+        $entity = new Orders();
+        $form   = $this->createCreateForm($entity);
+
+        return array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        );
+    }
+    
+    
     /**
      * Finds and displays a Orders entity.
      *
