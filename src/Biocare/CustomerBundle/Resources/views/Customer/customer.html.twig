@@ -28,8 +28,9 @@
                             </td>
                             <td>{{ entity.firstname }} {{ entity.fathername }} {{ entity.lastname }}</td>
                             <td>
-                                <i class="glyphicon glyphicon-earphone"></i>: {{ entity.phonenumber }}
-                                @: {{ entity.email }}</td>
+                                <i class="glyphicon glyphicon-earphone"></i> {{ entity.phonenumber }}<br/>
+                                <strong>@</strong> {{ entity.email }}
+                            </td>
                             <td class="text-center">
                                 {% for address in entity.address %}
                                     <button class='btn btn-xs btn-info btn-block'>
