@@ -283,7 +283,7 @@ class OrdersController extends Controller {
     /**
      * Updates a order
      *
-     * @Route("/{id}/setCustommerAddress", name="orders_set_customer_address")
+     * @Route("/setCustommerAddress/{customer}/{address}", name="orders_set_customer_address")
      * @Method("GET")
      */
     public function setCustomerAddress(\Biocare\CustomerBundle\Entity\Customer $customer, \Biocare\AddressBundle\Entity\Address $address) {
