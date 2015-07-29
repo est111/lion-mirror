@@ -193,7 +193,7 @@ class CustomerController extends Controller {
      *
      * @Route("/newModal", name="customer_new")
      * @Method("GET")
-     * @Template()
+     * @Template("BiocareCustomerBundle:Customer:customer_new.html.twig")
      */
     public function newModalAction() {
 
