@@ -24,7 +24,7 @@
                             <td class="col-lg-4">
 
                                 <a data-toggle="modal" class="btn btn-xs btn-default" href="{{ path('customer_edit', {'id':entity.id}) }}" data-target=".modal-customer_edit">
-                                    <i class="glyphicon glyphicon-edit"></i>
+                                    <i class="glyphicon glyphicon-pencil"></i>
                                 </a>
                                 {{ entity.firstname }} {{ entity.fathername }} {{ entity.lastname }}
                             </td>
@@ -37,7 +37,7 @@
                                     <div class="btn-group btn-group-xs" role="group"/>
                                     <a data-toggle="modal" class="btn btn-xs btn-default" href="{{ path('address_edit', {'id':address.id}) }}" data-target=".modal-address_edit">
                                         <br/>
-                                        <i class="glyphicon glyphicon-edit"></i>
+                                        <i class="glyphicon glyphicon-pencil"></i>
                                     </a>
                                     <button class='btn btn-info'>
                                         {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
