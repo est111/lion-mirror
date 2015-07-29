@@ -168,13 +168,11 @@ class AddressController extends Controller
             throw $this->createNotFoundException('Unable to find Address entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditModalForm($entity);
 
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
     }    
     
@@ -190,6 +188,24 @@ class AddressController extends Controller
     {
         $form = $this->createForm(new AddressType(), $entity, array(
             'action' => $this->generateUrl('admin_address_update', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Update'));
+
+        return $form;
+    }
+        /**
+    * Creates a form to edit a Address entity.
+    *
+    * @param Address $entity The entity
+    *
+    * @return \Symfony\Component\Form\Form The form
+    */
+    private function createEditModalForm(Address $entity)
+    {
+        $form = $this->createForm(new AddressType(), $entity, array(
+            'action' => $this->generateUrl('address_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
