@@ -80,7 +80,7 @@ class AddressController extends Controller
             $em->flush();
             
             $customer = $em->getRepository('BiocareCustomerBundle:Customer')->find($id);
-            $customer->addAddress($entity->getId());
+            $customer->addAddress($entity);
             $em->persist($customer);
             $em->flush();
 
