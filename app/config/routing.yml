@@ -1,3 +1,8 @@
+biocare_order:
+    resource: "@BiocareOrderBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 biocare_address:
     resource: "@BiocareAddressBundle/Controller/"
     type:     annotation
@@ -18,10 +23,10 @@ biocare_panel:
     type:     annotation
     prefix:   /
 
-#biocare_carrier:
-#    resource: "@BiocareCarrierBundle/Controller/"
-#    type:     annotation
-#    prefix:   /
+biocare_carrier:
+    resource: "@BiocareCarrierBundle/Controller/"
+    type:     annotation
+    prefix:   /
 
 #biocare_connection:
 #    resource: "@BiocareConnectionBundle/Controller/"

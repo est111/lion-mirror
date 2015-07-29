@@ -18,13 +18,13 @@ security:
                         roles: 'ROLE_ADMIN'
     firewalls:
         dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+            pattern: ^/(_(profiler|wdt|error)|css|images|js|httpapi)/
             security: false
         default:
             pattern:  ^/
             http_basic: ~
 
     access_control:
-        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/httpapi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_ADMIN }
         

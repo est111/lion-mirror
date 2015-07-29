@@ -24,12 +24,8 @@ class DefaultController extends Controller
         }
         $html .="</select>";
 
-        $response = new Response();
-        $response->setContent($html);
-        $response->setStatusCode(Response::HTTP_OK);
-        $response->headers->set('Content-Type', 'text/html');
 
-        // prints the HTTP headers followed by the content
-        return $response;
+	return new Response($html, 201, array('Access-Control-Allow-Origin' => '*', 'Content-Type' => 'text/html'));
+
     }
 }
