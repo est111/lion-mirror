@@ -5,15 +5,14 @@ namespace Biocare\CustomerBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Biocare\CallBundle\Entity\CallRegister as CallRegister;
 
-
 /**
  * Customer
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Biocare\CustomerBundle\Entity\CustomerRepository")
  */
-class Customer
-{
+class Customer {
+
     /**
      * @var integer
      *
@@ -50,30 +49,29 @@ class Customer
      * @ORM\Column(name="phonenumber", type="string", length=20)
      */
     private $phonenumber;
-    
+
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=50)
      */
-    private $email; 
-    
+    private $email;
+
     /**
      *
      * @ORM\OneToOne(targetEntity="\Biocare\CallBundle\Entity\CallRegister")
      */
     private $callregister;
-    
+
     /**
      * @ORM\ManyToMany(targetEntity="\Biocare\AddressBundle\Entity\Address")
      * @ORM\JoinTable(name="customers_addresses",
      *      joinColumns={@ORM\JoinColumn(name="customer_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="address_id", referencedColumnName="id", unique=true)}
      *      )
-     **/
+     * */
     private $address;
-    
-    
+
     public function getCallregister() {
         return $this->callregister;
     }
@@ -83,14 +81,12 @@ class Customer
         return $this;
     }
 
-        
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -100,8 +96,7 @@ class Customer
      * @param string $firstname
      * @return Customer
      */
-    public function setFirstname($firstname)
-    {
+    public function setFirstname($firstname) {
         $this->firstname = $firstname;
 
         return $this;
@@ -112,8 +107,7 @@ class Customer
      *
      * @return string 
      */
-    public function getFirstname()
-    {
+    public function getFirstname() {
         return $this->firstname;
     }
 
@@ -123,8 +117,7 @@ class Customer
      * @param string $lastname
      * @return Customer
      */
-    public function setLastname($lastname)
-    {
+    public function setLastname($lastname) {
         $this->lastname = $lastname;
 
         return $this;
@@ -135,8 +128,7 @@ class Customer
      *
      * @return string 
      */
-    public function getLastname()
-    {
+    public function getLastname() {
         return $this->lastname;
     }
 
@@ -146,8 +138,7 @@ class Customer
      * @param string $fathername
      * @return Customer
      */
-    public function setFathername($fathername)
-    {
+    public function setFathername($fathername) {
         $this->fathername = $fathername;
 
         return $this;
@@ -158,8 +149,7 @@ class Customer
      *
      * @return string 
      */
-    public function getFathername()
-    {
+    public function getFathername() {
         return $this->fathername;
     }
 
@@ -169,8 +159,7 @@ class Customer
      * @param string $phonenumber
      * @return Customer
      */
-    public function setPhonenumber($phonenumber)
-    {
+    public function setPhonenumber($phonenumber) {
         $this->phonenumber = $phonenumber;
 
         return $this;
@@ -181,15 +170,14 @@ class Customer
      *
      * @return string 
      */
-    public function getPhonenumber()
-    {
+    public function getPhonenumber() {
         return $this->phonenumber;
     }
+
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->address = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -199,8 +187,7 @@ class Customer
      * @param string $email
      * @return Customer
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
@@ -211,8 +198,7 @@ class Customer
      *
      * @return string 
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -222,8 +208,7 @@ class Customer
      * @param \Biocare\AddressBundle\Entity\Address $address
      * @return Customer
      */
-    public function addAddress(\Biocare\AddressBundle\Entity\Address $address)
-    {
+    public function addAddress(\Biocare\AddressBundle\Entity\Address $address) {
         $this->address[] = $address;
 
         return $this;
@@ -234,8 +219,7 @@ class Customer
      *
      * @param \Biocare\AddressBundle\Entity\Address $address
      */
-    public function removeAddress(\Biocare\AddressBundle\Entity\Address $address)
-    {
+    public function removeAddress(\Biocare\AddressBundle\Entity\Address $address) {
         $this->address->removeElement($address);
     }
 
@@ -244,8 +228,12 @@ class Customer
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getAddress()
-    {
+    public function getAddress() {
         return $this->address;
     }
+
+    public function __toString() {
+        return $this->getFirstname() . ' ' . $this->getLastname();
+    }
+
 }
