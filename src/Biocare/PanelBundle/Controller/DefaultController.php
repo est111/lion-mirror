@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Biocare\CallBundle\Entity\CallRegister;
-use Biocare\CallBundle\Entity\Source;
+use Biocare\OrdersBundle\Entity\Orders;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {
@@ -40,6 +40,10 @@ class DefaultController extends Controller {
         $callregister->setSource($source);
         $callregister->setDestination($destination);
 
+        
+        $order = new Orders();
+        $order->
+        
         $em = $this->getDoctrine()->getManager();
         $em->persist($callregister);
         $em->flush();
