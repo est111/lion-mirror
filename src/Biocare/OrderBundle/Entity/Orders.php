@@ -67,6 +67,16 @@ class Orders
         $this->callregister = $callregister;
         return $this;
     }
+    
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="\Biocare\CustomerBundle\Entity\Customer")
+     */
+    private $customer;    
 
-
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="\Biocare\AddressBundle\Entity\Address")
+     */
+    private $address;  
 }
