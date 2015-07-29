@@ -35,10 +35,10 @@
                             <td class="col-lg-4 text-right">
                                 {% for address in entity.address %}
                                     <div class="btn-group btn-group-xs" role="group"/>
-                                    <button class='btn btn-info'>
+                                    <a class='btn btn-info' href="{{path('orders_set_customer_address',{'customer':entity,'address':address })}}">
                                         {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
                                         <small>Nizinna 12/A2</small>
-                                    </button>  
+                                    </a>  
                                     <a data-toggle="modal" class="btn btn-xs btn-warning" href="{{ path('address_edit', {'id':address.id}) }}" data-target=".modal-address_edit">
                                         <br/>
                                         <i class="glyphicon glyphicon-pencil"></i>
