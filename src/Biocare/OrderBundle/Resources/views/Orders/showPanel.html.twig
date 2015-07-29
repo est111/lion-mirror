@@ -5,7 +5,7 @@
         </div>
         <div class="panel-body">  
             <strong>Customer:</strong> <br/> 
-            {{ entity.customer|default('Brak') }} <br/> 
+            {{ entity.customer|default('Brak') }} <br/> <br/> 
             <strong>Address:</strong> <br/>
             {% if entity.address is defined %}
                 {{ entity.address.postcode }}, {{ entity.address.city }}<br/>
