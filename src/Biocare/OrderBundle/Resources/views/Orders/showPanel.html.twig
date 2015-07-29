@@ -10,6 +10,9 @@
             {% if entity.address is defined %}
                 {{ entity.address.postcode }}, {{ entity.address.city }}<br/>
                 {{ entity.address.country|country(app.request.locale) }}<br/>
+                {% if entity.address.country == 'ru' %}
+                    {{ render(path('httpapi_zip',{'zip':entity.address.postcode})) }}
+                {% endif %}
             {% else %}
                 Brak
             {% endif %}
