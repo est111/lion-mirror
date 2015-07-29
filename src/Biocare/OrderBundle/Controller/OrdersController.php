@@ -35,6 +35,26 @@ class OrdersController extends Controller
             'entities' => $entities,
         );
     }
+    
+//    /**
+//     * Lists all Orders entities.
+//     *
+//     * @Route("/", name="admin_orders")
+//     * @Method("GET")
+//     * @Template()
+//     */
+//    public function indexAction()
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//
+//        $entities = $em->getRepository('BiocareOrderBundle:Orders')->findAll();
+//
+//        return array(
+//            'entities' => $entities,
+//        );
+//    }
+    
+    
     /**
      * Creates a new Orders entity.
      *
