@@ -9,7 +9,7 @@
             <strong>Address:</strong> <br/>
             {% if entity.address is defined %}
                 {{ entity.address.postcode }}, {{ entity.address.city }}<br/>
-                {{ address.address.country|country(app.request.locale) }}<br/>
+                {{ entity.address.country|country(app.request.locale) }}<br/>
             {% else %}
                 Brak
             {% endif %}
