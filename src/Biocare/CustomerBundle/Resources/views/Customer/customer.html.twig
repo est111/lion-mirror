@@ -20,18 +20,18 @@
                 <tbody>
                     {% for entity in entities %}
                         <tr {% if callregister.id==entity.callregister.id %} {% set callregister_flag = 0 %} class="bg-success" {% endif %}>
-                            <td>{{ entity.id }} ({{ entity.callregister.id|default('null') }})
+                            <td class="col-lg-1">{{ entity.id }} ({{ entity.callregister.id|default('null') }})
                                 <a class="btn btn-xs btn-primary btn-block" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
                                     <i class="glyphicon glyphicon-edit"></i>
                                 </a>
 
                             </td>
-                            <td>{{ entity.firstname }} {{ entity.fathername }} {{ entity.lastname }}</td>
-                            <td>
+                            <td class="col-lg-4">{{ entity.firstname }} {{ entity.fathername }} {{ entity.lastname }}</td>
+                            <td class="col-lg-3">
                                 <i class="glyphicon glyphicon-earphone"></i> {{ entity.phonenumber }}<br/>
                                 <strong>@</strong> {{ entity.email }}
                             </td>
-                            <td class="text-center">
+                            <td class="col-lg-4">
                                 {% for address in entity.address %}
                                     <div class="btn-group btn-group-xs btn-group-justified" role="group"/>
                                         <a class="btn btn-default" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
