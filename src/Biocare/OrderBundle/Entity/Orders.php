@@ -13,8 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Orders
 {
     public function __construct() {
-        
-        $this->setCreatedAt(new \DateTime('NOW', new \DateTimeZone('UTC')));
+       
     }
     
     /**
@@ -45,11 +44,11 @@ class Orders
      */
     private $savedAt;
     
-    public function getCreatedAt() {
+    public function getSavedAt() {
         return $this->savedAt;
     }
 
-    public function setCreatedAt(\DateTime $savedAt) {
+    public function setSavedAt(\DateTime $savedAt) {
         $this->savedAt = $savedAt;
         return $this;
     }
