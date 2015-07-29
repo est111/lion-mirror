@@ -61,7 +61,27 @@ class AddressController extends Controller
             'form'   => $form->createView(),
         );
     }
+    /**
+     * Creates a new Address entity.
+     *
+     * @Route("/modal", name="address_create")
+     * @Method("POST")
+     * @Template("BiocareAddressBundle:Address:address_new.html.twig")
+     */
+    public function createModalAction(Request $request)
+    {
+        $entity = new Address();
+        $form = $this->createCreateForm($entity);
+        $form->handleRequest($request);
 
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('panel'));
+        }
+    }
     /**
      * Creates a form to create a Address entity.
      *
