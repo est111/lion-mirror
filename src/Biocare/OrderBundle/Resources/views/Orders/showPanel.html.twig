@@ -8,7 +8,8 @@
             {{ entity.customer|default('Brak') }} <br/> 
             <strong>Address:</strong> <br/>
             {% if entity.address is defined %}
-           
+                {{ entity.postcode }}, {{ entity.city }}<br/>
+                {{ address.country|country(app.request.locale) }}<br/>
             {% else %}
                 Brak
             {% endif %}
