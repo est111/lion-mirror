@@ -40,17 +40,17 @@ class Orders
     /**
      * @var \DateTime DataTime when Connextion were created Datatime with UTC  
      * 
-     * @ORM\Column(name="createdAt", type="datetimetz")
+     * @ORM\Column(name="savedAt", type="datetimetz")
      * 
      */
-    private $createdAt;
+    private $savedAt;
     
     public function getCreatedAt() {
-        return $this->createdAt;
+        return $this->savedAt;
     }
 
-    public function setCreatedAt(\DateTime $createdAt) {
-        $this->createdAt = $createdAt;
+    public function setCreatedAt(\DateTime $savedAt) {
+        $this->savedAt = $savedAt;
         return $this;
     }
     
