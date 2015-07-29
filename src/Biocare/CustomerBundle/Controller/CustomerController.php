@@ -291,7 +291,7 @@ class CustomerController extends Controller {
      * @Method("PUT")
      * @Template("BiocareCustomerBundle:Customer:edit.html.twig")
      */
-    public function updateAction(Request $request, $id) {
+    public function updateModalAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareCustomerBundle:Customer')->find($id);
