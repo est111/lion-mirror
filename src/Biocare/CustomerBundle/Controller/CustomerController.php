@@ -195,7 +195,31 @@ class CustomerController extends Controller {
             'delete_form' => $deleteForm->createView(),
         );
     }
+    /**
+     * Displays a form to edit an existing Customer entity.
+     *
+     * @Route("/{id}/editmodal", name="customer_edit")
+     * @Method("GET")
+     * @Template("BiocareCustomerBundle:Customer:customer_edit.html.twig")
+     */
+    public function editModalAction($id) {
+        $em = $this->getDoctrine()->getManager();
 
+        $entity = $em->getRepository('BiocareCustomerBundle:Customer')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Customer entity.');
+        }
+
+        $editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id);
+
+        return array(
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        );
+    }
     /**
      * Creates a form to edit a Customer entity.
      *
