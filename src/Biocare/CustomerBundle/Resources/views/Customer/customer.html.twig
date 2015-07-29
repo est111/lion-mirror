@@ -22,7 +22,7 @@
                         <tr {% if callregister.id==entity.callregister.id %} {% set callregister_flag = 0 %} class="bg-success" {% endif %}>
                             <td class="col-lg-1">{{ entity.id }} ({{ entity.callregister.id|default('null') }})</td>
                             <td class="col-lg-4">
-                                
+
                                 <a data-toggle="modal" class="btn btn-xs btn-default" href="{{ path('customer_edit', {'id':entity.id}) }}" data-target=".modal-customer_edit">
                                     <i class="glyphicon glyphicon-edit"></i>
                                 </a>
@@ -35,17 +35,17 @@
                             <td class="col-lg-4 text-right">
                                 {% for address in entity.address %}
                                     <div class="btn-group btn-group-xs" role="group"/>
-                                            <a data-toggle="modal" class="btn btn-xs btn-default" href="{{ path('customer_edit', {'id':entity.id}) }}" data-target=".modal-customer_edit">
-                                            <br/>
-                                            <i class="glyphicon glyphicon-edit"></i>
-                                        </a>
-                                        <button class='btn btn-info'>
-                                            {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
-                                            <small>Nizinna 12/A2</small>
-                                        </button>  
+                                    <a data-toggle="modal" class="btn btn-xs btn-default" href="{{ path('address_edit', {'id':address.id}) }}" data-target=".modal-address_edit">
+                                        <br/>
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                    </a>
+                                    <button class='btn btn-info'>
+                                        {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
+                                        <small>Nizinna 12/A2</small>
+                                    </button>  
                                     </div>
-                                            <br/>
-                                            <br/>
+                                    <br/>
+                                    <br/>
                                 {% endfor %}
                                 <button class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus-sign"></i>  Add new address  </button>
                             </td>
@@ -67,11 +67,14 @@
             </div>
         {% endif %}
     </div>
-        
-        
-         <div class="modal fade modal-customer_edit" tabindex="-1" role="dialog" aria-labelledby="modal-customer_edit">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content"></div>
-            </div>
-        </div>   
+    <div class="modal fade modal-address_edit" tabindex="-1" role="dialog" aria-labelledby="modal-address_edit">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+    <div class="modal fade modal-customer_edit" tabindex="-1" role="dialog" aria-labelledby="modal-customer_edit">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content"></div>
+        </div>
+    </div>   
 {% endblock %}
