@@ -13,7 +13,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Kontakt</th>                        
+                        <th>Contakt</th>                        
                         <th>Address</th>
                     </tr>
                 </thead>
@@ -34,7 +34,7 @@
                             <td class="text-center">
                                 {% for address in entity.address %}
                                     <button class='btn btn-xs btn-info btn-block'>
-                                        <div class="col-lg-2">  
+                                        <div class="col-lg-2 vertical-align">  
                                             <a class="btn btn-xs btn-default" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
                                                 <i class="glyphicon glyphicon-edit"></i>
                                             </a>
