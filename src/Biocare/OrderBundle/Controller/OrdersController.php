@@ -146,6 +146,36 @@ class OrdersController extends Controller
         );
     }
 
+    
+        /**
+     * Finds and displays a Orders entity.
+     *
+     * @Route("/{id}/panel", name="orders_show")
+     * @Method("GET")
+     * @Template()
+     */
+    public function showPanelAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('BiocareOrderBundle:Orders')->findOneBy(
+                array(
+                   'callregister' => $id
+                ));
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Orders entity.');
+        }
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return array(
+            'entity'      => $entity,
+            'delete_form' => $deleteForm->createView(),
+        );
+    }
+    
+    
     /**
      * Displays a form to edit an existing Orders entity.
      *
