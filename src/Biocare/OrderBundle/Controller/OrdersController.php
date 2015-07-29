@@ -300,6 +300,9 @@ class OrdersController extends Controller {
         $em->persist($entity);
         $em->flush();
 
+        
+        $this->get('session')->det('active_address',$address->getId());
+        
         return $this->redirect($this->generateUrl('panel'));
     }
 
