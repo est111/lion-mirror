@@ -1,10 +1,12 @@
 {% block body -%}
     <div class="panel panel-success">
         <div class="panel-heading">
-            <strong>Orders</strong>
+            <strong>Order</strong> {{ entity.id }} ({{ entity.callregister.id }})
         </div>
         <div class="panel-body">  
-             {{ entity.id }}
+             {{ entity.customer|default('Brak') }}
+             {{ entity.customer|default('Brak') }}
+             
         </div>
     </div>
 {% endblock %}
