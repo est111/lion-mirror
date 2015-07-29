@@ -36,7 +36,7 @@
                                 {% for address in entity.address %}
                                     <div class="btn-group btn-group-xs" role="group"/>
                                     
-                                    <a class='btn {% if app.session.get('active_address') == address.id %} btn-danger {% else %} btn-info {% endif %}' href="{{path('orders_set_customer_address',{'customer':entity.id,'address':address.id })}}">
+                                    <a class='btn {% if app.session.get('active_address') == address.id %} active btn-danger {% else %} btn-info {% endif %}' href="{{path('orders_set_customer_address',{'customer':entity.id,'address':address.id })}}">
                                         {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
                                         <small>Nizinna 12/A2</small>
                                     </a>  
