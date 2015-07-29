@@ -34,7 +34,7 @@
                             <td class="col-lg-4 text-right">
                                 {% for address in entity.address %}
                                     <div class="btn-group btn-group-xs" role="group"/>
-                                        <a class="btn btn-default" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
+                                            <a data-toggle="modal" class="btn btn-xs btn-block btn-warning" href="{{ path('customer_edit', {'id':entity.id}) }}" data-target=".modal-customer_edit">
                                             <br/>
                                             <i class="glyphicon glyphicon-edit"></i>
                                         </a>
@@ -66,4 +66,6 @@
             </div>
         {% endif %}
     </div>
+        
+        
 {% endblock %}
