@@ -301,7 +301,7 @@ class OrdersController extends Controller {
         $em->flush();
 
         
-        $this->get('session')->det('active_address',$address->getId());
+        $this->get('session')->set('active_address',$address->getId());
         
         return $this->redirect($this->generateUrl('panel'));
     }
