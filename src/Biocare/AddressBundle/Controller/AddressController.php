@@ -154,7 +154,7 @@ class AddressController extends Controller
     /**
      * Displays a form to edit an existing Address entity.
      *
-     * @Route("/{id}/editmodal", name="admin_address_edit")
+     * @Route("/{id}/editmodal", name="address_edit")
      * @Method("GET")
      * @Template("BiocareAddressBundle:Address:address_edit.html.twig")
      */
