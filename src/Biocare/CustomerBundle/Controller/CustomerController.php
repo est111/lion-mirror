@@ -56,7 +56,50 @@ class CustomerController extends Controller {
             'entities' => $entities,
         );
     }
+    
+    /**
+     * Creates a new Customer entity.
+     *
+     * @Route("/", name="customer_create")
+     * @Method("POST")
+     * @Template("BiocareCustomerBundle:Customer:customer_new.html.twig")
+     */
+    public function createModalAction(Request $request) {
 
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = new Customer();
+        $callregister_entity = $this->get('session')->get('callregister');
+
+        $callregister = $em->getRepository('BiocareCallBundle:CallRegister')->find($callregister_entity->getId());
+
+        if ($callregister) {
+            $entity->setCallregister($callregister);
+        }
+        $form = $this->createCreateModalForm($entity);
+        $form->handleRequest($request);
+
+        if (!$callregister->getSource()) {
+            $callregister_entity->setSource($entity->getPhonenumber());
+            $this->get('session')->set('callregister',$callregister_entity);
+            $callregister->setSource($entity->getPhonenumber());
+            $em->persist($callregister);
+        }
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('panel'));
+        }
+
+        return array(
+            'entity' => $entity,
+            'form' => $form->createView(),
+        );
+    }
+    
     /**
      * Creates a new Customer entity.
      *
@@ -117,7 +160,6 @@ class CustomerController extends Controller {
 
         return $form;
     }
-
     /**
      * Displays a form to create a new Customer entity.
      *
@@ -139,6 +181,34 @@ class CustomerController extends Controller {
             $entity->setCallregister($callregister);
         }
         $form = $this->createCreateForm($entity);
+
+        return array(
+            'entity' => $entity,
+            'form' => $form->createView(),
+        );
+    }
+
+    /**
+     * Displays a form to create a new Customer entity.
+     *
+     * @Route("/newModal", name="customer_new")
+     * @Method("GET")
+     * @Template()
+     */
+    public function newModalAction() {
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = new Customer();
+        $callregister_entity = $this->get('session')->get('callregister');
+
+        $callregister = $em->getRepository('BiocareCallBundle:CallRegister')->find($callregister_entity->getId());
+
+        if ($callregister) {
+            $entity->setCallregister($callregister);
+        }
+        $form = $this->createCreateModalForm($entity);
 
         return array(
             'entity' => $entity,
