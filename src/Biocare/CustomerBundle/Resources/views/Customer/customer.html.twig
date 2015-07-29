@@ -61,8 +61,8 @@
         </div>
         {% if callregister_flag %}
             <div class="panel-footer">
-                <a class="btn btn-success" href="{{ path('admin_customer_new') }}">
-                    Add new Customer
+                <a class="btn btn-success" href="{{ path('admin_customer_new') }}" data-toggle="modal" data-target=".modal-customer_new"><i class="glyphicon glyphicon-plus-sign"></i>
+                     Add new Customer
                 </a>
             </div>
         {% endif %}
@@ -78,6 +78,11 @@
             <div class="modal-content"></div>
         </div>
     </div>
+    <div class="modal fade modal-customer_new" tabindex="-1" role="dialog" aria-labelledby="modal-customer_new">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content"></div>
+        </div>
+    </div>   
     <div class="modal fade modal-customer_edit" tabindex="-1" role="dialog" aria-labelledby="modal-customer_edit">
         <div class="modal-dialog modal-lg">
             <div class="modal-content"></div>
