@@ -34,10 +34,14 @@
                                         {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}</br>
                                         <small>Nizinna 12/A2</small>
                                     </button>
-                                {% endfor %}
+                                    <a class="btn btn-xs btn-block" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                    </a>
+                                </td>
+                            {% endfor %}
                             </td>
                             <td>
-{#                                <a class="btn btn-xs btn-primary" href="{{ path('admin_customer_show', { 'id': entity.id }) }}">show</a>#}
+                                {#                                <a class="btn btn-xs btn-primary" href="{{ path('admin_customer_show', { 'id': entity.id }) }}">show</a>#}
                                 <a class="btn btn-xs btn-primary btn-block" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
                                     <i class="glyphicon glyphicon-edit"></i>
                                 </a>
