@@ -4,9 +4,9 @@
             <strong>Order</strong> {{ entity.id }} ({{ entity.callregister.id }})
         </div>
         <div class="panel-body">  
-            <strong>Customer:</strong> <br/> 
+            <strong>Customer:</strong> <br/><br/>
             {{ entity.customer|default('Brak') }} <br/> <br/> 
-            <strong>Address:</strong> <br/>
+            <strong>Address:</strong> <br/><br/>
             {% if entity.address is defined %}
                 {{ entity.address.postcode }}, {{ entity.address.city }}<br/>
                 {{ entity.address.country|country(app.request.locale) }}<br/>
