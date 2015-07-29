@@ -41,11 +41,15 @@ class DefaultController extends Controller {
         $callregister->setDestination($destination);
 
         
-        $order = new Orders();
-        $order->
         
         $em = $this->getDoctrine()->getManager();
         $em->persist($callregister);
+        
+        
+        $order = new Orders();
+        $order->setCallregister($callregister);
+        $em->persist($order);
+        
         $em->flush();
 
 
