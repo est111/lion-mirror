@@ -34,16 +34,19 @@
                             <td class="col-lg-4">
                                 {% for address in entity.address %}
                                     <div class="btn-group btn-group-xs btn-group-justified" role="group"/>
-                                        <div class="btn-group" role="group">
-                                            <a class="btn btn-default" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
-                                                <br/>
-                                                <i class="glyphicon glyphicon-edit"></i>
-                                            </a>
-                                            <button class='btn btn-info'>
-                                                {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
-                                                <small>Nizinna 12/A2</small>
-                                            </button>  
-                                        </div>
+                                    <div class="btn-group" role="group">
+                                        <a class="btn btn-default" href="{{ path('admin_customer_edit', { 'id': entity.id }) }}">
+                                            <br/>
+                                            <i class="glyphicon glyphicon-edit"></i>
+                                        </a>
+                                    </div>
+                                    </div>
+                                    <div class="btn-group" role="group">
+                                        <button class='btn btn-info'>
+                                            {{ address.postcode }}, {{ address.city }},{{ address.country|country(app.request.locale) }}<br/>
+                                            <small>Nizinna 12/A2</small>
+                                        </button>  
+                                    </div>
                                     </div>
                                     <br/>
                                 {% endfor %}
