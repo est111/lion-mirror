@@ -142,7 +142,25 @@ class CustomerController extends Controller {
             'form' => $form->createView(),
         );
     }
+    
+   /**
+     * Creates a form to create a Customer entity.
+     *
+     * @param Customer $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateModalForm(Customer $entity) {
+        $form = $this->createForm(new CustomerType(), $entity, array(
+            'action' => $this->generateUrl('customer_create'),
+            'method' => 'POST',
+        ));
 
+        $form->add('submit', 'submit', array('label' => 'Create'));
+
+        return $form;
+    }
+    
     /**
      * Creates a form to create a Customer entity.
      *
