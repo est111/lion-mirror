@@ -211,13 +211,11 @@ class CustomerController extends Controller {
             throw $this->createNotFoundException('Unable to find Customer entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditModalForm($entity);
 
         return array(
             'entity' => $entity,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
     }
     /**
@@ -237,7 +235,23 @@ class CustomerController extends Controller {
 
         return $form;
     }
+    /**
+     * Creates a form to edit a Customer entity.
+     *
+     * @param Customer $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditModalForm(Customer $entity) {
+        $form = $this->createForm(new CustomerType(), $entity, array(
+            'action' => $this->generateUrl('customer_update', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
 
+        $form->add('submit', 'submit', array('label' => 'Update'));
+
+        return $form;
+    }
     /**
      * Edits an existing Customer entity.
      *
@@ -270,7 +284,31 @@ class CustomerController extends Controller {
             'delete_form' => $deleteForm->createView(),
         );
     }
+    /**
+     * Edits an existing Customer entity.
+     *
+     * @Route("/{id}/modal", name="customer_update")
+     * @Method("PUT")
+     * @Template("BiocareCustomerBundle:Customer:edit.html.twig")
+     */
+    public function updateAction(Request $request, $id) {
+        $em = $this->getDoctrine()->getManager();
 
+        $entity = $em->getRepository('BiocareCustomerBundle:Customer')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Customer entity.');
+        }
+
+        $editForm = $this->createEditModalForm($entity);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isValid()) {
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('panel'));
+        }
+    }
     /**
      * Deletes a Customer entity.
      *
