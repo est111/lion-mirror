@@ -64,14 +64,14 @@ class AddressController extends Controller
     /**
      * Creates a new Address entity.
      *
-     * @Route("/modal", name="address_create")
+     * @Route("/modal/{id}", name="address_create")
      * @Method("POST")
      * @Template("BiocareAddressBundle:Address:address_new.html.twig")
      */
-    public function createModalAction(Request $request)
+    public function createModalAction(Request $request,$id)
     {
         $entity = new Address();
-        $form = $this->createCreateForm($entity);
+        $form = $this->createCreateModalForm($entity,$id);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -112,10 +112,10 @@ class AddressController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateModalForm(Address $entity)
+    private function createCreateModalForm(Address $entity,$id)
     {
         $form = $this->createForm(new AddressType(), $entity, array(
-            'action' => $this->generateUrl('address_create'),
+            'action' => $this->generateUrl('address_create',array('id'=>$id)),
             'method' => 'POST',
         ));
 
@@ -152,7 +152,7 @@ class AddressController extends Controller
     {      
         
         $entity = new Address();
-        $form   = $this->createCreateModalForm($entity);
+        $form   = $this->createCreateModalForm($entity,$id);
 
         return array(
             'entity' => $entity,
