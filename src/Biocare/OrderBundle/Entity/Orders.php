@@ -31,4 +31,38 @@ class Orders
     {
         return $this->id;
     }
+    
+        /**
+     * @var \DateTime DataTime when Connextion were created Datatime with UTC  
+     * 
+     * @ORM\Column(name="createdAt", type="datetimetz")
+     * 
+     */
+    private $createdAt;
+    
+    public function getCreatedAt() {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTime $createdAt) {
+        $this->createdAt = $createdAt;
+        return $this;
+    }
+    
+     /**
+     *
+     * @ORM\OneToOne(targetEntity="\Biocare\CallBundle\Entity\CallRegister")
+     */
+    private $callregister;
+    
+    public function getCallregister() {
+        return $this->callregister;
+    }
+
+    public function setCallregister($callregister) {
+        $this->callregister = $callregister;
+        return $this;
+    }
+
+
 }
