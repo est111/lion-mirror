@@ -23,7 +23,7 @@
 
 
 
-                {{ render(url('orders_new')) }}
+                {{ render(url('orders_show',{ 'callregister': callregister.id})) }}
             </div>
             <div class='col-lg-9'>
                 {{ render(url('customer')) }}
