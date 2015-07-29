@@ -15,8 +15,7 @@ use Biocare\OrderBundle\Form\OrdersType;
  *
  * @Route("/admin/orders")
  */
-class OrdersController extends Controller
-{
+class OrdersController extends Controller {
 
     /**
      * Lists all Orders entities.
@@ -25,8 +24,7 @@ class OrdersController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('BiocareOrderBundle:Orders')->findAll();
@@ -35,7 +33,7 @@ class OrdersController extends Controller
             'entities' => $entities,
         );
     }
-    
+
 //    /**
 //     * Lists all Orders entities.
 //     *
@@ -53,8 +51,7 @@ class OrdersController extends Controller
 //            'entities' => $entities,
 //        );
 //    }
-    
-    
+
     /**
      * Creates a new Orders entity.
      *
@@ -62,8 +59,7 @@ class OrdersController extends Controller
      * @Method("POST")
      * @Template("BiocareOrderBundle:Orders:new.html.twig")
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $entity = new Orders();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -78,7 +74,7 @@ class OrdersController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -89,8 +85,7 @@ class OrdersController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Orders $entity)
-    {
+    private function createCreateForm(Orders $entity) {
         $form = $this->createForm(new OrdersType(), $entity, array(
             'action' => $this->generateUrl('admin_orders_create'),
             'method' => 'POST',
@@ -108,19 +103,16 @@ class OrdersController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
-    {
+    public function newAction() {
         $entity = new Orders();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
-    
-    
     /**
      * Finds and displays a Orders entity.
      *
@@ -128,8 +120,7 @@ class OrdersController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function showAction($id)
-    {
+    public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareOrderBundle:Orders')->find($id);
@@ -141,27 +132,25 @@ class OrdersController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
 
-    
-        /**
+    /**
      * Finds and displays a Orders entity.
      *
      * @Route("/{callregister}/panel", name="orders_show")
      * @Method("GET")
      * @Template()
      */
-    public function showPanelAction($callregister)
-    {
+    public function showPanelAction($callregister) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareOrderBundle:Orders')->findOneBy(
                 array(
-                   'callregister' => $callregister
-                ));
+                    'callregister' => $callregister
+        ));
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Orders entity.');
@@ -169,11 +158,10 @@ class OrdersController extends Controller
 
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
         );
     }
-    
-    
+
     /**
      * Displays a form to edit an existing Orders entity.
      *
@@ -181,8 +169,7 @@ class OrdersController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
-    {
+    public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareOrderBundle:Orders')->find($id);
@@ -195,21 +182,20 @@ class OrdersController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
 
     /**
-    * Creates a form to edit a Orders entity.
-    *
-    * @param Orders $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Orders $entity)
-    {
+     * Creates a form to edit a Orders entity.
+     *
+     * @param Orders $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Orders $entity) {
         $form = $this->createForm(new OrdersType(), $entity, array(
             'action' => $this->generateUrl('admin_orders_update', array('id' => $entity->getId())),
             'method' => 'PUT',
@@ -219,6 +205,7 @@ class OrdersController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Orders entity.
      *
@@ -226,8 +213,7 @@ class OrdersController extends Controller
      * @Method("PUT")
      * @Template("BiocareOrderBundle:Orders:edit.html.twig")
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareOrderBundle:Orders')->find($id);
@@ -247,19 +233,19 @@ class OrdersController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Orders entity.
      *
      * @Route("/{id}", name="admin_orders_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -285,13 +271,36 @@ class OrdersController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_orders_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
+                        ->setAction($this->generateUrl('admin_orders_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->getForm()
         ;
     }
+
+    /**
+     * Updates a order
+     *
+     * @Route("/{id}/setCustommerAddress", name="orders_set_customer_address")
+     * @Method("GET")
+     */
+    public function setCustomerAddress(\Biocare\CustomerBundle\Entity\Customer $customer, \Biocare\AddressBundle\Entity\Address $address) {
+
+        $em = $this->getDoctrine()->getManager();
+        $callregister = $this->get('session')->get('callregister');
+        $entity = $em->getRepository('BiocareOrderBundle:Orders')->findOneBy(
+                array(
+                    'callregister' => $callregister
+                )
+        );
+        $entity->setCustomer($customer);
+        $entity->setAddress($address);
+        $em->persist($entity);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('panel'));
+    }
+
 }
