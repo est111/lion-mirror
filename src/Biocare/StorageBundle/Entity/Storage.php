@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Biocare\StorageBundle\Entity\StorageRepository")
  */
-class Storage
-{
+class Storage {
+
     /**
      * @var integer
      *
@@ -21,23 +21,20 @@ class Storage
      */
     private $id;
 
-
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
-    
-        
+
     /**
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
-    
+
     public function getName() {
         return $this->name;
     }
@@ -46,17 +43,16 @@ class Storage
         $this->name = $name;
         return $this;
     }
-    
+
     /**
      * @ORM\OneToMany(targetEntity="\Biocare\ProductBundle\Entity\Item", mappedBy="storage")
      */
     private $item;
-    
+
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->item = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -66,8 +62,7 @@ class Storage
      * @param \Biocare\ProductBundle\Entity\Item $item
      * @return Storage
      */
-    public function addItem(\Biocare\ProductBundle\Entity\Item $item)
-    {
+    public function addItem(\Biocare\ProductBundle\Entity\Item $item) {
         $this->item[] = $item;
 
         return $this;
@@ -78,8 +73,7 @@ class Storage
      *
      * @param \Biocare\ProductBundle\Entity\Item $item
      */
-    public function removeItem(\Biocare\ProductBundle\Entity\Item $item)
-    {
+    public function removeItem(\Biocare\ProductBundle\Entity\Item $item) {
         $this->item->removeElement($item);
     }
 
@@ -88,8 +82,12 @@ class Storage
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getItem()
-    {
+    public function getItem() {
         return $this->item;
     }
+
+    public function getItemCountByProduct() {
+        
+    }
+
 }
