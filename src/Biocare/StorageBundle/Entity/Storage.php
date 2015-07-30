@@ -89,7 +89,8 @@ class Storage {
     public function getItemCountByProduct() {
         $array = array();
         foreach ($this->item as $item) {
-            $array[$item->getProduct()->getName()]++;
+            $array[$item->getProduct()->getId()]['count']++;
+            $array[$item->getProduct()->getId()]['name'] = $item->getProduct()->getName();
         }
         return $array;
     }
