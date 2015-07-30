@@ -92,7 +92,7 @@ class Storage {
         $criteria = new \Doctrine\Common\Collections\Criteria();
         $criteria->where($criteria->expr()->eq('product', $product));
 
-        return $this->item->matching($criteria);
+        return count($this->item->matching($criteria));
 
     }
 
