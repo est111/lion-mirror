@@ -28,30 +28,31 @@
                         <strong>Products [{{ callregister.id}}]</strong>
                     </div>
                     <div class="panel-body">
-                        <div class="col-lg-3 text-center">
-                            <img height=200 src="{{ asset('bundles/biocareproduct/img/1.png') }}" /> <br/>
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">&#8381;</div>
-                                        <input type="text" class="form-control col-lg-3" id="exampleInputAmount" placeholder="Amount"/>
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-success" type="button">Update cart</button>
-                                        </span>
+                        <div class="row">
+                            <div class="col-lg-3 text-center">
+                                <img height=200 src="{{ asset('bundles/biocareproduct/img/1.png') }}" /> <br/>
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">&#8381;</div>
+                                            <input type="text" class="form-control col-lg-3" id="exampleInputAmount" placeholder="Amount"/>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-success" type="button">Update cart</button>
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
+                            <div class="col-lg-4 text-justify">
+                                <h2>Delipox Professional</h2>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                </p>
+
+                            </div>
+                            <div class="col-lg-5 text-center"></div>
                         </div>
-                        <div class="col-lg-4 text-justify">
-                            <h3>Delipox Professional</h3>
-
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                            </p>
-
-                        </div>
-                        <div class="col-lg-5 text-center"></div>
-
                     </div>
                 </div>   
                 {{ render(url('customer')) }}
