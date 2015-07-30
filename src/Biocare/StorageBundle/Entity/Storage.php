@@ -86,7 +86,7 @@ class Storage {
         return $this->item;
     }
 
-    public function getItemCountByProduct($product_id) {
+    public function getItemCountByProduct() {
 
         $product = Array();
         foreach ($this->item as $item) {
