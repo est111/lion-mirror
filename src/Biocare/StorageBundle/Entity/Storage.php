@@ -48,7 +48,7 @@ class Storage
     }
     
     /**
-     * @ORM\OneToMany(targetEntity="\Biocare\ProductBundle\Entity\Item", inversedBy="storage")
+     * @ORM\OneToMany(targetEntity="\Biocare\ProductBundle\Entity\Item", mappedBy="storage")
      */
     private $item;
     
