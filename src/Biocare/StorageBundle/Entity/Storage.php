@@ -47,4 +47,9 @@ class Storage
         return $this;
     }
     
+    /**
+     * @ORM\OneToMany(targetEntity="\Biocare\ProductBundle\Entity\Item", inversedBy="storage")
+     */
+    private $item;
+    
 }
