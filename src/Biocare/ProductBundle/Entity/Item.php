@@ -33,7 +33,7 @@ class Item
     }
     
     /**
-     * @ORM\ManyToOne(targetEntity="\Biocare\StorageBundle\Entity\Storage", mappedBy="item")
+     * @ORM\ManyToOne(targetEntity="\Biocare\StorageBundle\Entity\Storage", inversedBy="item")
      */
     private $storage; 
 }
