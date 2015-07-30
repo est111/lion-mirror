@@ -1,9 +1,13 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Product list</h1>
-
-    <table class="records_list">
+    
+    <div class="panel panel-info">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-table">
+        
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -36,4 +40,5 @@
             </a>
         </li>
     </ul>
+        </div>
     {% endblock %}
