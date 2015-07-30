@@ -88,4 +88,8 @@ class Item
     {
         return $this->product;
     }
+    
+    public function __toString() {
+        return $this->getProduct()." ".$this->getId();
+    }
 }
