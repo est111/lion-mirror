@@ -59,4 +59,10 @@ class Item
     {
         return $this->storage;
     }
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="\Biocare\ProductBundle\Entity\Product")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
+     **/
+    private $product; 
 }
