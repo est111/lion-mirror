@@ -31,4 +31,9 @@ class Item
     {
         return $this->id;
     }
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="\Biocare\StorageBundle\Entity\Storage", mappedBy="item")
+     */
+    private $storage;
 }
