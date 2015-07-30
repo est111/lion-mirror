@@ -25,7 +25,7 @@
                                     <tr>
                                         <td><a href="{{ path('admin_storage_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                         <td>{{ entity.name }}</td>
-{#                                        <td>{{ dump(entity.getItemCountByProduct) }}</td>#}
+                                        <td>{{ dump(entity.ItemCountByProduct) }}</td>
                                         <td>
                                             <a class="btn btn-xs btn-primary" href="{{ path('admin_storage_show', { 'id': entity.id }) }}">show</a>
                                             <a class="btn btn-xs btn-primary" href="{{ path('admin_storage_edit', { 'id': entity.id }) }}">edit</a>
