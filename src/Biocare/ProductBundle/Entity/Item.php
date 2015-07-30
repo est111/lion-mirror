@@ -65,4 +65,27 @@ class Item
      * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      **/
     private $product; 
+
+    /**
+     * Set product
+     *
+     * @param \Biocare\ProductBundle\Entity\Product $product
+     * @return Item
+     */
+    public function setProduct(\Biocare\ProductBundle\Entity\Product $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Biocare\ProductBundle\Entity\Product 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
 }
