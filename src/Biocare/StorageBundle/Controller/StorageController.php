@@ -24,12 +24,13 @@ class StorageController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function countAction()
+    public function countAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('BiocareStorageBundle:Storage')->findAll();
-        $query = $em->createQuery('SELECT COUNT(u.id) FROM Entities\User u');
+        $query = $em->createQuery('SELECT i.product.name, COUNT(i.id) FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product.id');
+        $query->setParameter('storage', $id);
         $count = $query->getResult();
         dump($count);
         exit;
