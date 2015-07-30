@@ -31,7 +31,7 @@ class StorageController extends Controller
         $query->setParameter('storage', $id);
         $count = $query->getResult();
         return array(
-            'count' => $count,
+            'count' => $count[0],
         );
     }
     /**
