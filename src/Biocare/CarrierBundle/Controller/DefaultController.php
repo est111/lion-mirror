@@ -13,7 +13,7 @@ class DefaultController extends Controller
      * @Route("/httpapi/{zip}",name="httpapi_zip")
      */
     public function indexAction($zip)
-    {
+    {        
         $httpapi = new \Biocare\CarrierBundle\Entity\HttpApi();
         $resp_raw = $httpapi->tariff($zip);
         $resp_conv = mb_convert_encoding($resp_raw, "utf-8", "windows-1251");
