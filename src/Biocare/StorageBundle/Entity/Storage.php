@@ -87,14 +87,16 @@ class Storage {
     }
 
     public function getItemCountByProduct() {
-        
-       return $this->item;
-        
-        
+
+        foreach ($this->item as $item) {
+            echo $item;
+        }
+
+        return;
     }
-    
+
     public function __toString() {
-        return $this->getName()." ".$this->getId();
+        return $this->getName() . " " . $this->getId();
     }
 
 }
