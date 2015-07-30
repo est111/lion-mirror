@@ -88,11 +88,11 @@ class Storage {
 
     public function getItemCountByProduct() {
 
-        foreach ($this->item as $item) {
-            echo $item;
-        }
+        $criteria = new \Doctrine\Common\Collections\Criteria();
+        $criteria->where($criteria->expr()->eq('employeeType', $employeeTypeId));
 
-        return;
+        return $this->item->matching($criteria);
+
     }
 
     public function __toString() {
