@@ -52,4 +52,44 @@ class Storage
      */
     private $item;
     
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->item = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add item
+     *
+     * @param \Biocare\ProductBundle\Entity\Item $item
+     * @return Storage
+     */
+    public function addItem(\Biocare\ProductBundle\Entity\Item $item)
+    {
+        $this->item[] = $item;
+
+        return $this;
+    }
+
+    /**
+     * Remove item
+     *
+     * @param \Biocare\ProductBundle\Entity\Item $item
+     */
+    public function removeItem(\Biocare\ProductBundle\Entity\Item $item)
+    {
+        $this->item->removeElement($item);
+    }
+
+    /**
+     * Get item
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getItem()
+    {
+        return $this->item;
+    }
 }

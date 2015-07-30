@@ -36,4 +36,27 @@ class Item
      * @ORM\ManyToOne(targetEntity="\Biocare\StorageBundle\Entity\Storage", inversedBy="item")
      */
     private $storage; 
+
+    /**
+     * Set storage
+     *
+     * @param \Biocare\StorageBundle\Entity\Storage $storage
+     * @return Item
+     */
+    public function setStorage(\Biocare\StorageBundle\Entity\Storage $storage = null)
+    {
+        $this->storage = $storage;
+
+        return $this;
+    }
+
+    /**
+     * Get storage
+     *
+     * @return \Biocare\StorageBundle\Entity\Storage 
+     */
+    public function getStorage()
+    {
+        return $this->storage;
+    }
 }
