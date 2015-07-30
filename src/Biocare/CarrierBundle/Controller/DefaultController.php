@@ -18,7 +18,7 @@ class DefaultController extends Controller
         $resp_raw = $httpapi->tariff($zip);
         $resp_conv = mb_convert_encoding($resp_raw, "utf-8", "windows-1251");
         $resp = json_decode($resp_conv);
-        $html ="<select>";
+        $html ="<select class='select2'>";
         foreach ($resp->delivery_ways as $dw){ 
             $html .="<option value='".$dw->Стоимость."'>".$dw->Наименование." - ".$dw->Стоимость." - ".$dw->Код."</option>";
         }
