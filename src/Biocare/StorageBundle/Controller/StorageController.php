@@ -17,7 +17,26 @@ use Biocare\StorageBundle\Form\StorageType;
  */
 class StorageController extends Controller
 {
+    /**
+     * Lists all Storage entities.
+     *
+     * @Route("/{id}/count", name="storage_count")
+     * @Method("GET")
+     * @Template()
+     */
+    public function countAction()
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $entities = $em->getRepository('BiocareStorageBundle:Storage')->findAll();
+        $query = $em->createQuery('SELECT COUNT(u.id) FROM Entities\User u');
+        $count = $query->getResult();
+        dump($count);
+        exit;
+        return array(
+            'entities' => $count,
+        );
+    }
     /**
      * Lists all Storage entities.
      *
