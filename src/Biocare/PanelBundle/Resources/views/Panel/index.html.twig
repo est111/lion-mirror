@@ -23,11 +23,19 @@
                 {{ render(url('orders_show',{ 'callregister': callregister.id})) }}
             </div>
             <div class='col-lg-9'>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <strong>Products [{{ callregister.id}}]</strong>
+                    </div>
+                    <div class="panel-body">
+                        ...
+                    </div>
+                </div>   
                 {{ render(url('customer')) }}
             </div>
         </div>
     </div>
-    
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
@@ -35,6 +43,6 @@
         $(".select2").select2({
             placeholder: "Select a state",
             allowClear: true
-          });
+        });
     </script>
-    {% endblock %}
+{% endblock %}
