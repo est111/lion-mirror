@@ -86,24 +86,13 @@ class Storage {
         return $this->item;
     }
 
-    public function getItemCountByProduct() {
-//            $category = $this->item->createQueryBuilder('i')
-//                    ->select('i.product.id')
-//                    ->distinct()
-//                    ->getQuery();
-//
-//            return $category->getResult();   
-//       
-        $em = $this->container->get('doctrine')->getManager();
+    public function getItemCountByProduct(\Biocare\ProductBundle\Entity\Product $product) {
 
-        $query = $em->createQuery('SELECT COUNT(s.id) FROM BiocareStorageBundle:Storage s');
-        $count = $query->getSingleScalarResult();
-        return $count;
-        /*
+        
         $criteria = new \Doctrine\Common\Collections\Criteria();
         $criteria->where($criteria->expr()->eq('product', $product));
 
-        return count($this->item->matching($criteria));*/
+        return count($this->item->matching($criteria));
 
     }
 
