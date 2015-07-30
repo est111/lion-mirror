@@ -94,6 +94,7 @@ class Storage {
 //
 //            return $category->getResult();   
 //       
+        $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery('SELECT COUNT(s.id) FROM BiocareStorageBundle:Storage s');
         $count = $query->getSingleScalarResult();
         return $count;
