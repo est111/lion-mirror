@@ -40,7 +40,7 @@ class HttpApi {
         return $resp;
     }
     
-        public function tariff($zip,$price) {
+        public function tariff($zip,$price=null) {
         $curl = curl_init();
 // Set some options - we are passing in a useragent too here
         curl_setopt_array($curl, array(
