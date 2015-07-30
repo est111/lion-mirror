@@ -90,7 +90,7 @@ class Storage {
 
         $product = Array();
         foreach ($this->item as $item) {
-            $product[$item->getProduct()->id];
+            $product[$item->getProduct()->getId()];
         }
         dump($product);
         /*$criteria = new \Doctrine\Common\Collections\Criteria();
