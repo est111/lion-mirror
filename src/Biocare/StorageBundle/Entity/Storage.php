@@ -90,7 +90,7 @@ class Storage {
 
         
         $criteria = new \Doctrine\Common\Collections\Criteria();
-        $criteria->where($criteria->expr()->eq('id', 1));
+        $criteria->where($criteria->expr()->eq('id', 2));
 
         return $this->item->matching($criteria);
 
