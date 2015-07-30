@@ -29,7 +29,7 @@ class StorageController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('BiocareStorageBundle:Storage')->findAll();
-        $query = $em->createQuery('SELECT i.product.name, COUNT(i.id) FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product.id');
+        $query = $em->createQuery('SELECT p.name, COUNT(i.id) FROM BiocareProductBundle:Item i JOIN BiocareProductBundle:Product p WHERE i.storage = :storage GROUP BY p.id');
         $query->setParameter('storage', $id);
         $count = $query->getResult();
         dump($count);
