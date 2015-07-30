@@ -93,10 +93,10 @@ class Storage {
             $product[$item->getProduct()->id];
         }
         dump($product);
-        $criteria = new \Doctrine\Common\Collections\Criteria();
+        /*$criteria = new \Doctrine\Common\Collections\Criteria();
         
-        $criteria->where($criteria->expr()->eq('product.id', 1));
-        return count($this->item->matching($criteria));
+        $criteria->where($criteria->expr()->eq('product', 1));
+        return count($this->item->matching($criteria));*/
     }
 
     public function __toString() {
