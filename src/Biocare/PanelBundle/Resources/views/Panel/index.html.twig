@@ -30,7 +30,17 @@
                     <div class="panel-body">
                         <div class="col-lg-3 text-center">
                         <img height=200 src="{{ asset('bundles/biocareproduct/img/1.png') }}" /> <br/>
-                        <input type="text"/>
+                        <form class="form-inline">
+                            <div class="form-group">
+                              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                              <div class="input-group">
+                                <div class="input-group-addon">&#8381;</div>
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                                <div class="input-group-addon">.00</div>
+                              </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Transfer cash</button>
+                          </form>
                         </div>
                         
                     </div>
