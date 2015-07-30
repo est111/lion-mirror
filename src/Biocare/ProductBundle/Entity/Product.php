@@ -31,4 +31,22 @@ class Product
     {
         return $this->id;
     }
+    
+    
+    /**
+     * @ORM/Column(name="name", type="string", length="255")
+     */
+    private $name;
+    
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+        
+    
 }
