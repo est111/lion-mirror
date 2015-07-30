@@ -22,7 +22,7 @@ class StorageController extends Controller
      *
      * @Route("/{id}/count", name="storage_count")
      * @Method("GET")
-     * @Template()
+     * @Template("BiocareStorageBundle:Storage:storage_count.html.twig")
      */
     public function countAction($id)
     {
