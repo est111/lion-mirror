@@ -88,8 +88,9 @@ class Storage {
 
     public function getItemCountByProduct() {
 
+        
         $criteria = new \Doctrine\Common\Collections\Criteria();
-        $criteria->where($criteria->expr()->eq('employeeType', $employeeTypeId));
+        $criteria->where($criteria->expr()->eq('id', 1));
 
         return $this->item->matching($criteria);
 
