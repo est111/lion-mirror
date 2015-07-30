@@ -93,6 +93,7 @@ class Storage {
             $product[$item->getProduct()->getId()];
         }
         dump($product);
+        exit;
         /*$criteria = new \Doctrine\Common\Collections\Criteria();
         
         $criteria->where($criteria->expr()->eq('product', 1));
