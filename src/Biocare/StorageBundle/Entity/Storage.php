@@ -87,6 +87,9 @@ class Storage {
     }
 
     public function getItemCountByProduct() {
+        foreach ($this->item as $key => $value) {
+            
+        }
         
     }
 
