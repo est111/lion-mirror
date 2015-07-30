@@ -86,19 +86,6 @@ class Storage {
         return $this->item;
     }
 
-    public function getItemCountByProduct() {
-
-        $product = Array();
-        foreach ($this->item as $item) {
-            $product[$item->getProduct()->getId()];
-        }
-        dump($product);
-        exit;
-        /*$criteria = new \Doctrine\Common\Collections\Criteria();
-        
-        $criteria->where($criteria->expr()->eq('product', 1));
-        return count($this->item->matching($criteria));*/
-    }
 
     public function __toString() {
         return $this->getName() . " " . $this->getId();
