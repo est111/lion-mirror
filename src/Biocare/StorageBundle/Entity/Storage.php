@@ -91,7 +91,6 @@ class Storage {
         $criteria = new \Doctrine\Common\Collections\Criteria();
         
         $criteria->where($criteria->expr()->eq('product.id', $product_id));
-
         return count($this->item->matching($criteria));
     }
 
