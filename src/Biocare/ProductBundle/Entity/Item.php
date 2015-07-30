@@ -35,5 +35,5 @@ class Item
     /**
      * @ORM\ManyToOne(targetEntity="\Biocare\StorageBundle\Entity\Storage", mappedBy="item")
      */
-    private $storage;
+    private $storage; 
 }
