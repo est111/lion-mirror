@@ -86,11 +86,11 @@ class Storage {
         return $this->item;
     }
 
-    public function getItemCountByProduct() {
+    public function getItemCountByProduct(\Biocare\ProductBundle\Entity\Product $product) {
 
         
         $criteria = new \Doctrine\Common\Collections\Criteria();
-        $criteria->where($criteria->expr()->eq('id', 2));
+        $criteria->where($criteria->expr()->eq('product', $product));
 
         return $this->item->matching($criteria);
 
