@@ -1,3 +1,8 @@
+biocare_product:
+    resource: "@BiocareProductBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 biocare_order:
     resource: "@BiocareOrderBundle/Controller/"
     type:     annotation
