@@ -1,6 +1,5 @@
 {% block body -%}
     {% for item in count %}
-        {{dump(item)}}
         {{ item.name }} - {{ item.1 }} {% trans %} Szt. {% endtrans %}<br/>
     {% endfor %}    
 {% endblock %}
