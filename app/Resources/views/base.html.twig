@@ -135,10 +135,14 @@
                 $('#tab-' + product_id + ' .gratis').attr({max:qty});
                 $('#tab-' + product_id + ' .gratisTip').text(qty);
                 
-                var gratis = $('#tab-' + product_id + ' .gratis').val();               
+                var gratisRaw = $('#tab-' + product_id + ' .gratis').val();               
                 
-                if (gratis)
+                if (gratisRaw > qty) {
+                    $('#tab-' + product_id + ' .gratis').val(qty);   
+                }
                 
+                var gratis = $('#tab-' + product_id + ' .gratis').val();
+                 
                 if (price[0] == 'flat') {
                     price_value = price[1][0] * qty;
                     priceChange(product_id,price_value);
