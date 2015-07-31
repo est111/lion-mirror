@@ -131,11 +131,12 @@
 
         <script type="text/javascript">
 
-            function getPrice(product_id, price){
+            function getPrice(product_id, price,qty){
              
                 if (price[0]=='flat'){
                     price_value = price[1][0];
-                    $('#tab-'+product_id+' .priceValue').text(price_value +' RUB');
+                    $('#tab-'+product_id+' .priceValue').text(price_value*qty +' RUB');
+                    $('#tab-'+product_id+' .provisionValue').text(price_value*qty*1% +' RUB');
                 }
             }            
             
@@ -144,7 +145,7 @@
                 price[1] = ['flat',[1200]];
                 price[2] = ['minmax',[32,94,1299]];
                 
-                getPrice(product_id,price[product_id]*qty);
+                getPrice(product_id,price[product_id],qty);
                 
             }
 
