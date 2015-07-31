@@ -66,7 +66,7 @@
                                     <div class="row">
                                         <div class="col-lg-4 text-center"> 
                                             <strong>MAX:<br/> <span class="priceMax">0</span> RUB</strong>
-                                            <input onchange="getPrice(2)" class="range form-control col-lg-6" type="range" orient="vertical" step="10" value="0" min="0" max="0"/>
+                                            <input onmousemove="function(this){$(this).on('onmousedown',function(){getPrice(2)})}" class="range form-control col-lg-6" type="range" orient="vertical" step="10" value="0" min="0" max="0"/>
                                             <br/>
                                             <br/>
                                             <br/>
