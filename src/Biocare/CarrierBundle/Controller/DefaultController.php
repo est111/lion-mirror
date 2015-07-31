@@ -30,9 +30,9 @@ class DefaultController extends Controller {
      * @Route("/aaa",name="aaa")
      */
     public function aAction() {
-        $box = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-        dump($box);
-        exit;
+        $im = imagegrabscreen();
+        imagepng($im, "myscreenshot.png");
+        imagedestroy($im);
     }
 
 }
