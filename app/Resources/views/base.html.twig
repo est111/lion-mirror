@@ -130,8 +130,9 @@
 
         <script type="text/javascript">
 
-            function getPrice(product_id, price, qty) {
-
+            function getPrice(product_id, price) {
+                var qty = $('#tab-' + product_id + ' .qty').val();
+                
                 if (price[0] == 'flat') {
                     price_value = price[1][0];
                     priceChange(product_id,price_value);
@@ -159,12 +160,13 @@
                     $('#tab-' + product_id + ' .provisionValue').text(parseFloat(price_value * 0.005));
             }
 
-            function qtyOnChange(product_id, qty) {
+            function qtyOnChange(product_id) {
+                
                 var price = [];
                 price[1] = ['flat', [1200]];
                 price[2] = ['minmax', [32, 94, 1299]];
 
-                getPrice(product_id, price[product_id], qty);
+                getPrice(product_id, price[product_id]);
 
             }
 
