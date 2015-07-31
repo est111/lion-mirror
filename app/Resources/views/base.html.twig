@@ -156,6 +156,7 @@
             
             
             function rangeOnChange(product_id){
+                    var price_value = $('#tab-' + product_id + ' .range').val();
                     $('#tab-' + product_id + ' .priceValue').text(parseFloat(price_value));
                     $('#tab-' + product_id + ' .provisionValue').text(parseFloat(price_value * 0.005));
             }
