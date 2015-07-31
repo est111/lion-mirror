@@ -143,6 +143,7 @@
                     price_min = price[1][0] * qty + price[1][1] / qty;
                     $('#tab-' + product_id + ' .range').attr({
                         max: parseFloat(price_max),
+                        value: parseFloat(price_max),
                         min: parseFloat(price_min)
                     });
                     
