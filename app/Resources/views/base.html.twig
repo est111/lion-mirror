@@ -150,10 +150,14 @@
                     $('#tab-' + product_id + ' .priceMin').text(parseFloat(price_min));
                     $('#tab-' + product_id + ' .priceMax').text(parseFloat(price_max));
                     
-                    $('#tab-' + product_id + ' .priceValue').text(parseFloat(price_value * qty));
-                    $('#tab-' + product_id + ' .provisionValue').text(parseFloat(price_value * qty * 0.005));
                 }
 
+            }
+            
+            
+            function rangeOnChange(product_id){
+                    $('#tab-' + product_id + ' .priceValue').text(parseFloat(price_value));
+                    $('#tab-' + product_id + ' .provisionValue').text(parseFloat(price_value * 0.005));
             }
 
             function qtyOnChange(product_id, qty) {
