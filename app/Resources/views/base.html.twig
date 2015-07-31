@@ -157,7 +157,7 @@
                     price_max = price[1][2] * (qty);
                     price_min = (((price[1][0] * (qty)) + (price[1][1] / (qty))) * 5);
                     if(gratis>0){
-                        price_min = price_min + ((price[1][0])*(gratis) + (price[1][1] / (gratis)))
+                        price_min = price_min + (((price[1][0])*(gratis) + (price[1][1] / (gratis))) * 5)
                     }
                     
                     $('#tab-' + product_id + ' .range').attr({
