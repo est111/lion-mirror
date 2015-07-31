@@ -154,6 +154,11 @@
 
             }
             
+            $('.range').attrchange({
+                callback: function (e,'value') { 
+                   rangeOnChange(product_id);
+                }
+            });
             
             function rangeOnChange(product_id){
                     var price_value = $('#tab-' + product_id + ' .range').val();
