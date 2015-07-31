@@ -20,10 +20,13 @@
             body {
                 background-color: #ddd;
             }
-            .vrange {
-                margin-top: 50px;
-                transform: rotate(270deg);
-                -moz-transform: rotate(270deg); /*do same for other browsers if required*/
+            input[type=range][orient=vertical]
+            {
+                writing-mode: bt-lr; /* IE */
+                -webkit-appearance: slider-vertical; /* WebKit */
+                width: 8px;
+                height: 175px;
+                padding: 0 5px;
             }
             .vertical-align {
                 display: flex;
