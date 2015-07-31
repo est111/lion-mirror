@@ -66,7 +66,7 @@
                                     <div class="row">
                                         <div class="col-lg-4 text-center"> 
                                             <strong>MAX:<br/> <span class="priceMax">0</span> RUB</strong>
-                                            <input class="range form-control col-lg-6" type="range" orient="vertical" value="0" min="0" max="100"/>
+                                            <input onchange="rangeOnChange(2)" class="range form-control col-lg-6" type="range" orient="vertical" value="0" min="0" max="100"/>
                                             <br/>
                                             <br/>
                                             <br/>
@@ -95,7 +95,7 @@
                                             <br/>
                                             <div class="input-group">
                                                 <div class="input-group-addon">GRATIS:</div>
-                                                <input onchange="rangeOnChange(2)" name="qty" class="form-control col-lg-6" type="number" value="0" min="0" max="3"/>
+                                                <input name="qty" class="form-control col-lg-6" type="number" value="0" min="0" max="3"/>
                                                 <div class="input-group-addon">MAX: 8</div>
                                             </div>
                                             <br/>
