@@ -192,15 +192,8 @@
                     var price_value = $('#tab-' + product_id + ' .range').val();
                     priceChange(product_id,price_value);
                 }
-                if (price[0] == 'minmaxset') {
-                    price_max = price[1][2] * (qty);
-                    price_min = 0;                
-                    if(gratis>0){
-                        price_min = price_min + (((price[1][0])*(gratis) + (price[1][1] / (gratis))) * 5)
-                    }
-                    if(qty>0){
-                        price_min = price_min + (((price[1][0] * (qty)) + (price[1][1] / (qty))) * 5);    
-                    }   
+                if (price[0] == 'set') {
+                    (((price[1][0])*(qty) + (price[1][1] / (qty))) * 5);
                     
                     
                     $('#tab-' + product_id + ' .range').attr({
