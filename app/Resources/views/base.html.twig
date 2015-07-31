@@ -137,6 +137,9 @@
                     price_value = price[1][0];
                     $('#tab-'+product_id+' .priceValue').text(parseFloat(price_value*qty) +' RUB');
                     $('#tab-'+product_id+' .provisionValue').text(price_value*qty*1% +' RUB');
+                    
+                    
+                    console.log(parseFloat(price_value*qty));
                 }
             }            
             
