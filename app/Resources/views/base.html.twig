@@ -137,10 +137,13 @@
                     price_value = price[1][0];
                     $('#tab-'+product_id+' .priceValue')    .text(parseFloat(price_value*qty      ));
                     $('#tab-'+product_id+' .provisionValue').text(parseFloat(price_value*qty*0.005 ));
-                    
-                    
-                    console.log(qty);
                 }
+                if (price[0]=='minmax'){
+                    price_value = price[1][0];
+                    $('#tab-'+product_id+' .priceValue')    .text(parseFloat(price_value*qty      ));
+                    $('#tab-'+product_id+' .provisionValue').text(parseFloat(price_value*qty*0.005 ));
+                }
+                
             }            
             
             function qtyOnChange(product_id,qty){
