@@ -176,7 +176,7 @@
                     });
                     
                     $('#tab-' + product_id + ' .priceMin').text(parseFloat(price_min).toFixed(0));
-                    $('#tab-' + product_id + ' .priceMax').text(parseFloat(price_max).toFixed(-1));
+                    $('#tab-' + product_id + ' .priceMax').text(parseFloat(price_max).toFixed(2));
                     
                     var price_value = $('#tab-' + product_id + ' .range').val();
                     priceChange(product_id,price_value);
