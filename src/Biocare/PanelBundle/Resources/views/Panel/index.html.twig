@@ -29,6 +29,7 @@
                         <ul class="nav nav-pills" role="tablist">
                             <li role="presentation" class="active"><a href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab"><h4>Varicoline</h4></a></li>
                             <li role="presentation"><a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="tab"><h4>Delipox Professional</h4></a></li>
+                            <li role="presentation"><a href="#tab-3" aria-controls="tab-3" role="tab" data-toggle="tab"><h4>Delipox Professional</h4></a></li>
                         </ul>
                     </div>
                     <div class="panel-body">
@@ -54,8 +55,7 @@
                                     <span class="text-success pull-right">Your provision: <span class="provisionValue">0</span> RUB </span> 
                                     <a href="#" class="pull-right btn btn-md btn-block btn-success">Add to cart</a>
                                 </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="tab-2">
+                            </div><div role="tabpanel" class="tab-pane fade" id="tab-2">
                                 <div class="col-lg-6 text-justify">
                                     <p class="well well-lg">
                                         <img class="pull-left img-thumbnail img-responsive" style="margin-right: 10px; height: 150px;" src="{{ asset('bundles/biocareproduct/img/1.png') }}" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor e magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -92,10 +92,54 @@
                                                 <input onchange="getPrice(2)" name="qty" class="qty form-control col-lg-6" type="number" value="0" min="0"/>
                                             </div>
                                             <br/>
+                                            <h2 class="text-right"><span class="priceValue">0</span> RUB<br/><small>+ shipping 300 RUB</small></h2> 
+                                            <span class="text-success pull-right">Your provision: <span class="provisionValue">0</span> RUB </span> 
+                                            <a href="#" class="pull-right btn btn-md btn-block btn-success">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab-3">
+                                <div class="col-lg-6 text-justify">
+                                    <p class="well well-lg">
+                                        <img class="pull-left img-thumbnail img-responsive" style="margin-right: 10px; height: 150px;" src="{{ asset('bundles/biocareproduct/img/1.png') }}" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor e magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 well well-lg">
+
+                                    <div class="row">
+                                        <div class="col-lg-4 text-center"> 
+                                            <strong>MAX:<br/> <span class="priceMax">0</span> RUB</strong>
+                                            <input oninput="getPrice(2)" onchange="getPrice(3)" class="range form-control col-lg-6" type="range" orient="vertical" step="1" value="0" min="0" max="0"/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <strong>MIN:<br/> <span class="priceMin">0</span> RUB</strong>
+                                        </div>
+                                        <div class="col-lg-8"> 
+                                            <strong>Enter Qty to order:</strong>
+                                            <br/>
+                                            <br/>
+
+                                            <div class="input-group">
+                                                <div class="input-group-addon">QTY:</div>
+                                                <input onchange="getPrice(3)" name="qty" class="qty form-control col-lg-6" type="number" value="0" min="0"/>
+                                            </div>
+                                            <br/>
                                             <br/>
                                             <div class="input-group">
                                                 <div class="input-group-addon">GRATIS:</div>
-                                                <input onchange="getPrice(2)" name="qty" class="gratis form-control col-lg-6" type="number" value="0" min="0" max="0"/>
+                                                <input onchange="getPrice(3)" name="qty" class="gratis form-control col-lg-6" type="number" value="0" min="0" max="0"/>
                                                 <div class="input-group-addon">MAX: <span class="gratisTip">0</span></div>
                                             </div>
                                             <br/>
