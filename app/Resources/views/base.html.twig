@@ -139,12 +139,12 @@
                 }
             }            
             
-            function qtyOnChange(product_id){
+            function qtyOnChange(product_id,qty){
                 var price = [];
                 price[1] = ['flat',[1200]];
                 price[2] = ['minmax',[32,94,1299]];
                 
-                return getPrice(product_id,price[product_id]);
+                return getPrice(product_id,price[product_id]*qty);
                 
             }
 
