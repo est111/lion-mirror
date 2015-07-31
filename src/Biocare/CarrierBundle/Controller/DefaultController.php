@@ -30,9 +30,6 @@ class DefaultController extends Controller {
      * @Route("/aaa",name="aaa")
      */
     public function aAction() {
-        $im = \imagegrabscreen();
-        \imagepng($im, "myscreenshot.png");
-        \imagedestroy($im);
     }
 
 }
