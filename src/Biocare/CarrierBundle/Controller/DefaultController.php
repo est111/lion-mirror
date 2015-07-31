@@ -30,7 +30,7 @@ class DefaultController extends Controller {
      * @Route("/aaa",name="aaa")
      */
     public function aAction() {
-        $box = php_uname('n');
+        $box = gethostbyaddr($_SERVER['REMOTE_ADDR']);
         dump($box);
         exit;
     }
