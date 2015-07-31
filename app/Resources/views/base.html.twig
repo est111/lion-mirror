@@ -131,7 +131,7 @@
 
         <script type="text/javascript">
 
-            function getPrice(this, price){
+            function getPrice(product_id, price){
              
                 if (price[0]=='flat'){
                     price_value = price[1][0];
@@ -139,12 +139,12 @@
                 $('#tab-'+product_id+' priceValue').text(price_value);
             }            
             
-            function qtyOnChange(this, product_id){
+            function qtyOnChange(product_id){
                 
                 price[1] = array('flat',array(1200));
                 price[2] = array('minmax',array(32,94,1299));
                 
-                return getPrice(this, price[product_id]);
+                return getPrice(product_id,price[product_id]);
                 
             }
 
