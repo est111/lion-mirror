@@ -154,8 +154,8 @@
                     priceChange(product_id,price_value);
                 }
                 if (price[0] == 'minmaxgratis') {
-                    price_max = price[1][2] * (qty+gratis);
-                    price_min = ((price[1][0] * (qty+gratis)) + (price[1][1] / (qty+gratis))) * 5;
+                    price_max = price[1][2] * (qty);
+                    price_min = (((price[1][0] * (qty)) + (price[1][1] / (qty))) * 5)+((price[1][0]) + (price[1][1] / (gratis)));
                     $('#tab-' + product_id + ' .range').attr({
                         max:    parseFloat(price_max),
                         value:  parseFloat(price_max),
