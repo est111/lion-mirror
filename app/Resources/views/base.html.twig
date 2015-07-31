@@ -136,7 +136,7 @@
                 if (price[0]=='flat'){
                     price_value = price[1][0];
                     $('#tab-'+product_id+' .priceValue').text(parseFloat(price_value*qty) +' RUB');
-                    $('#tab-'+product_id+' .provisionValue').text(price_value*qty*1% +' RUB');
+                    $('#tab-'+product_id+' .provisionValue').text(parseFloat(price_value*qty*1%) +' RUB');
                     
                     
                     console.log(qty);
