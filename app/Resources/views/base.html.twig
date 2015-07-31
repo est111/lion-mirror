@@ -134,7 +134,7 @@
                 var qty = $('#tab-' + product_id + ' .qty').val();
                 
                 if (price[0] == 'flat') {
-                    price_value = price[1][0];
+                    price_value = price[1][0] * qty;
                     priceChange(product_id,price_value);
                 }
                 if (price[0] == 'minmax') {
