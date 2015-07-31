@@ -134,8 +134,7 @@
 
                 if (price[0] == 'flat') {
                     price_value = price[1][0];
-                    $('#tab-' + product_id + ' .priceValue').text(parseFloat(price_value * qty));
-                    $('#tab-' + product_id + ' .provisionValue').text(parseFloat(price_value * qty * 0.005));
+                    priceChange(product_id,price_value);
                 }
                 if (price[0] == 'minmax') {
                     price_max = price[1][2] * qty;
@@ -149,12 +148,13 @@
                     $('#tab-' + product_id + ' .priceMin').text(parseFloat(price_min));
                     $('#tab-' + product_id + ' .priceMax').text(parseFloat(price_max));
                     
+                    var price_value = $('#tab-' + product_id + ' .range').val();
+                    priceChange(product_id,price_value);
                 }
 
             }
               
-            function rangeOnChange(product_id){
-                    var price_value = $('#tab-' + product_id + ' .range').val();
+            function priceChange(product_id,price_value){
                     $('#tab-' + product_id + ' .priceValue').text(parseFloat(price_value));
                     $('#tab-' + product_id + ' .provisionValue').text(parseFloat(price_value * 0.005));
             }
