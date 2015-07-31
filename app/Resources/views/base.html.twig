@@ -192,6 +192,29 @@
                     var price_value = $('#tab-' + product_id + ' .range').val();
                     priceChange(product_id,price_value);
                 }
+                if (price[0] == 'minmaxset') {
+                    price_max = price[1][2] * (qty);
+                    price_min = 0;                
+                    if(gratis>0){
+                        price_min = price_min + (((price[1][0])*(gratis) + (price[1][1] / (gratis))) * 5)
+                    }
+                    if(qty>0){
+                        price_min = price_min + (((price[1][0] * (qty)) + (price[1][1] / (qty))) * 5);    
+                    }   
+                    
+                    
+                    $('#tab-' + product_id + ' .range').attr({
+                        max:    parseFloat(price_max),
+                        value:  parseFloat(price_max),
+                        min:    parseFloat(price_min)
+                    });
+                    
+                    $('#tab-' + product_id + ' .priceMin').text(parseFloat(price_min).toFixed(0));
+                    $('#tab-' + product_id + ' .priceMax').text(parseFloat(price_max).toFixed(2));
+                    
+                    var price_value = $('#tab-' + product_id + ' .range').val();
+                    priceChange(product_id,price_value);
+                }
 
             }
               
