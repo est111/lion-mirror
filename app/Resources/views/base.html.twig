@@ -131,8 +131,11 @@
         <script type="text/javascript">
 
             function getPriceRaw(product_id, price) {
-                var qty = $('#tab-' + product_id + ' .qty').val();                
-                var gratis = $('#tab-' + product_id + ' .gratis').val();
+                var qty = $('#tab-' + product_id + ' .qty').val();  
+                var gratis = $('#tab-' + product_id + ' .gratis').attr({'max':qty});
+                var gratis = $('#tab-' + product_id + ' .gratis').val();               
+                
+                if (gratis)
                 
                 if (price[0] == 'flat') {
                     price_value = price[1][0] * qty;
