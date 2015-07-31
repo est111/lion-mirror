@@ -132,7 +132,9 @@
 
             function getPriceRaw(product_id, price) {
                 var qty = $('#tab-' + product_id + ' .qty').val();  
-                var gratis = $('#tab-' + product_id + ' .gratis').attr({'max':qty});
+                $('#tab-' + product_id + ' .gratis').attr({max:qty});
+                $('#tab-' + product_id + ' .gratisTip').text(qty);
+                
                 var gratis = $('#tab-' + product_id + ' .gratis').val();               
                 
                 if (gratis)
