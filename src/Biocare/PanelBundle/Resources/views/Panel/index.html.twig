@@ -25,14 +25,14 @@
             <div class='col-lg-9'>
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                       {# <strong>Products [{{ callregister.id}}]</strong>  #} 
+                        {# <strong>Products [{{ callregister.id}}]</strong>  #} 
                         <ul class="nav nav-pills" role="tablist">
                             <li role="presentation" class="active"><a href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab"><h4>Delipox Professional</h4></a></li>
                             <li role="presentation"><a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="tab"><h4>Varicoline</h4></a></li>
                         </ul>
                     </div>
                     <div class="panel-body">
-                    
+
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade in active" id="tab-1">
                                 <div class="col-lg-8 text-justify">
@@ -57,7 +57,11 @@
                                     <strong>Enter Qty to order:</strong>
                                     <br/>
                                     <br/>
-                                    <label for="qty" class="col-lg-3"> QTY: </label> <input name="qty" class="col-lg-6" type="number" value="0" min="0"/>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">QTY</div>
+                                        <input name="qty" class="col-lg-6" type="number" value="0" min="0"/>
+                                    </div>
+
                                     <br/>
                                     <br/>
                                     <h2 class="text-right" id="price-sum-2">1 600 RUB</h2> 
@@ -67,21 +71,21 @@
                         </div>
 
 
-                       {# <div class="row">
-                            <div class="col-lg-12">
-                                <form class="form-inline">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon">&#8381;</div>
-                                            <input type="text" class="form-control col-lg-3" id="exampleInputAmount" placeholder="Amount"/>
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-success" type="button">Update cart</button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>#}
+                        {# <div class="row">
+                             <div class="col-lg-12">
+                                 <form class="form-inline">
+                                     <div class="form-group">
+                                         <div class="input-group">
+                                             <div class="input-group-addon">&#8381;</div>
+                                             <input type="text" class="form-control col-lg-3" id="exampleInputAmount" placeholder="Amount"/>
+                                             <span class="input-group-btn">
+                                                 <button class="btn btn-success" type="button">Update cart</button>
+                                             </span>
+                                         </div>
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>#}
                     </div>
                 </div>   
                 {{ render(url('customer')) }}
