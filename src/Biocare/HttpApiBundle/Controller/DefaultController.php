@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/api/{test}", name="api_test")
+     * @Route("/apitest/", default={"test"=TRUE},name="api_test")
      * @Route("/api/", name="api")
      * @Template()
      */
@@ -18,6 +18,12 @@ class DefaultController extends Controller {
         $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');    
         $a->tarif();
         $response = $a->getResponseHTML();
+
+        $a->tarif();
+        $response = $a->getResponseHTML();
+        
+        
+        
         return array('name' => $response);
     }
 
