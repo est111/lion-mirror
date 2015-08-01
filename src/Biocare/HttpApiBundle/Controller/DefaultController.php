@@ -12,17 +12,26 @@ class DefaultController extends Controller {
      * @Route("/api/{country}/{company}/", name="api_tarif")
      * @Template()
      */
-    public function tarifAction($country, $company, $package) {
+    public function tarifAction($country, $company) {
 
         if ($country = 'ru') {
             if ($company = 'b2cpl') {
                 $api = new \Biocare\HttpApiBundle\Entity\RuB2CPL();
             }
-        }
+        }       
+        $api->tarif('194156','1000',array('1','1','1'),'post_add','1000');
+        $response = $api->getResponse();
         
-        $api->tarif($zip, $weight, $dimensions, $type, $price);
-        $response = $api->getResponseHTML();
-        return array('name'=>$response);
+        
+        $resp = json_decode($response);
+        $html = "<select class='col-lg-12 select2'>";
+        foreach ($resp->delivery_ways as $dw) {
+            $html .="<option value='" . $dw->Стоимость . "'>" . $dw->Наименование . " - " . $dw->Стоимость . " - " . $dw->Код . "</option>";
+        }
+        $html .="</select>";
+        
+        
+        return array('name'=>$html);
     }
 
     /**
