@@ -9,11 +9,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/api/{test}")
      * @Template()
      */
-    public function indexAction($name)
+    public function indexAction($test = NULL)
     {
+        $RuB2CPL = new \Biocare\HttpApiBundle\Entity\RuB2CPL($test);
+        
+        dump($RuB2CPL);
+        exit();
+        
         return array('name' => $name);
     }
 }
