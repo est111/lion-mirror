@@ -16,11 +16,11 @@ class DefaultController extends Controller {
 
         $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');    
         $a->tarif();
-        $response = $a->getResponseHTML();
+        $response = $a->getResponseTEST();
 
         $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL();   
         $b->tarif();
-        $response .= $b->getResponseHTML();
+        $response .= $b->getResponseTEST();
         
         
         
