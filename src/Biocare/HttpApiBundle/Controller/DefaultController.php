@@ -16,10 +16,10 @@ class DefaultController extends Controller {
     public function indexAction($test = NULL) {
 
         $a = new \Biocare\HttpApiBundle\Entity\HttpApi('http://is.b2cpl.ru/portal/client_api.ashx','test','test');
-        
+        dump($a->getUrl());
         //$a = new \Biocare\HttpApiBundle\Entity\Curl();
         $a->setUrl('http://is.b2cpl.ru/portal/client_api.ashx?client=test&key=test');
-        
+        dump($a->getUrl());
         $a->getQuery('&func=tarif&zip=125032&weight=1001&x=121&y=1&z=1&type=post_add&price=10000');
         $response = $a->getResponseHTML();
         return array('name' => $response);
