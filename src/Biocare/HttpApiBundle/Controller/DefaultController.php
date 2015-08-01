@@ -33,22 +33,22 @@ class DefaultController extends Controller {
         
         
         foreach ($args as $arg) {
-            $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
+            $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test'); 
             $b->tarif($arg[0],$arg[1],$arg[2],$arg[3],$arg[4]);
             $response .= $b->getResponseTEST($arg[0])."<br/>";
             unset($b);
             
-            $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
+            $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test'); 
             $a->tarif($arg[0],$arg[1],$arg[2],$arg[3],$arg[4]*10);
             $response .= $a->getResponseTEST($arg[0])."<br/>";
             unset($a);
             
-            $c = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
+            $c = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test'); 
             $c->tarif($arg[0],$arg[1],$arg[2],'post',$arg[4]);
             $response .= $c->getResponseTEST($arg[0])."<br/>";
             unset($c);
             
-            $d = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
+            $d = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test'); 
             $d->tarif($arg[0],$arg[1],$arg[2],'post',$arg[4]*10);
             $response .= $d->getResponseTEST($arg[0])."<br/>";
             unset($d);
