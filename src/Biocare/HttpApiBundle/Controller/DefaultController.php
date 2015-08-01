@@ -16,7 +16,6 @@ class DefaultController extends Controller {
     public function indexAction($test = NULL) {
 
         $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');
-        dump($a->getUrl());
         $a->getQuery('&func=tarif&zip=125032&weight=1001&x=121&y=1&z=1&type=post_add&price=10000');
         $response = $a->getResponseHTML();
         return array('name' => $response);
