@@ -14,7 +14,7 @@ class HttpApi extends Curl
     } 
     
     public function testApi(){
-       $this->get();
+       $this->getUrl();
    }
 
 
