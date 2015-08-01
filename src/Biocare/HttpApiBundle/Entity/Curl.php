@@ -45,11 +45,11 @@ class Curl {
         return $this;
     }
 
-    public function post() {
+    public function postQuery($query = NULL) {
         
     }
 
-    public function get($query = NULL) {
+    public function getQuery($query = NULL) {
         curl_setopt_array($this->getCurl(), array(
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => $this->getUrl() . $query,
