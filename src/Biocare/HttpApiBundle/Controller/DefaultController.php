@@ -42,6 +42,7 @@ class DefaultController extends Controller {
             $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
             $b->tarif($arg[0],$arg[1],$arg[2],$arg[3],$arg[4]);
             $response .= $b->getResponseTEST();
+            unset($b);
         }
         
           
