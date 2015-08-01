@@ -2,7 +2,7 @@
 {% block body -%}
     <div class="container">
         <div class="row">
-            {{ name|raw }}
+            {{ name|json_encode() }}
         </div>
     </div>
 {% endblock %}
