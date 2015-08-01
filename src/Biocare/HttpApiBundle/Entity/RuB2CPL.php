@@ -27,7 +27,7 @@ class RuB2CPL extends HttpApi {
     public function getResponseTEST($idTest = NULL) {
         $response_array = json_decode($this->getResponse(), true);
         $response_md5 = md5($this->getResponse());
-        $response = '# ['.$response_md5 ."] ". count($response_array['delivery_ways'])." "."<br/>";
+        $response = $idTest.'# ['.$response_md5 ."] ". count($response_array['delivery_ways'])." "."<br/>";
                 foreach ($response_array['delivery_ways'] as $dw ){
                     $response .= $dw["Стоимость"]." | ".$dw["Наименование"] ."<br/>";
                 }
