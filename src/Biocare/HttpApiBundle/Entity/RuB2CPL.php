@@ -25,7 +25,12 @@ class RuB2CPL extends HttpApi {
 
     
     public function getResponseTEST() {
-        return json_decode($this->getResponse(), true);
+        $response_array = json_decode($this->getResponse(), true);
+        
+        $response = '# '. $response_array['delivery_ways'];
+        
+        return $response;
+        
     }
 
 
