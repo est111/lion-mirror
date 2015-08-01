@@ -14,8 +14,8 @@ class DefaultController extends Controller {
      */
     public function tarifAction($country, $company) {
 
-        if ($country = 'ru') {
-            if ($company = 'b2cpl') {
+        if ($country == 'ru') {
+            if ($company == 'b2cpl') {
                 $api = new \Biocare\HttpApiBundle\Entity\RuB2CPL();
             }
         }       
