@@ -20,7 +20,7 @@ class DefaultController extends Controller {
         echo "<pre>";
         print_r($a->getResponse());
         echo "</pre>";
-        return array('name' => $response);
+        return array('name' => '$response');
     }
 
 }
