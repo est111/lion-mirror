@@ -35,12 +35,12 @@ class DefaultController extends Controller {
         foreach ($args as $arg) {
             $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
             $b->tarif($arg[0],$arg[1],$arg[2],$arg[3],$arg[4]);
-            $response .= $b->getResponseTEST()."<br/>";
+            $response .= $b->getResponseTEST($arg[0])."<br/>";
             unset($b);
             
             $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
             $a->tarif($arg[0],$arg[1],$arg[2],$arg[3],$arg[4]*10);
-            $response .= $a->getResponseTEST()."<br/>";
+            $response .= $a->getResponseTEST($arg[0])."<br/>";
             unset($a);
         }
         
