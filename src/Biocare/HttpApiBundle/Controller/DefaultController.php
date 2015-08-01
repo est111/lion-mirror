@@ -32,10 +32,10 @@ class DefaultController extends Controller {
         );
         
         
-        $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');    
-        $a->tarif();
-        $response .= $a->getResponseTEST();
-        
+//        $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');    
+//        $a->tarif();
+//        $response .= $a->getResponseTEST();
+//        
         
         
         foreach ($args as $arg) {
