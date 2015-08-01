@@ -18,9 +18,7 @@ class RuB2CPL extends HttpApi {
         }
         parent::__construct($url, $username, $password);
     }
-    public function testApi() {
-        parent::testApi();
-    }
+
 
     public function Tarif() {
         
