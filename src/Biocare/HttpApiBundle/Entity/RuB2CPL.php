@@ -34,8 +34,8 @@ class RuB2CPL extends HttpApi {
     }
 
 
-    public function tarif() {
-        $this->getQuery('&func=tarif&zip=125032&weight=1001&x=121&y=1&z=1&type=post_add&price=10000');
+    public function tarif($zip,$weight,$dimensions,$type,$price) {
+        $this->getQuery('&func=tarif&zip='.$zip.'&weight='.$weight.'&x='.$dimensions[0].'&y='.$dimensions[0].'&z='.$dimensions[0].'&type='.$type.'&price='.$price.'');
     }
 
 }
