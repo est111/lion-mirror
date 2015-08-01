@@ -14,13 +14,38 @@ class DefaultController extends Controller {
      */
     public function indexAction() {
 
+        $response = "";
+        
+        $args = array(
+            array('191520','1000',array('1','1','1'),'post_add','1000'),
+            array('191520','1000',array('1','1','1'),'post_add','2000'),
+            array('191520','1000',array('1','1','1'),'post_add','3000'),
+            array('191520','1000',array('1','1','1'),'post_add','4000'),
+            array('191520','1000',array('1','1','1'),'post_add','5000'),
+            array('191520','1000',array('1','1','1'),'post_add','6000'),
+            array('191520','1000',array('1','1','1'),'post_add','7000'),
+            array('191520','1000',array('1','1','1'),'post_add','8000'),
+            array('191520','1000',array('1','1','1'),'post_add','9000'),
+            array('191520','1000',array('1','1','1'),'post_add','10000'),
+            array('191520','1000',array('1','1','1'),'post_add','11000'),
+            array('191520','1000',array('1','1','1'),'post_add','12000'),
+        );
+        
+        
         $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');    
         $a->tarif();
-        $response = $a->getResponseTEST();
-
-        $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL();   
-        $b->tarif();
-        $response .= $b->getResponseTEST();
+        $response .= $a->getResponseTEST();
+        
+        
+        
+        foreach ($args as $arg) {
+            $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
+            $b->tarif($arg[0],$arg[1],$arg[2],$arg[3],$arg[4]);
+            $response .= $b->getResponseTEST();
+        }
+        
+          
+        
         
         
         
