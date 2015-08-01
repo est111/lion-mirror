@@ -65,7 +65,7 @@ class Curl {
         
         $return = "<strong> Odpowiedź: </strong><br/>";
         $return .= "<pre>";
-        $return .= $this->getResponse();
+        $return .= print_r($this->getResponse());
         $return .= "</pre>";
 
         return $return;
