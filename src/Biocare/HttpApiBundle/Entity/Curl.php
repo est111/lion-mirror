@@ -59,12 +59,17 @@ class Curl {
         return $this;
     }
 
-    public function __toString() {
+    
+    public function getResponseHTML(){
         $return = "<pre>";
         $return .= $this->getResponse();
         $return .= "</pre>";
 
         return $return;
+    }
+    
+    public function __toString() {
+        return $this->getResponseHTML();
     }
 
 }
