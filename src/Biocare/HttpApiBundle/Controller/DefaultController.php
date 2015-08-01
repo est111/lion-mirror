@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/apitest/", default={"test"=TRUE},name="api_test")
+     * @Route("/apitest/", defaults={"test"=TRUE},name="api_test")
      * @Route("/api/", name="api")
      * @Template()
      */
