@@ -15,12 +15,16 @@ class DefaultController extends Controller
      */
     public function indexAction($test = NULL)
     {
-        $RuB2CPL = new \Biocare\HttpApiBundle\Entity\RuB2CPL($test);
+        /*$RuB2CPL = new \Biocare\HttpApiBundle\Entity\RuB2CPL($test);
         $response = $RuB2CPL->testApi();
         //$response = $RuB2CPL->getResponseHTML();
         
         dump($RuB2CPL, $response);
+        */
         
+        $a = new \Biocare\HttpApiBundle\Entity\Curl();
+        $a->get();
+        $response = $a->getResponseHTML();
         return array('name' => $response);
     }
 }
