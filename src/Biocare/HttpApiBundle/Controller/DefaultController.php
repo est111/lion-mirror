@@ -17,9 +17,12 @@ class DefaultController extends Controller {
         $response = "";
         
         $args = array(
-            array('191000','1000',array('1','1','1'),'post_add','1000'),
-            array('201000','1000',array('1','1','1'),'post_add','2000'),
-            array('211000','1000',array('1','1','1'),'post_add','3000'),
+            array('685000','1000',array('1','1','1'),'post_add','1000'),
+            array('664047','1000',array('1','1','1'),'post_add','1000'),
+            array('630078','1000',array('1','1','1'),'post_add','1000'),
+            array('121500','1000',array('1','1','1'),'post_add','1000'),
+            array('194156','1000',array('1','1','1'),'post_add','1000'),
+            array('678400','1000',array('1','1','1'),'post_add','1000'),
         );
         
         
