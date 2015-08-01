@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             
-            {{ name|raw }}
+            {{ name|json_encode(constant('JSON_PRETTY_PRINT')) }}
             
         </div>
     </div>
