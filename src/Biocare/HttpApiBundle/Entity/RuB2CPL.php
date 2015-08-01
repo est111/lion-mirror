@@ -19,8 +19,12 @@ class RuB2CPL extends HttpApi {
         parent::__construct($url, $username, $password);
     }
 
+    public function getResponse() {
+        $response = mb_convert_encoding($this->getResponse(), "utf-8", "windows-1251");
+        return $response;
+    }
 
-    public function Tarif() {
+        public function Tarif() {
         
     }
 
