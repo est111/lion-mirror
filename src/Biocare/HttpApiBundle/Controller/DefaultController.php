@@ -46,7 +46,7 @@ class DefaultController extends Controller {
 
 
 
-        /*
+        
           $response = "";
 
           $args = array(
@@ -99,7 +99,7 @@ class DefaultController extends Controller {
 
 
 
-         */
+         
 
 
         return array('name' => $response);
