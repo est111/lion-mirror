@@ -15,12 +15,8 @@ class DefaultController extends Controller {
      */
     public function indexAction($test = NULL) {
 
-        $a = new \Biocare\HttpApiBundle\Entity\Curl();
-        $a->setUrl('http://is.b2cpl.ru/portal/client_api.ashx?client=OOOMIKSPRAYS&key=9A7A4EAC&func=tarif&zip=125032&weight=1001&x=121&y=1&z=1&type=post_add&price=10000');
-        dump($a);
-        $a->get();        
-        dump($a);
-        
+        $a = new \Biocare\HttpApiBundle\Entity\HttpApi('http://is.b2cpl.ru/portal/client_api.ashx','test','test');
+        $a->getQuery('&func=tarif&zip=125032&weight=1001&x=121&y=1&z=1&type=post_add&price=10000');
         $response = $a->getResponseHTML();
         return array('name' => $response);
     }
