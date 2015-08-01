@@ -17,12 +17,6 @@ class HttpApi extends Curl
        $this->get();
    }
 
-    public function __toString() {
-       $return = "<pre>";
-       $return .= $this->getResponse();
-       $return .= "</pre>";
-       
-       return $return;       
-   }
+
    
 }

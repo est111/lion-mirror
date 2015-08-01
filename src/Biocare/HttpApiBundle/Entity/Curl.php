@@ -51,13 +51,20 @@ class Curl {
     public function get($query = NULL) {
         curl_setopt_array($this->getCurl(), array(
             CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_URL => $this->getUrl().$query,
+            CURLOPT_URL => $this->getUrl() . $query,
             CURLOPT_USERAGENT => 'Karol Gontarski cURL Agent',
         ));
-        
+
         $this->setResponse(curl_exec($this->getCurl()));
         return $this;
     }
 
+    public function __toString() {
+        $return = "<pre>";
+        $return .= $this->getResponse();
+        $return .= "</pre>";
+
+        return $return;
+    }
 
 }
