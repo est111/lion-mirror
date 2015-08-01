@@ -41,9 +41,7 @@ class Curl {
     }
 
     public function __construct() {
-        $curl = curl_init();
-        dump($curl);
-        $this->setCurl($curl);
+        $this->setCurl(curl_init());
     }
 
     public function post() {
@@ -56,9 +54,8 @@ class Curl {
             CURLOPT_URL => $this->getUrl() . $query,
             CURLOPT_USERAGENT => 'Karol Gontarski cURL Agent',
         ));
-        $response =  curl_exec($this->getCurl());
-        dump($this->curl);
-        $this->setResponse($response);
+
+        $this->setResponse(curl_exec($this->getCurl()));
         return $this;
     }
 
