@@ -29,7 +29,7 @@ class RuB2CPL extends HttpApi {
         $response_md5 = md5($this->getResponse());
         $response = '# ['.$response_md5 ."] ". count($response_array['delivery_ways'])." "."<br/>";
                 foreach ($response_array['delivery_ways'] as $dw ){
-                    $response .= $dw["Наименование"] ." | " .$dw["Стоимость"] . "<br/>";
+                    $response .= $dw["Стоимость"]." | ".$dw["Наименование"] ."<br/>";
                 }
         
         return $response;
