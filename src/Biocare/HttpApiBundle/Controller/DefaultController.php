@@ -20,15 +20,6 @@ class DefaultController extends Controller {
             array('191000','1000',array('1','1','1'),'post_add','1000'),
             array('201000','1000',array('1','1','1'),'post_add','2000'),
             array('211000','1000',array('1','1','1'),'post_add','3000'),
-            array('321000','1000',array('1','1','1'),'post_add','4000'),
-            array('421000','1000',array('1','1','1'),'post_add','5000'),
-            array('431000','1000',array('1','1','1'),'post_add','6000'),
-            array('441000','1000',array('1','1','1'),'post_add','7000'),
-            array('411000','1000',array('1','1','1'),'post_add','8000'),
-            array('491000','1000',array('1','1','1'),'post_add','9000'),
-            array('511000','1000',array('1','1','1'),'post_add','10000'),
-            array('601000','1000',array('1','1','1'),'post_add','11000'),
-            array('601000','1000',array('1','1','1'),'post_add','12000'),
         );
         
         
