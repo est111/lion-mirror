@@ -18,7 +18,7 @@ class DefaultController extends Controller {
         $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');
         $a->getQuery('&func=tarif&zip=125032&weight=1001&x=121&y=1&z=1&type=post_add&price=10000');
         $response = $a->getResponse();
-        return array('name' => $response);
+        return array('name' => json_decode($response));
     }
 
 }
