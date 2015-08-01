@@ -9,7 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/api/{test}")
+     * @Route("/api/{test}", name="api_test")
+     * @Route("/api/", name="api")
      * @Template()
      */
     public function indexAction($test = NULL)
