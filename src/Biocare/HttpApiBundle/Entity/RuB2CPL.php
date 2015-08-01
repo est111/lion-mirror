@@ -20,10 +20,7 @@ class RuB2CPL extends HttpApi {
     }
 
     public function getResponse() {
-        $response = '';
-        foreach(mb_list_encodings() as $chr){ //"windows-1251"
-        $response .= mb_convert_encoding(parent::getResponse(), "UTF-8", $chr). " : ".$chr."<br/>";
-        }
+        $response = mb_convert_encoding(parent::getResponse(), "UTF-8", "Windows-1251");        
         return $response;
     }
 
