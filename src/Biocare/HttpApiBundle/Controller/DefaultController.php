@@ -6,27 +6,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
-{
+class DefaultController extends Controller {
+
     /**
      * @Route("/api/{test}", name="api_test")
      * @Route("/api/", name="api")
      * @Template()
      */
-    public function indexAction($test = NULL)
-    {
-        /*$RuB2CPL = new \Biocare\HttpApiBundle\Entity\RuB2CPL($test);
-        $response = $RuB2CPL->testApi();
-        //$response = $RuB2CPL->getResponseHTML();
-        
-        dump($RuB2CPL, $response);
-        */
-        
+    public function indexAction($test = NULL) {
+
         $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');
-        dump($a);
-        //$a->setUrl('http://is.b2cpl.ru/portal/client_api.ashx?client=test&key=test');
+        
         $a->get();
+        dump($a);
         $response = $a->getResponseHTML();
         return array('name' => $response);
     }
+
 }
