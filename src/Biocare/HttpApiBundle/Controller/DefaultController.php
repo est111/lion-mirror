@@ -19,7 +19,7 @@ class DefaultController extends Controller {
                 $api = new \Biocare\HttpApiBundle\Entity\RuB2CPL();
             }
         }       
-        $api->tarif('194156','500',array('1','1','1'),'+post','1000');
+        $api->tarif('194156','500',array('1','1','1'),'post','1000');
         $response = $api->getResponse();
         
         
