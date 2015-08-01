@@ -7,7 +7,10 @@ use Biocare\HttpApiBundle\Entity\Curl;
 
 class HttpApi extends Curl
 {
-   
+    public function setUrl($url) {
+        return parent::setUrl($url);
+    }
+
     public function __construct($url,$username,$password) {     
         parent::__construct();
         $this->setUrl = $url."?client=".$username."&key=".$password;  
