@@ -55,7 +55,7 @@ class HttpApi extends Curl
     } 
     
     public function testApi(){
-        parent::getUrl();
+        parent::get();
     }
 
    
