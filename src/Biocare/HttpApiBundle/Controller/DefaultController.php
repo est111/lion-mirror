@@ -19,6 +19,8 @@ class DefaultController extends Controller
         $RuB2CPL->testApi();
         $response = $RuB2CPL->getResponseHTML();
         
+        dump($RuB2CPL, $response);
+        
         return array('name' => $response);
     }
 }
