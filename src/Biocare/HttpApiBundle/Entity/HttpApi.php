@@ -7,29 +7,16 @@ use Doctrine\ORM\Mapping as ORM;
 class HttpApi
 {
    
-    public function __construct($url,$username,$password) {
-        $this->setUrl = $url."?client=".$key."&key=".$password;        
+    public function __construct($url,$username,$password) {     
+        $this->setUrl = $url."?client=".$username."&key=".$password;        
     } 
     
    private $url;
-   private $username;
-   private $password;
+   
    private $response; 
    
    public function getUrl() {
        return $this->url;
-   }
-
-   public function getUsername() {
-       return $this->username;
-   }
-
-   public function getPassword() {
-       return $this->password;
-   }
-
-   public function getResponse() {
-       return $this->response;
    }
 
    public function setUrl($url) {
@@ -37,14 +24,8 @@ class HttpApi
        return $this;
    }
 
-   public function setUsername($username) {
-       $this->username = $username;
-       return $this;
-   }
-
-   public function setPassword($password) {
-       $this->password = $password;
-       return $this;
+   public function getResponse() {
+       return $this->response;
    }
 
    public function setResponse($response) {
