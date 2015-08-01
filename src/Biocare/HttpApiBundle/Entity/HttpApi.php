@@ -6,6 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 
 class HttpApi
 {
+   
+    public function __construct($url,$username,$password) {
+        $this->setUrl = $url."?client=".$key."&key=".$password;        
+    } 
+    
    private $url;
    private $username;
    private $password;
