@@ -4,14 +4,23 @@ namespace Biocare\HttpApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+class RuB2CPL extends HttpApi {
 
-class RuB2CPL extends HttpApi
-{
+    public function __construct($test = NULL) {
+        $url = "http://is.b2cpl.ru/portal/client_api.ashx";
 
-    public function Tarif(){
+        if ($test) {
+            $username = "test";
+            $password = "test";
+        } else {
+            $username = "OOOMIKSPRAYS";
+            $password = "9A7A4EAC";            
+        }
+        parent::__construct($url, $username, $password);
+    }
+
+    public function Tarif() {
         
     }
-    
-    
-    
+
 }
