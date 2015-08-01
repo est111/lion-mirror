@@ -57,7 +57,7 @@ class Curl {
             CURLOPT_USERAGENT => 'Karol Gontarski cURL Agent',
         ));
         $response =  curl_exec($this->getCurl());
-        dump($response);
+        dump($this->curl);
         $this->setResponse($response);
         return $this;
     }
