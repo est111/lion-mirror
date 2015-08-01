@@ -9,18 +9,18 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/apitest/", defaults={"test"=TRUE},name="api_test")
      * @Route("/api/", name="api")
      * @Template()
      */
-    public function indexAction($test = NULL) {
+    public function indexAction() {
 
         $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');    
         $a->tarif();
         $response = $a->getResponseHTML();
 
-        $a->tarif();
-        $response = $a->getResponseHTML();
+        $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL();   
+        $b->tarif();
+        $response .= $b->getResponseHTML();
         
         
         
