@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/api/{country}/{company}/", name="api")
+     * @Route("/api/{country}/{company}/", name="api_tarif")
      * @Template()
      */
     public function tarifAction($country, $company, $package) {
