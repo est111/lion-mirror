@@ -22,7 +22,7 @@ class DefaultController extends Controller
         dump($RuB2CPL, $response);
         */
         
-        $a = new \Biocare\HttpApiBundle\Entity\HttpApi('http://is.b2cpl.ru/portal/client_api.ashx','test','test');
+        $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL();
         dump($a);
         //$a->setUrl('http://is.b2cpl.ru/portal/client_api.ashx?client=test&key=test');
         $a->get();
