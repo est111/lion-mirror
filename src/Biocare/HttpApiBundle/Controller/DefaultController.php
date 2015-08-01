@@ -23,7 +23,7 @@ class DefaultController extends Controller
         */
         
         $a = new \Biocare\HttpApiBundle\Entity\HttpApi('http://is.b2cpl.ru/portal/client_api.ashx','test','test');
-        $a->setUrl('http://is.b2cpl.ru/portal/client_api.ashx?client=test&key=test');
+        //$a->setUrl('http://is.b2cpl.ru/portal/client_api.ashx?client=test&key=test');
         $a->get();
         $response = $a->getResponseHTML();
         return array('name' => $response);
