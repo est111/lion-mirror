@@ -1,1 +1,4 @@
-{{ name|raw }}
+{% extends '::base.html.twig' %}
+{% block body -%}
+    {{ name|raw }}
+{% endblock %}
