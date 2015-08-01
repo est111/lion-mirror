@@ -15,7 +15,8 @@ class DefaultController extends Controller {
      */
     public function indexAction($test = NULL) {
 
-        $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');        
+        $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');    
+        $a->tarif();
         $response = $a->getResponse();
         return array('name' => $response);
     }
