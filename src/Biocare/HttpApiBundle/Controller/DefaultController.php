@@ -42,6 +42,17 @@ class DefaultController extends Controller {
             $a->tarif($arg[0],$arg[1],$arg[2],$arg[3],$arg[4]*10);
             $response .= $a->getResponseTEST($arg[0])."<br/>";
             unset($a);
+            
+            $b = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
+            $b->tarif($arg[0],$arg[1],$arg[2],'post',$arg[4]);
+            $response .= $b->getResponseTEST($arg[0])."<br/>";
+            unset($b);
+            
+            $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL(); 
+            $a->tarif($arg[0],$arg[1],$arg[2],'post',$arg[4]*10);
+            $response .= $a->getResponseTEST($arg[0])."<br/>";
+            unset($a);
+            
         }
         
           
