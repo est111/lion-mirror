@@ -17,7 +17,7 @@ class DefaultController extends Controller {
 
         $a = new \Biocare\HttpApiBundle\Entity\RuB2CPL('test');    
         $a->tarif();
-        $response = $a->getResponse();
+        $response = $a->getResponseHTML();
         return array('name' => $response);
     }
 
