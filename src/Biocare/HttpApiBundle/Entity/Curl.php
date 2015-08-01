@@ -41,7 +41,9 @@ class Curl {
     }
 
     public function __construct() {
-        $this->setCurl(curl_init());
+        $curl = curl_init();
+        dump($curl);
+        $this->setCurl($curl);
     }
 
     public function post() {
