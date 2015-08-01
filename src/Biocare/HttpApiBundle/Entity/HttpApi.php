@@ -9,9 +9,9 @@ class HttpApi extends Curl
 {
 
     public function __construct($url,$username,$password) {    
-        $this->setUrl = $url.
+        $this->setUrl($url.
                 "client=".$username."&".
-                "key=".$password."&";  
+                "key=".$password."&");  
         parent::__construct();
     } 
 }
