@@ -12,6 +12,7 @@
                     <div class="panel-body">
 
                         <div class="tab-content">
+                            {% for item in count %}  
                             <div role="tabpanel" class="tab-pane fade" id="tab-{{ item.product.id }}">
                                 <div class="col-lg-8 text-justify">
                                     <p class="well well-lg"> 
@@ -35,6 +36,7 @@
                                     <a href="#" class="pull-right btn btn-md btn-block btn-success">Add to cart</a>
                                 </div>
                             </div>
+                            {% endfor %}            
                             <div role="tabpanel" class="tab-pane fade" id="tab-2">
                                 <div class="col-lg-6 text-justify">
                                     <p class="well well-lg">
