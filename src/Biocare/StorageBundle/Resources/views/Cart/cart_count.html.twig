@@ -1,5 +1,5 @@
 {% block body -%}
     {% for item in count %}
-        {{ item.product.name }} - {{ item.qty }} - {{ item.weight }} {% trans %} Szt. {% endtrans %}<br/>
+        {{ item.product.name }} - {{ item.qty }} {% trans %} Szt. {% endtrans %} - {{ item.weight }} {% trans %} Gram {% endtrans %}<br/>
     {% endfor %}    
 {% endblock %}
