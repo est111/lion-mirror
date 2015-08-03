@@ -68,7 +68,7 @@ class Orders {
 
     /**
      *
-     * @ORM\OneToOne(targetEntity="\Biocare\CustomerBundle\Entity\Customer")
+     * @ORM\OneToMany(targetEntity="\Biocare\CustomerBundle\Entity\Customer")
      */
     private $customer;
 
@@ -83,7 +83,7 @@ class Orders {
 
     /**
      *
-     * @ORM\OneToOne(targetEntity="\Biocare\AddressBundle\Entity\Address")
+     * @ORM\OneToMany(targetEntity="\Biocare\AddressBundle\Entity\Address")
      */
     private $address;
 
