@@ -22,7 +22,7 @@ class StorageController extends Controller
      *
      * @Route("/{id}/expo", name="storage_expo")
      * @Method("GET")
-     * @Template("BiocareStorageBundle:Storage:storage_count.html.twig")
+     * @Template("BiocareStorageBundle:Storage:storage_expo.html.twig")
      */
     public function expoAction($id)
     {
