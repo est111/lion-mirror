@@ -16,7 +16,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('admin_price_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.startAt }}</td>
+                <td>{{ entity.startAt|date('Y-m-d H:i') }}</td>
                 <td>{{ entity.currency }}</td>
                 <td>
                 <ul>
