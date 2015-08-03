@@ -9,10 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Biocare\ProductBundle\Entity\ItemRepository")
- * @ORM\InheritanceType("JOINED")
- * @ORM\DiscriminatorColumn(name="discr", type="string")
- * 
  */
+
+//* @ORM\InheritanceType("JOINED")
+//* @ORM\DiscriminatorColumn(name="discr", type="string")
+
 class Item
 {
     /**
@@ -95,4 +96,48 @@ class Item
     public function __toString() {
         return $this->getProduct()." ".$this->getId();
     }
+    
+    /**
+     * @ORM\Column(name="value", type="decimal", precision=15, scale=2, nullable=true)
+     */
+    private $value;
+    
+    public function getValue() {
+        return $this->value;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+        return $this;
+    }
+  
+    /**
+     * @ORM\ManyToOne(targetEntity="\Biocare\PriceBundle\Entity\Currency", nullable=true)
+     */
+    private $currency;
+    
+    /**
+     * Set currency
+     *
+     * @param \Biocare\PriceBundle\Entity\Currency $currency
+     * @return Price
+     */
+    public function setCurrency(\Biocare\PriceBundle\Entity\Currency $currency = null) {
+        $this->currency = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Get currency
+     *
+     * @return \Biocare\CampaignBundle\Entity\Currency 
+     */
+    public function getCurrency() {
+        return $this->currency;
+    }
+    
+    
+    
+    
 }
