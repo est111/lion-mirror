@@ -20,6 +20,25 @@ class StorageController extends Controller
     /**
      * Lists all Storage entities.
      *
+     * @Route("/{id}/expo", name="storage_count")
+     * @Method("GET")
+     * @Template("BiocareStorageBundle:Storage:storage_count.html.twig")
+     */
+    public function expoAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT p as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i JOIN BiocareProductBundle:Product p WHERE i.storage = :storage GROUP BY p.id');
+        $query->setParameter('storage', $id);
+        $count = $query->getResult();
+        return array(
+            'count' => $count,
+        );
+    }
+    
+    
+    /**
+     * Lists all Storage entities.
+     *
      * @Route("/{id}/count", name="storage_count")
      * @Method("GET")
      * @Template("BiocareStorageBundle:Storage:storage_count.html.twig")
