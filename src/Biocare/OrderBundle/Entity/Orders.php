@@ -68,7 +68,9 @@ class Orders {
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="\Biocare\CustomerBundle\Entity\Customer")
+     * @ORM\ManyToOne(targetEntity="\Biocare\CustomerBundle\Entity\Customer")
+     * @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
+     * 
      */
     private $customer;
 
@@ -83,7 +85,8 @@ class Orders {
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="\Biocare\AddressBundle\Entity\Address")
+     * @ORM\ManyToOne(targetEntity="\Biocare\AddressBundle\Entity\Address")     
+     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
      */
     private $address;
 
@@ -101,7 +104,7 @@ class Orders {
      * @ORM\OneToOne(targetEntity="\Biocare\StorageBundle\Entity\Cart")
      */
     private $cart;
-    
+
     public function getCart() {
         return $this->cart;
     }
@@ -111,7 +114,4 @@ class Orders {
         return $this;
     }
 
-
-    
-    
 }
