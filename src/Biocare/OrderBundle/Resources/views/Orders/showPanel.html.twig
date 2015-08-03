@@ -7,7 +7,7 @@
             <strong>Customer:</strong> <br/><br/>
             {{ entity.customer|default('Brak') }} <br/> <br/> 
             <strong>Address:</strong> <br/><br/>
-            {% if entity.address is defined %}
+            {% if entity.address %}
                 {{ entity.address.postcode }}, {{ entity.address.city }}<br/>
                 {{ entity.address.country|country(app.request.locale) }}<br/>
                 {% if entity.address.country == 'RU' %}
