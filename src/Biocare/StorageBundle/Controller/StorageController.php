@@ -20,7 +20,7 @@ class StorageController extends Controller
     /**
      * Lists all Storage entities.
      *
-     * @Route("/{id}/expo", name="storage_count")
+     * @Route("/{id}/expo", name="storage_expo")
      * @Method("GET")
      * @Template("BiocareStorageBundle:Storage:storage_count.html.twig")
      */
