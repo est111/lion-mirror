@@ -27,7 +27,7 @@ class CartController extends Controller
     public function countAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery('SELECT p as product, COUNT(i.id),(COUNT(i.id)*p.weight) as weight  as qty FROM BiocareProductBundle:CartItem i JOIN BiocareProductBundle:Product p WHERE i.cart = :cart GROUP BY p.id');
+        $query = $em->createQuery('SELECT p as product, COUNT(i.id) as qty ,(COUNT(i.id)*p.weight) as weight FROM BiocareProductBundle:CartItem i JOIN BiocareProductBundle:Product p WHERE i.cart = :cart GROUP BY p.id');
         $query->setParameter('cart', $id);
         $count = $query->getResult();
         return array(
