@@ -12,8 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity()
  */ 
-class CartItem extends Item 
-{   
+class CartItem extends Item{   
     
     public function __construct() {
         parent::__construct();
