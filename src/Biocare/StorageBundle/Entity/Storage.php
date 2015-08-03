@@ -56,6 +56,7 @@ class Storage {
      */
     public function __construct() {
         $this->item = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct();
     }
 
     /**

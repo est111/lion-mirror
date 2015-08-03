@@ -24,28 +24,6 @@ class Cart extends Storage{
     }
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId() {
-        return $this->id;
-    }
-
-    
-
-
-
-    /**
      * @var \DateTime DataTime when Connextion were created Datatime with UTC  
      * 
      * @ORM\Column(name="createdAt", type="datetimetz")
