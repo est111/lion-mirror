@@ -34,6 +34,7 @@ class StorageController extends Controller
             $query_1 = $em->createQuery('SELECT p as product FROM BiocareProductBundle:Product p WHERE p.id = :product');
             $query_1->setParameter('product', $product["product"]);
             $count[$key]["product"] = $query_1->getSingleScalarResult();
+            dump($count);
         }            
         dump($count);
         return array(
