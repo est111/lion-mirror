@@ -29,9 +29,9 @@ class Price
     private $startAt;
 
     /**
-     * @var \stdClass
+     * @var 
      *
-     * @ORM\Column(name="currency", type="object")
+     * @ORM\ManyToOne(targetEntity="Currency")
      */
     private $currency;
 
