@@ -40,4 +40,17 @@ class Cart extends Storage{
         return $this;
     }
     
+    public function addItem(\Biocare\ProductBundle\Entity\CartItem $item) {
+        return parent::addItem($item);
+    }
+
+    public function getItem() {
+        return parent::getItem();
+    }
+
+    public function removeItem(\Biocare\ProductBundle\Entity\CartItem $item) {
+        parent::removeItem($item);
+    }
+
+    
 }
