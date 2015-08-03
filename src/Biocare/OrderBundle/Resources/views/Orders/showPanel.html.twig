@@ -11,7 +11,7 @@
                 {{ entity.address.postcode }}, {{ entity.address.city }}<br/>
                 {{ entity.address.country|country(app.request.locale) }}<br/>
                 {% if entity.address.country == 'RU' %}
-                    {{ render(path('httpapi_zip',{'zip':entity.address.postcode})) }}
+{#                    {{ render(path('httpapi_zip',{'zip':entity.address.postcode})) }}#}
                 {% endif %}
             {% else %}
                 Brak
