@@ -17,6 +17,7 @@ class ItemType extends AbstractType
         $builder
             ->add('product')
             ->add('storage')
+                
         ;
     }
 
