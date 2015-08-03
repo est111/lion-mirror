@@ -12,10 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity()
  */
-class CartItem extends Item{
-    
-    
-    
+class CartItem extends Item 
+{   
     /**
      * @ORM/Column(type="value", type="integer")
      */
