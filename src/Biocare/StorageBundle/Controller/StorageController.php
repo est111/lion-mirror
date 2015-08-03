@@ -33,7 +33,7 @@ class StorageController extends Controller
         foreach ($count as $key => $product) {
             $query_1 = $em->createQuery('SELECT p as product FROM BiocareProductBundle:Product p WHERE p.id = :product');
             $query_1->setParameter('product', $product["product"]);
-            $count[$key] = $query_1->getResult()[0];
+            $count[$key]["product"] = $query_1->getResult()[0]["product"];
             dump($query_1->getResult()[0]);
         }            
         dump($count);
