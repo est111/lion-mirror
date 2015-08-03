@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Biocare\CallBundle\Entity\CallRegister;
 use Biocare\OrderBundle\Entity\Orders;
+use Biocare\StorageBundle\Entity\Cart;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {
