@@ -12,10 +12,12 @@
                     <div class="panel-body">
 
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active" id="tab-1">
+                            <div role="tabpanel" class="tab-pane fade" id="tab-{{ item.product.id }}">
                                 <div class="col-lg-8 text-justify">
                                     <p class="well well-lg"> 
-                                        <img class="pull-left img-thumbnail img-responsive" style="margin-right: 10px; height: 150px;" src="{{ asset('bundles/biocareproduct/img/2.png') }}" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor e magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br/><br/><br/>
+                                        <img class="pull-left img-thumbnail img-responsive" style="margin-right: 10px; height: 150px;" src="{{ asset('bundles/biocareproduct/img/'~item.product.id~'.png') }}" /> 
+                                        {{ item.product.description }}
+                                        <br/><br/><br/>
                                         <strong class="pull-right">Price: 1200 RUB</strong>
                                     </p>
                                 </div>
