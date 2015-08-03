@@ -14,6 +14,10 @@ use Doctrine\ORM\Mapping as ORM;
  */ 
 class CartItem extends Item 
 {   
+    
+    public function __construct() {
+        parent::__construct();
+    }
     /**
      * @ORM\Column(name="weight", type="integer")
      */
