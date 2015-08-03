@@ -18,8 +18,11 @@
             {% endif %}
             <hr/>
             
-            <strong>Cart:</strong> <br/><br/>
-            {{ entity.cart }}
+            <strong>Cart:</strong> <br/><br/>   
+            {{ entity.cart.id }}
+            {% for item in entity.cart.item %}
+                {{ item.id }}
+            {% endfor %}    
             <strong>Cart:</strong> <br/><br/>
             <table class="table table-bordered table-striped bg-success">
                 <thead>
