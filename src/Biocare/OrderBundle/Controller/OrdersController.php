@@ -296,6 +296,8 @@ class OrdersController extends Controller {
                 )
         );
         $entity->setCustomer($customer);
+        $em->persist($entity);
+        $em->flush();
         $entity->setAddress($address);
         $em->persist($entity);
         $em->flush();
