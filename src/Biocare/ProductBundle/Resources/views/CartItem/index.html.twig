@@ -16,6 +16,7 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>
+                                    <th>Storage</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -24,6 +25,7 @@
                                     <tr>
                                         <td><a href="{{ path('admin_product_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                         <td>{{ entity.product.name }}</td>
+                                        <td>{{ entity.storage }}</td>
                                         <td>
                                             <a class="btn btn-xs btn-primary" href="{{ path('admin_product_show', { 'id': entity.id }) }}">show</a>
                                             <a class="btn btn-xs btn-primary" href="{{ path('admin_product_edit', { 'id': entity.id }) }}">edit</a>
