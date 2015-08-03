@@ -5,7 +5,7 @@
                         {# <strong>Products [{{ callregister.id}}]</strong>  #} 
                         <ul class="nav nav-pills" role="tablist">
                                 {% for item in count %}         
-                                    <li role="presentation"><a href="#tab-{{ item.product.id }}" aria-controls="tab-{{ item.product.id }}" role="tab" data-toggle="tab"><h4>{{ item.product.name }} <small class="text-warning">( {{ item.qty }} {% trans %}Szt.{% endtrans %} )</small></h4></a></li>
+                                    <li role="presentation"><a href="#tab-{{ item.product.id }}" aria-controls="tab-{{ item.product.id }}" role="tab" data-toggle="tab"><h4>{{ item.product.name }} <small class="text-default">( {{ item.qty }} {% trans %}Szt.{% endtrans %} )</small></h4></a></li>
                                 {% endfor %} 
                         </ul>
                     </div>
