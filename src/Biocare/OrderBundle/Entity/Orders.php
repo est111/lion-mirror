@@ -96,4 +96,22 @@ class Orders {
         return $this;
     }
 
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="\Biocare\StorageBundle\Entity\Cart")
+     */
+    private $cart;
+    
+    public function getCart() {
+        return $this->cart;
+    }
+
+    public function setCart($cart) {
+        $this->cart = $cart;
+        return $this;
+    }
+
+
+    
+    
 }
