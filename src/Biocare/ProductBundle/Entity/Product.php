@@ -61,6 +61,22 @@ class Product
         return $this;
     }
     
+    /**
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+    
+    
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setDescription($description) {
+        $this->description = $description;
+        return $this;
+    }
+
+        
     public function __toString() {
         return $this->getName();
     }    
