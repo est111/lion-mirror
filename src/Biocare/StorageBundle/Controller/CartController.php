@@ -20,7 +20,7 @@ class CartController extends Controller
     /**
      * Lists all Storage entities.
      *
-     * @Route("/{id}/count", name="storage_count")
+     * @Route("/{id}/count", name="cart_count")
      * @Method("GET")
      * @Template("BiocareStorageBundle:Cart:cart_count.html.twig")
      */
