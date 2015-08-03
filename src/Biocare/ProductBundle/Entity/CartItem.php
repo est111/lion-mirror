@@ -13,26 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity()
  */ 
 class CartItem extends Item{   
-    
-    
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId() {
-        return $this->id;
-    }
-    
+ 
     /**
      * @ORM\Column(name="weight", type="integer")
      */
