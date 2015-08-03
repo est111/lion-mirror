@@ -23,19 +23,19 @@
                             <tbody>
                                 {% for entity in entities %}
                                     <tr>
-                                        <td><a href="{{ path('admin_storage_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                        <td><a href="{{ path('admin_cart_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                         <td>{{ entity.name }}</td>
-                                        <td>{{ render(path('storage_count',{'id':entity.id})) }}</td>
+                                        <td>{{ render(path('cart_count',{'id':entity.id})) }}</td>
                                         <td>
-                                            <a class="btn btn-xs btn-primary" href="{{ path('admin_storage_show', { 'id': entity.id }) }}">show</a>
-                                            <a class="btn btn-xs btn-primary" href="{{ path('admin_storage_edit', { 'id': entity.id }) }}">edit</a>
+                                            <a class="btn btn-xs btn-primary" href="{{ path('admin_cart_show', { 'id': entity.id }) }}">show</a>
+                                            <a class="btn btn-xs btn-primary" href="{{ path('admin_cart_edit', { 'id': entity.id }) }}">edit</a>
                                         </td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
                         <div class="panel-footer">
-                            <a class="btn btn-xs btn-success" href="{{ path('admin_storage_new') }}">
+                            <a class="btn btn-xs btn-success" href="{{ path('admin_cart_new') }}">
                                 Create a new entry
                             </a>
                         </div>
