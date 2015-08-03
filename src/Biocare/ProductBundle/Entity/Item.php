@@ -112,7 +112,7 @@ class Item
     }
   
     /**
-     * @ORM\ManyToOne(targetEntity="\Biocare\PriceBundle\Entity\Currency", nullable=true)
+     * @ORM\ManyToOne(targetEntity="\Biocare\PriceBundle\Entity\Currency")
      */
     private $currency;
     
