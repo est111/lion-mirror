@@ -40,12 +40,12 @@ class HttpApi {
         return $resp;
     }
     
-        public function tariff($zip,$price='1000') {
+        public function tariff($zip,$price='1000',$weight="1000") {
         $curl = curl_init();
 // Set some options - we are passing in a useragent too here
         curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_URL => $this->url."&func=tarif&zip=".$zip."&weight=1000&x=1&y=1&z=1&type=+post&price=".$price."",
+            CURLOPT_URL => $this->url."&func=tarif&zip=".$zip."&weight=".$weight."&x=1&y=1&z=1&type=+post&price=".$price."",
             CURLOPT_USERAGENT => 'Codular Sample cURL Request',
         ));
         // Send the request & save response to $resp
