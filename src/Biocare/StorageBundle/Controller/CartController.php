@@ -17,7 +17,23 @@ use Biocare\StorageBundle\Form\CartType;
  */
 class CartController extends Controller
 {
-
+    /**
+     * Lists all Storage entities.
+     *
+     * @Route("/{id}/count", name="storage_count")
+     * @Method("GET")
+     * @Template("BiocareStorageBundle:Cart:cart_count.html.twig")
+     */
+    public function countAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT p as product, COUNT(i.id),(COUNT(i.id)*p.weight) as weight  as qty FROM BiocareProductBundle:CartItem i JOIN BiocareProductBundle:Product p WHERE i.cart = :cart GROUP BY p.id');
+        $query->setParameter('cart', $id);
+        $count = $query->getResult();
+        return array(
+            'count' => $count,
+        );
+    }
     /**
      * Lists all Cart entities.
      *
