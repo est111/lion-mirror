@@ -15,8 +15,8 @@ use Biocare\StorageBundle\Form\StorageType;
  *
  * @Route("/admin/storage")
  */
-class StorageController extends Controller
-{
+class StorageController extends Controller {
+
     /**
      * Lists all Storage entities.
      *
@@ -24,8 +24,7 @@ class StorageController extends Controller
      * @Method("GET")
      * @Template("BiocareStorageBundle:Storage:storage_expo.html.twig")
      */
-    public function expoAction($id)
-    {
+    public function expoAction($id) {
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery('SELECT distinct(i.product) as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product');
         $query->setParameter('storage', $id);
@@ -34,14 +33,12 @@ class StorageController extends Controller
             $query_1 = $em->createQuery('SELECT p as product FROM BiocareProductBundle:Product p WHERE p.id = :product');
             $query_1->setParameter('product', $product["product"]);
             $count[$key]["product"] = $query_1->getResult()[0]["product"];
-           
-        }            
+        }
         return array(
             'count' => $count,
         );
     }
-    
-    
+
     /**
      * Lists all Storage entities.
      *
@@ -49,18 +46,21 @@ class StorageController extends Controller
      * @Method("GET")
      * @Template("BiocareStorageBundle:Storage:storage_count.html.twig")
      */
-    public function countAction($id)
-    {
+    public function countAction($id) {
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery('SELECT distinct(i.product) as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product');
         $query->setParameter('storage', $id);
         $count = $query->getResult();
+        foreach ($count as $key => $product) {
+            $query_1 = $em->createQuery('SELECT p as product FROM BiocareProductBundle:Product p WHERE p.id = :product');
+            $query_1->setParameter('product', $product["product"]);
+            $count[$key]["product"] = $query_1->getResult()[0]["product"];
+        }
         return array(
             'count' => $count,
         );
     }
-    
-    
+
     /**
      * Lists all Storage entities.
      *
@@ -68,8 +68,7 @@ class StorageController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('BiocareStorageBundle:Storage')->findAll();
@@ -78,6 +77,7 @@ class StorageController extends Controller
             'entities' => $entities,
         );
     }
+
     /**
      * Creates a new Storage entity.
      *
@@ -85,8 +85,7 @@ class StorageController extends Controller
      * @Method("POST")
      * @Template("BiocareStorageBundle:Storage:new.html.twig")
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $entity = new Storage();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -101,7 +100,7 @@ class StorageController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -112,8 +111,7 @@ class StorageController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Storage $entity)
-    {
+    private function createCreateForm(Storage $entity) {
         $form = $this->createForm(new StorageType(), $entity, array(
             'action' => $this->generateUrl('admin_storage_create'),
             'method' => 'POST',
@@ -131,14 +129,13 @@ class StorageController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
-    {
+    public function newAction() {
         $entity = new Storage();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -149,8 +146,7 @@ class StorageController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function showAction($id)
-    {
+    public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareStorageBundle:Storage')->find($id);
@@ -162,7 +158,7 @@ class StorageController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -174,8 +170,7 @@ class StorageController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
-    {
+    public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareStorageBundle:Storage')->find($id);
@@ -188,21 +183,20 @@ class StorageController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
 
     /**
-    * Creates a form to edit a Storage entity.
-    *
-    * @param Storage $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Storage $entity)
-    {
+     * Creates a form to edit a Storage entity.
+     *
+     * @param Storage $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Storage $entity) {
         $form = $this->createForm(new StorageType(), $entity, array(
             'action' => $this->generateUrl('admin_storage_update', array('id' => $entity->getId())),
             'method' => 'PUT',
@@ -212,6 +206,7 @@ class StorageController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Storage entity.
      *
@@ -219,8 +214,7 @@ class StorageController extends Controller
      * @Method("PUT")
      * @Template("BiocareStorageBundle:Storage:edit.html.twig")
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BiocareStorageBundle:Storage')->find($id);
@@ -240,19 +234,19 @@ class StorageController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Storage entity.
      *
      * @Route("/{id}", name="admin_storage_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -278,13 +272,13 @@ class StorageController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_storage_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
+                        ->setAction($this->generateUrl('admin_storage_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->getForm()
         ;
     }
+
 }
