@@ -32,6 +32,46 @@ class Currency
         return $this->id;
     }
     
+    /**
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
     
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+    
+    /**
+     * @ORM\Column(name="code", type="string", length=3)
+     */
+    private $code;
+    
+    public function getCode() {
+        return $this->code;
+    }
+
+    public function setCode($code) {
+        $this->code = $code;
+        return $this;
+    }
+    
+    /**
+     * @ORM\Column(name="symbol", type="string", length=1)
+     */
+    private $symbol;
+    
+    public function getSymbol() {
+        return $this->symbol;
+    }
+
+    public function setSymbol($symbol) {
+        $this->symbol = $symbol;
+        return $this;
+    }
     
 }
