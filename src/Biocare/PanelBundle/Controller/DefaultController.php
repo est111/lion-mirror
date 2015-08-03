@@ -49,9 +49,13 @@ class DefaultController extends Controller {
         
         $order = new Orders();
         $order->setCallregister($callregister);
-        $cart = new Cart();
-        $em->persist($cart);
+        
+            $cart = new Cart();
+            $cart->setName($callregister->getId());
+            $em->persist($cart);
+        
         $order->setCart($cart);        
+        
         $em->persist($order);
         
         $em->flush();
