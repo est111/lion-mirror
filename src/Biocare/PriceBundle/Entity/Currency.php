@@ -31,4 +31,7 @@ class Currency
     {
         return $this->id;
     }
+    
+    
+    
 }
