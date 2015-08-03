@@ -27,7 +27,7 @@ class StorageController extends Controller
     public function expoAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery('SELECT (SELECT p FROM BiocareProductBundle:Product p WHERE product_id=p.id) as product, distinct(i.product) as product_id, COUNT(i.id) as qty FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product');
+        $query = $em->createQuery('SELECT distinct(i.product) as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product');
         $query->setParameter('storage', $id);
         $count = $query->getResult();
         dump($count);
