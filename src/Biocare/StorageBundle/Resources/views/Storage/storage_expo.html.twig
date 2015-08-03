@@ -5,7 +5,7 @@
                         {# <strong>Products [{{ callregister.id}}]</strong>  #} 
                         <ul class="nav nav-pills" role="tablist">
                                 {% for item in count %}         
-                                    <li role="presentation"><a href="#tab-{{ item.product.id }}" aria-controls="tab-{{ item.product.id }}" role="tab" data-toggle="tab"><h4>{{ item.product.name }} <small>( {{ item.qty }} {% trans %}Szt.{% endtrans %} )</small></h4></a></li>
+                                    <li role="presentation"><a href="#tab-{{ item.product.id }}" aria-controls="tab-{{ item.product.id }}" role="tab" data-toggle="tab"><h4>{{ item.product.name }} <small class="text-success">( {{ item.qty }} {% trans %}Szt.{% endtrans %} )</small></h4></a></li>
                                 {% endfor %} 
                         </ul>
                     </div>
@@ -13,7 +13,7 @@
 
                         <div class="tab-content">
                             {% for item in count %}  
-                            <div role="tabpanel" class="tab-pane fade" id="tab-{{ item.product.id }}">
+                            <div role="tabpanel" class="tab-pane fade " id="tab-{{ item.product.id }}">
                                 <div class="col-lg-8 text-justify">
                                     <p class="well well-lg"> 
                                         <img class="pull-left img-thumbnail img-responsive" style="margin-right: 10px; height: 150px;" src="{{ asset('bundles/biocareproduct/img/'~item.product.id~'.png') }}" /> 
