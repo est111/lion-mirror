@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 class CartItem extends Item 
 {   
     /**
-     * @ORM/Column(type="weight", type="integer")
+     * @ORM/Column(name="weight", type="integer")
      */
     private $weight;
     
@@ -30,7 +30,7 @@ class CartItem extends Item
 
     
     /**
-     * @ORM/Column(type="value", type="decimal", precision=15, scale=2)
+     * @ORM/Column(name="value", type="decimal", precision=15, scale=2)
      */
     private $value;
     
