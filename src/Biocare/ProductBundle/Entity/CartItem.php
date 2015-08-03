@@ -14,20 +14,6 @@ use Doctrine\ORM\Mapping as ORM;
  */ 
 class CartItem extends Item{   
  
-    /**
-     * @ORM\Column(name="weight", type="integer")
-     */
-    private $weight;
-    
-    public function getWeight() {
-        return $this->weight;
-    }
-
-    public function setWeight($weight) {
-        $this->weight = $weight;
-        return $this;
-    }
-
     
     /**
      * @ORM\Column(name="value", type="decimal", precision=15, scale=2)

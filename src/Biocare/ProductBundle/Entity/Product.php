@@ -47,6 +47,20 @@ class Product
         return $this;
     }
 
+    /**
+     * @ORM\Column(name="weight", type="integer")
+     */
+    private $weight;
+    
+    public function getWeight() {
+        return $this->weight;
+    }
+
+    public function setWeight($weight) {
+        $this->weight = $weight;
+        return $this;
+    }
+    
     public function __toString() {
         return $this->getName();
     }    
