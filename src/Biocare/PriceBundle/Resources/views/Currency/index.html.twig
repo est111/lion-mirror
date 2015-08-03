@@ -7,6 +7,9 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Id</th>
+                <th>Id</th>
+                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -14,6 +17,9 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('admin_price_currency_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.code }}</td>
+                <td>{{ entity.symbol }}</td>
+                <td>{{ entity.name }}</td>
                 <td>
                 <ul>
                     <li>
