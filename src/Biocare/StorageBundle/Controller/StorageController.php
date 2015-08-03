@@ -27,7 +27,7 @@ class StorageController extends Controller
     public function expoAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery('SELECT distinct(i.product) as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i JOIN BiocareProductBundle:Product p WHERE i.storage = :storage GROUP BY i.product');
+        $query = $em->createQuery('SELECT distinct(i.product) as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product');
         $query->setParameter('storage', $id);
         $count = $query->getResult();
         return array(
@@ -46,7 +46,7 @@ class StorageController extends Controller
     public function countAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery('SELECT distinct(i.product) as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i JOIN BiocareProductBundle:Product p WHERE i.storage = :storage GROUP BY i.product');
+        $query = $em->createQuery('SELECT distinct(i.product) as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product');
         $query->setParameter('storage', $id);
         $count = $query->getResult();
         return array(
