@@ -11,7 +11,11 @@
             </tr>
             <tr>
                 <th>Createdat</th>
-                <td>{{ entity.createdAt }}</td>
+                <td>{{ entity.name }}</td>
+                </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{{ entity.createdAt|date('Y-m-d H:i') }}</td>
             </tr>
         </tbody>
     </table>
