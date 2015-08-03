@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Orders {
 
     public function __construct() {
-        
+        $this->cart = new \Biocare\StorageBundle\Entity\Cart();
     }
 
     /**
