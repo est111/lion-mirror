@@ -30,7 +30,12 @@ class StorageController extends Controller
         $query = $em->createQuery('SELECT distinct(i.product) as product, COUNT(i.id) as qty FROM BiocareProductBundle:Item i WHERE i.storage = :storage GROUP BY i.product');
         $query->setParameter('storage', $id);
         $count = $query->getResult();
-        dump($count);
+        foreach ($count as $key => $product) {
+            $query_1 = $em->createQuery('SELECT p as product FROM BiocareProductBundle:Product p WHERE p.id = :product');
+            $query_1->setParameter('storage', $product["product"]);
+            $count[$key]["product"]= $query_1->getResult();
+        }            
+        
         return array(
             'count' => $count,
         );
