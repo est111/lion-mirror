@@ -30,5 +30,7 @@ security:
 
     access_control:
         - { path: ^/httpapi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/callcenter, roles: ROLE_ADMIN }
+        - { path: ^/, roles: ROLE_USER }
         
