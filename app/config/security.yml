@@ -6,8 +6,18 @@ security:
     encoders:
         Symfony\Component\Security\Core\User\User:
             algorithm: plaintext
+        Yellowknife\SecurityBundle\Entity\User:
+            algorithm: plaintext
+            
+    providers:       
+        chain_provider:
+            chain:
+                providers: [in_memory, db_provider]
+        db_provider:
+            entity:
+                class: YellowknifeSecurityBundle:User
+                property: username
 
-    providers:
         in_memory:
             memory:
                 users:
@@ -24,6 +34,7 @@ security:
         default:
             pattern:  ^/
             http_basic: ~
+            provider: db_provider
             form_login:
                 login_path: /login
                 check_path: /login_check
