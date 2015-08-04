@@ -1,5 +1,5 @@
 <?php
-// src/AppBundle/Entity/User.php
+// src/Yellowknife\SecurityBundle/Entity/User.php
 namespace Yellowknife\SecurityBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -7,6 +7,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Table(name="users")
+ * @ORM\Entity(repositoryClass="Yellowknife\SecurityBundle\Entity\UserRepository")
  */
 class User implements UserInterface, \Serializable
 {
