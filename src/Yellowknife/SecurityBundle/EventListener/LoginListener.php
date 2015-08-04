@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\UserBundle\EventListener;
+namespace Yellowknife\SecurityBundle\EventListener;
 
 use Symfony\Component\Security\Core\Event\AuthenticationEvent;
 use Symfony\Component\Security\Core\SecurityContext;
