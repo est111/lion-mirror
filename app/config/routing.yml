@@ -67,4 +67,5 @@ biocare_carrier:
 #    resource: "@BiocareConnectionBundle/Controller/"
 #    type:     annotation
 #    prefix:   /
-
+logout:
+    path: /logout
