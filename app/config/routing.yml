@@ -1,3 +1,8 @@
+yellowknife_security:
+    resource: "@YellowknifeSecurityBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 biocare_admin:
     resource: "@BiocareAdminBundle/Controller/"
     type:     annotation
