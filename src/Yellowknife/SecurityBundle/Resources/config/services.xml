@@ -4,13 +4,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
+    
     <services>
-        <service id="yellowknife_security.example" class="Yellowknife\SecurityBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="yellowknife_security.login" class="Yellowknife\SecurityBundle\EventListener\LoginListener">
+            <argument type="service" id="security.context" />
+            <argument type="service" id="router" />
+            <tag name="kernel.event_listener" event="security.authentication.success" method="handle" />
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
         </service>
     </services>
-    -->
+
 </container>
