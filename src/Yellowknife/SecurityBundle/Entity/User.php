@@ -32,6 +32,11 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=60, unique=true)
      */
     private $email;
+    
+    /**
+     * @ORM\Column(type="string", length=2)
+     */
+    private $locale;
 
     /**
      * @ORM\Column(name="is_active", type="boolean")
