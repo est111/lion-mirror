@@ -16,7 +16,6 @@ security:
         db_provider:
             entity:
                 class: YellowknifeSecurityBundle:User
-                property: username
 
         in_memory:
             memory:
