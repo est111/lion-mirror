@@ -34,6 +34,9 @@ security:
             pattern:  ^/
             http_basic: ~
             provider: db_provider
+            logout:
+                path:   /logout
+                target: /login
             form_login:
                 login_path: /login
                 check_path: /login_check
