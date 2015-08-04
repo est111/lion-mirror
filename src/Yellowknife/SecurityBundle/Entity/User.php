@@ -4,12 +4,12 @@ namespace Yellowknife\SecurityBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+//use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 /**
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="Yellowknife\SecurityBundle\Entity\UserRepository")
  */
-class User implements AdvancedUserInterface, \Serializable
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Column(type="integer")
@@ -94,4 +94,6 @@ class User implements AdvancedUserInterface, \Serializable
             // $this->salt
         ) = unserialize($serialized);
     }
+    
+    
 }
