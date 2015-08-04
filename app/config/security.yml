@@ -23,6 +23,9 @@ security:
         default:
             pattern:  ^/
             http_basic: ~
+            form_login:
+                login_path: /login
+                check_path: /login_check
 
     access_control:
         - { path: ^/httpapi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
