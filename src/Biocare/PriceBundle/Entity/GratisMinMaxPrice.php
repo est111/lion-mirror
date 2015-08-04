@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * 
  */
-class MinMaxPrice extends Price
+class GratisMinMaxPrice extends Price
 {
     public function __construct() {
         $this->setType('gratisminmax');        
