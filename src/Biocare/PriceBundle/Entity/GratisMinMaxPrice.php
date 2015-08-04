@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class MinMaxPrice extends Price
 {
     public function __construct() {
-        $this->setType('minmax');        
+        $this->setType('gratisminmax');        
     }
     
     private $max;
@@ -39,17 +39,5 @@ class MinMaxPrice extends Price
         return $this;
     }
     
-    private $gratisMax;
-    
-    public function getGratisMax() {
-        return $this->gratisMax;
-    }
-
-    public function setGratisMax($gratisMax) {
-        $this->gratisMax = $gratisMax;
-        return $this;
-    }
-
-
     
 }
