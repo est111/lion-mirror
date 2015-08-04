@@ -9,8 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Biocare\PriceBundle\Entity\PriceRepository")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
  */
-class FlatPrice
+class Price
 {
     /**
      * @var integer
@@ -46,6 +48,27 @@ class FlatPrice
         return $this->id;
     }
 
+    
+    /**
+     *
+     * @ORM\Column(name="type",type="string",length=255)
+     */
+    private $type;
+    
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+        return $this;
+    }
+
+        
+    
+    
+    
+    
     /**
      * Set startAt
      *
