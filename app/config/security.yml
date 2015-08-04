@@ -32,6 +32,7 @@ security:
             security: false
         default:
             pattern:  ^/
+            anonymous: ~
             http_basic: ~
             provider: db_provider
             logout:
