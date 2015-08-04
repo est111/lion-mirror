@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new Biocare\StorageBundle\BiocareStorageBundle(),
             new Biocare\HttpApiBundle\BiocareHttpApiBundle(),
             new Biocare\PriceBundle\BiocarePriceBundle(),
+            new Biocare\CampaignBundle\BiocareCampaignBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
