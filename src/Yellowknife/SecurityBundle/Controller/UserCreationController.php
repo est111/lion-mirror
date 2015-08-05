@@ -74,7 +74,7 @@ class UserCreationController extends Controller {
 
             $user = new User();
             // check if user exist by email
-
+            $user->setLocale($data["locale"]);
             $user->setEmail($data["email"]);
             $email_check = $this->getDoctrine()
                     ->getRepository('YellowknifeSecurityBundle:User')
