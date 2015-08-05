@@ -85,14 +85,46 @@ class UserCreationController extends Controller {
                 $this->get('session')->getFlashBag()->add(
                         'warning', 'EMAIL IS ALREADY IN DATABASE FIND IT AND RESET A PASSWORD: ' . $user->getEmail()
                 );
-                return $this->redirect($this->generateUrl('callcenter_show'));
+                return $this->redirect($this->generateUrl('admin_user'));
+            }
+            $username = strtolower($user->getFirstname() . "." . $user->getLastname() . (count($user_check) > 0 ? count($user_check) : ''));
+
+            $user->setUsername($username);
+
+            $generator = new SecureRandom();
+            $password = bin2hex($generator->nextBytes(4));
+
+            $message = \Swift_Message::newInstance()
+                    ->setSubject('Password Lion CRM')
+                    ->setFrom('karol.gontarski@gmail.com')
+                    ->setTo($user->getEmail())
+                    ->setBody('User: ' . $username . '  Password: ' . $password, 'text/plain'
+            );
+
+
+            $encoder = $this->container->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($user, $password);
+
+            $user->setPassword($encoded);
+
+            $entity->setUser($user);
+
+
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+
+                $em->flush();
+
+                $this->container->get('mailer')->send($message);
+                return $this->redirect($this->generateUrl('admin_user'));
             }
 
 
 
 
 
-            return $this->redirect($this->generateUrl('panel'));
+            return $this->redirect($this->generateUrl('admin_user'));
         }
     }
 

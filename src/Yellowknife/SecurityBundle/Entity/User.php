@@ -217,4 +217,23 @@ class User implements UserInterface, \Serializable
     {
         return $this->isActive;
     }
+    public function getFirstname() {
+        return $this->firstname;
+    }
+
+    public function getLastname() {
+        return $this->lastname;
+    }
+
+    public function setFirstname($firstname) {
+        $this->firstname = $firstname;
+        return $this;
+    }
+
+    public function setLastname($lastname) {
+        $this->lastname = $lastname;
+        return $this;
+    }
+
+
 }
