@@ -26,6 +26,8 @@ class LoginListener {
     private $locale;
     
     private $user;
+    
+    private $router;
 
 
     /**
@@ -34,9 +36,11 @@ class LoginListener {
      * @param SecurityContext $securityContext
      * @param Doctrine        $doctrine
      */
-    public function __construct(SecurityContext $securityContext, Doctrine $doctrine) {
+    public function __construct(SecurityContext $securityContext, Doctrine $doctrine, Router $router) {
         $this->securityContext = $securityContext;
         $this->em = $doctrine->getEntityManager();
+        $this->router = $router;
+                
     }
 
     /**
@@ -56,7 +60,10 @@ class LoginListener {
             // user has logged in using remember_me cookie
         }
         if ($this->securityContext->isGranted('ROLE_ADMIN')) {
-            
+            return $this->router->redirect('admin', array(), true);
+        }
+        if ($this->securityContext->isGranted('ROLE_USER')) {
+            return $this->router->redirect('panel', array(), true);
         }
 
         // ...
