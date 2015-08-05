@@ -50,7 +50,8 @@ class UserCreationController extends Controller {
             $form->bind($request);
             $data = $form->getData();
 
-            dump($data);
+            print_r($data);
+            exit;
             return $this->redirect($this->generateUrl('admin_user'));
         }
 
