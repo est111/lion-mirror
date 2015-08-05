@@ -1,7 +1,7 @@
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
 {% block body -%}
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             {{ form(form.name) }} 
         </div>
         <div class="col-lg-3">
@@ -13,8 +13,8 @@
         <div class="col-lg-2">
             {{ form(form.locale) }} 
         </div>    
-        <div class="col-lg-1">
-            <button class="btn btn-success btn-md pull-right" type="submit">{% trans %} Add new user {% endtrans %}</button>
+        <div class="col-lg-2">
+            <button class="btn btn-success btn-md" type="submit">{% trans %} Add new user {% endtrans %}</button>
         </div>
     </div>
             {{ form_end(form) }} 
