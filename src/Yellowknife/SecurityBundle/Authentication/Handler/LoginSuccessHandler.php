@@ -28,16 +28,13 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
         // Default target for unknown roles. Everyone else go there.
         $url = 'panel';
         
-        if($this->security->isGranted('ROLE_USER')) {
-            $url = 'panel';
-        }
-        
-        elseif($this->security->isGranted('ROLE_ADMIN')) {
+        if($this->security->isGranted('ROLE_ADMIN')) {
             $url = 'admin';
         }
         
-        
-        
+        if($this->security->isGranted('ROLE_USER')) {
+            $url = 'panel';
+        }     
         
         $response = new RedirectResponse($this->router->generate($url));
             
