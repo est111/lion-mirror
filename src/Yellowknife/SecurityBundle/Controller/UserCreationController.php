@@ -16,19 +16,15 @@ use Symfony\Component\Security\Core\Util\SecureRandom;
  */
 class UserCreationController extends Controller {
 
-    /**
-     *
-     * @Route("/userCreation", name="admin_user_creation")
-     * @Method({"GET","POST"})
-     * @Template()
-     */
-    public function userCreationAction(Request $request) {
+    private $form;
+
+    public function __construct() {
         $data = array(
         );
         $option = array(
             'action' => $this->generateUrl('admin_user_creation'),
         );
-        $form = $this->createFormBuilder($data, $option)
+        $this->form = $this->createFormBuilder($data, $option)
                 ->add('name', 'text', array('attr' => array('placeholder' => 'Name'), 'label' => false))
                 ->add('surname', 'text', array('attr' => array('placeholder' => 'Surname'), 'label' => false))
                 ->add('email', 'email', array('attr' => array('placeholder' => 'E-mail'), 'label' => false))
@@ -47,17 +43,28 @@ class UserCreationController extends Controller {
                 ))
                 ->getForm();
 
+        parent::__construct();
+    }
+
+    /**
+     *
+     * @Route("/userCreation", name="admin_user_creation")
+     * @Method({"GET","POST"})
+     * @Template()
+     */
+    public function userCreationAction(Request $request) {
+
+
         if ($request->isMethod('POST')) {
-            $form->bind($request);
-            $data = $form->getData();      
+            $this->form->bind($request);
+            $data = $$this->form->getData();
             return $this->redirect($this->generateUrl('admin_user'));
         }
 
-        return array('form' => $form->createView());
+        return array('form' => $$this->form->createView());
     }
-    
-    
-    public function newUserCreationAction(Request $request){
+
+    public function newUserCreationAction(Request $request) {
         
     }
 
