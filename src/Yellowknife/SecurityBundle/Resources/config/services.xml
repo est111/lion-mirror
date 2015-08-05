@@ -10,6 +10,7 @@
             <argument type="service" id="security.context" />
             <argument type="service" id="doctrine" />
             <tag name="kernel.event_listener" event="security.interactive_login" />
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
         </service>
     </services>
 
