@@ -119,24 +119,14 @@ class UserCreationController extends Controller {
 
             $user->setPassword($encoded);
 
-            $entity->setUser($user);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
 
-
-            if ($form->isValid()) {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($entity);
-
-                $em->flush();
-
-                $this->container->get('mailer')->send($message);
-                return $this->redirect($this->generateUrl('admin_user'));
-            }
-
-
-
-
-
+            $this->container->get('mailer')->send($message);
+            
             return $this->redirect($this->generateUrl('admin_user'));
+      
         }
     }
 
