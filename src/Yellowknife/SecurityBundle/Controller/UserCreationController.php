@@ -69,6 +69,29 @@ class UserCreationController extends Controller {
         if ($request->isMethod('POST')) {
             $form->bind($request);
             $data = $form->getData();
+
+            $user = new User();
+            // check if user exist by email
+
+            $user->setEmail($data["email"]);
+            $email_check = $this->getDoctrine()
+                    ->getRepository('YellowknifeSecureBundle:User')
+                    ->findBy(array(
+                'email' => $user->getEmail()
+            ));
+
+            if ($email_check) {
+
+                $this->get('session')->getFlashBag()->add(
+                        'warning', 'EMAIL IS ALREADY IN DATABASE FIND IT AND RESET A PASSWORD: ' . $user->getEmail()
+                );
+                return $this->redirect($this->generateUrl('callcenter_show'));
+            }
+
+
+
+
+
             return $this->redirect($this->generateUrl('panel'));
         }
     }
