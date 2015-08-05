@@ -69,7 +69,7 @@ class UserCreationController extends Controller {
         if ($request->isMethod('POST')) {
             $form->bind($request);
             $data = $form->getData();
-            return $this->redirect($this->generateUrl('admin_user'));
+            return $this->redirect($this->generateUrl('admin_user_new'));
         }
     }
 
