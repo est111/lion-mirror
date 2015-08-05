@@ -23,6 +23,11 @@ class LoginListener {
     /** @var \Doctrine\ORM\EntityManager */
     private $em;
 
+    private $locale;
+    
+    private $user;
+
+
     /**
      * Constructor
      * 
@@ -49,7 +54,7 @@ class LoginListener {
         }
 
         // do some other magic here
-        $user = $event->getAuthenticationToken()->getUser();
+        $this->user = $event->getAuthenticationToken()->getUser();
 
         // ...
     }
