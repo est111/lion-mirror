@@ -36,14 +36,8 @@
                                         <td>{{ entity.locale }}</td>
                                         <td>{{ entity.isActive }}</td>
                                         <td>
-                                            <ul>
-                                                <li>
-                                                    <a class="btn-default btn" href="{{ path('admin_user_show', { 'id': entity.id }) }}">show</a>
-                                                </li>
-                                                <li>
-                                                    <a class="btn-primary btn" href="{{ path('admin_user_edit', { 'id': entity.id }) }}">edit</a>
-                                                </li>
-                                            </ul>
+                                            <a class="btn btn-default btn-xs" href="{{ path('admin_user_show', { 'id': entity.id }) }}">show</a>
+                                            <a class="btn btn-primary btn-xs" href="{{ path('admin_user_edit', { 'id': entity.id }) }}">edit</a>
                                         </td>
                                     </tr>
                                 {% endfor %}
