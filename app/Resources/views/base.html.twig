@@ -54,7 +54,9 @@
 
                         </div>
                         <div class="navbar-text navbar-right">
-
+                            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            <a class="btn btn-danger btn-xs" href="{{path('logout') }}">{% trans %}Logout{% endtrans %}</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
