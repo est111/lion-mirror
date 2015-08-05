@@ -38,7 +38,7 @@ class UserCreationController extends Controller {
         }
 
 
-        return array('form' => $form->getViewData());
+        return array('form' => $form->getFormView());
     }
 
 }
