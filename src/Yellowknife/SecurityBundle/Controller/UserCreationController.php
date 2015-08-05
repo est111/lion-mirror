@@ -16,15 +16,14 @@ use Symfony\Component\Security\Core\Util\SecureRandom;
  */
 class UserCreationController extends Controller {
 
-    private $form;
 
-    public function __construct() {
+    public function createForm() {
         $data = array(
         );
         $option = array(
             'action' => $this->generateUrl('admin_user_creation'),
         );
-        $this->form = $this->createFormBuilder($data, $option)
+        $form = $this->createFormBuilder($data, $option)
                 ->add('name', 'text', array('attr' => array('placeholder' => 'Name'), 'label' => false))
                 ->add('surname', 'text', array('attr' => array('placeholder' => 'Surname'), 'label' => false))
                 ->add('email', 'email', array('attr' => array('placeholder' => 'E-mail'), 'label' => false))
@@ -43,7 +42,7 @@ class UserCreationController extends Controller {
                 ))
                 ->getForm();
 
-        parent::__construct();
+        return $form;
     }
 
     /**
@@ -54,13 +53,15 @@ class UserCreationController extends Controller {
      */
     public function userCreationAction(Request $request) {
 
+        $form = $this->createForm();
+        
         if ($request->isMethod('POST')) {
-            $this->form->bind($request);
-            $data = $this->form->getData();
+            $form->bind($request);
+            $data = $form->getData();
             return $this->redirect($this->generateUrl('admin_user'));
         }
 
-        return array('form' => $$this->form->createView());
+        return array('form' => $form->createView());
     }
 
     public function newUserCreationAction(Request $request) {
