@@ -53,7 +53,7 @@ class UserCreationController extends Controller {
      */
     public function userCreationAction(Request $request) {
 
-        $form = $this->createForm();
+        $form = $this->createUserCreationForm();
         
         if ($request->isMethod('POST')) {
             $form->bind($request);
