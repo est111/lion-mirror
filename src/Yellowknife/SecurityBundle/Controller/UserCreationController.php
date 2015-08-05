@@ -93,7 +93,7 @@ class UserCreationController extends Controller {
             $user->setLastname($data["surname"]);
 
             $user_check = $this->getDoctrine()
-                    ->getRepository('YellowknifeUserBundle:User')
+                    ->getRepository('YellowknifeSecurityBundle:User')
                     ->findBy(array(
                 'firstname' => $user->getFirstname(),
                 'lastname' => $user->getLastname()
