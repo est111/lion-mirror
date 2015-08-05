@@ -8,9 +8,8 @@
     <services>
         <service id="yellowknife_security.login" class="Yellowknife\SecurityBundle\EventListener\LoginListener">
             <argument type="service" id="security.context" />
-            <argument type="service" id="router" />
-            <tag name="kernel.event_listener" event="security.authentication.success" method="handle" />
-            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
+            <argument type="service" id="doctrine" />
+            <tag name="kernel.event_listener" event="security.interactive_login" />
         </service>
     </services>
 
