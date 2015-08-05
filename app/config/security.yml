@@ -42,6 +42,8 @@ security:
                 login_path: /login
                 check_path: /login_check
                 csrf_provider: security.csrf.token_manager
+                use_referer: false
+                success_handler: yellowknife_security.login
 
     access_control:
         - { path: ^/httpapi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
