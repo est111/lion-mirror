@@ -21,7 +21,7 @@ class CreationUserController extends Controller {
      * @Method({"GET","POST"})
      * @Template()
      */
-    public function userCreationAction() {
+    public function userCreationAction(Request $request) {
         $data = array();
         $form = $this->createFormBuilder($data)
                 ->add('query', 'text')
