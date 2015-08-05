@@ -24,9 +24,9 @@ class UserCreationController extends Controller {
     public function userCreationAction(Request $request) {
         $data = array();
         $form = $this->createFormBuilder($data)
-                ->add('name', 'text', array('attr' => array('placeholder' => 'Your name'), 'label' => false))
-                ->add('surname', 'text', array('attr' => array('placeholder' => 'Your name'), 'label' => false))
-                ->add('email', 'email', array('attr' => array('placeholder' => 'Your name'), 'label' => false))
+                ->add('name', 'text', array('attr' => array('placeholder' => 'Name'), 'label' => false))
+                ->add('surname', 'text', array('attr' => array('placeholder' => 'Surname'), 'label' => false))
+                ->add('email', 'email', array('attr' => array('placeholder' => 'e-mail'), 'label' => false))
                 ->add('locale', 'choice', array(
                     'choices' => array(
                         'en' => 'English',
