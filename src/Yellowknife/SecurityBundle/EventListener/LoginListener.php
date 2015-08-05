@@ -82,7 +82,7 @@ class LoginListener {
 
         if (null !== $this->locale) {
             $request = $event->getRequest();
-            $request->getSession()->set('_locale', $this->locale);
+            //$request->getSession()->set('_locale', $this->locale);
         }
     }
 
