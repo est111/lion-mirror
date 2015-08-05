@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
  * User controller.
@@ -48,14 +49,16 @@ class UserCreationController extends Controller {
 
         if ($request->isMethod('POST')) {
             $form->bind($request);
-            $data = $form->getData();
-
-            print_r($data);
-            exit;
+            $data = $form->getData();      
             return $this->redirect($this->generateUrl('admin_user'));
         }
 
         return array('form' => $form->createView());
+    }
+    
+    
+    public function newUserCreationAction(Request $request){
+        
     }
 
 }
