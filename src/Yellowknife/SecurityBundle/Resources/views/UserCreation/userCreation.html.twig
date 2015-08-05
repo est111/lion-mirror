@@ -3,16 +3,16 @@
     {{ form_start(form) }} 
     <div class="row">
         <div class="col-lg-2">
-            {{ form(form.name) }} 
+            {{ form_widget(form.name) }} 
         </div>
         <div class="col-lg-3">
-            {{ form(form.surname) }} 
+            {{ form_widget(form.surname) }} 
         </div>
         <div class="col-lg-3">
-            {{ form(form.email) }} 
+            {{ form_widget(form.email) }} 
         </div>
         <div class="col-lg-2">
-            {{ form(form.locale) }} 
+            {{ form_widget(form.locale) }} 
         </div>    
         <div class="col-lg-2">
             <button class="btn btn-success btn-md" type="submit">{% trans %} Add new user {% endtrans %}</button>
