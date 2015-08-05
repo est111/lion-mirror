@@ -23,12 +23,11 @@ class UserCreationController extends Controller {
      */
     public function userCreationAction(Request $request) {
         $data = array(
-                
-            );
+        );
         $option = array(
             'action' => $this->generateUrl('admin_user_creation'),
         );
-        $form = $this->createFormBuilder($data,$option)
+        $form = $this->createFormBuilder($data, $option)
                 ->add('name', 'text', array('attr' => array('placeholder' => 'Name'), 'label' => false))
                 ->add('surname', 'text', array('attr' => array('placeholder' => 'Surname'), 'label' => false))
                 ->add('email', 'email', array('attr' => array('placeholder' => 'E-mail'), 'label' => false))
@@ -42,7 +41,9 @@ class UserCreationController extends Controller {
                     ),
                     'attr' => array(
                         'placeholder' => 'Locale'
-                    ), 'label' => false))
+                    ),
+                    'label' => false
+                ))
                 ->getForm();
 
         if ($request->isMethod('POST')) {
@@ -54,6 +55,5 @@ class UserCreationController extends Controller {
 
         return array('form' => $form->createView());
     }
-
 
 }
