@@ -34,7 +34,7 @@ security:
             pattern:  ^/
             anonymous: ~
             http_basic: ~
-            provider: db_provider
+            provider: chain_provider
             logout:
                 path:   /logout
                 target: /login
