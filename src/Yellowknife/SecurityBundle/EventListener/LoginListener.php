@@ -45,6 +45,9 @@ class LoginListener {
      * @param InteractiveLoginEvent $event
      */
     public function onSecurityInteractiveLogin(InteractiveLoginEvent $event) {
+        
+        $this->user = $event->getAuthenticationToken()->getUser();
+        
         if ($this->securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
             // user has just logged in
         }
@@ -52,9 +55,9 @@ class LoginListener {
         if ($this->securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             // user has logged in using remember_me cookie
         }
-
-        // do some other magic here
-        $this->user = $event->getAuthenticationToken()->getUser();
+        if ($this->securityContext->isGranted('ROLE_ADMIN')) {
+            
+        }
 
         // ...
     }
