@@ -6,7 +6,7 @@
 
     
     <services>
-        <service id="yellowknife_security.login" class="Yellowknife\SecurityBundle\EventListener\LoginListener">
+        <service id="yellowknife_security.login" class="Yellowknife\SecurityBundle\Authentication\Handler\LoginSuccessHandler">
             <argument type="service" id="router" />
             <argument type="service" id="security.context" />
             <tag name="monolog.logger" channel="security" />
