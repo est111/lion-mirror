@@ -17,7 +17,7 @@ use Symfony\Component\Security\Core\Util\SecureRandom;
 class UserCreationController extends Controller {
 
 
-    public function createForm() {
+    public function createUserCreationForm() {
         $data = array(
         );
         $option = array(
