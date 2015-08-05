@@ -54,7 +54,6 @@ class UserCreationController extends Controller {
      */
     public function userCreationAction(Request $request) {
 
-
         if ($request->isMethod('POST')) {
             $this->form->bind($request);
             $data = $$this->form->getData();
