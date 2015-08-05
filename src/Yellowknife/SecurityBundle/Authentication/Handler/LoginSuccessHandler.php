@@ -1,5 +1,5 @@
 <?php
-namespace Yellowknife\SecurityBundle\Authentication\Handler\LoginSuccessHandler;
+namespace Yellowknife\SecurityBundle\Authentication\Handler;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
