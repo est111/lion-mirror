@@ -24,11 +24,15 @@ class UserCreationController extends Controller {
     public function userCreationAction(Request $request) {
         $data = array();
         $form = $this->createFormBuilder($data)
-                ->add('query', 'text')
-                ->add('category', 'choice', array('choices' => array(
-                        'judges' => 'Judges',
-                        'interpreters' => 'Interpreters',
-                        'attorneys' => 'Attorneys',
+                ->add('name', 'text')
+                ->add('surname', 'text')
+                ->add('email', 'email')
+                ->add('locale', 'choice', array('choices' => array(
+                        'en' => 'English',
+                        'ru' => 'Russian',
+                        'cz' => 'Czech',
+                        'sk' => 'Slovak',
+                        'hu' => 'Hungarian',
             )))
                 ->getForm();
 
