@@ -26,7 +26,7 @@ class UserCreationController extends Controller {
         $form = $this->createFormBuilder($data)
                 ->add('name', 'text', array('attr' => array('placeholder' => 'Name'), 'label' => false))
                 ->add('surname', 'text', array('attr' => array('placeholder' => 'Surname'), 'label' => false))
-                ->add('email', 'email', array('attr' => array('placeholder' => 'e-mail'), 'label' => false))
+                ->add('email', 'email', array('attr' => array('placeholder' => 'E-mail'), 'label' => false))
                 ->add('locale', 'choice', array(
                     'choices' => array(
                         'en' => 'English',
@@ -36,7 +36,7 @@ class UserCreationController extends Controller {
                         'hu' => 'Hungarian',
                     ),
                     'attr' => array(
-                        'placeholder' => 'Your name'
+                        'placeholder' => 'Locale'
                     ), 'label' => false))
                 ->getForm();
 
