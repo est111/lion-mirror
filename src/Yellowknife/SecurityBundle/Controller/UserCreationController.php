@@ -22,7 +22,11 @@ class UserCreationController extends Controller {
      * @Template()
      */
     public function userCreationAction(Request $request) {
-        $data = array();
+        $data = array(
+            array(
+                'action' => $this->generateUrl('admin_user_index')),
+            )
+        );
         $form = $this->createFormBuilder($data)
                 ->add('name', 'text', array('attr' => array('placeholder' => 'Name'), 'label' => false))
                 ->add('surname', 'text', array('attr' => array('placeholder' => 'Surname'), 'label' => false))
@@ -43,11 +47,19 @@ class UserCreationController extends Controller {
         if ($request->isMethod('POST')) {
             $form->bind($request);
             $data = $form->getData();
-         
+
             dump($data);
         }
 
         return array('form' => $form->createView());
+    }
+
+    private function userForm(Consultants $entity) {
+        $form = $this->createForm(new ConsultantsType(), $entity, );
+
+        $form->add('submit', 'submit', array('label' => 'Update'));
+
+        return $form;
     }
 
 }
