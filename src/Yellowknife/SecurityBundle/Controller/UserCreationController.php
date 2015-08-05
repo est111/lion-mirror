@@ -24,7 +24,7 @@ class UserCreationController extends Controller {
     public function userCreationAction(Request $request) {
         $data = array(
             array(
-                'action' => $this->generateUrl('admin_user_index'),
+                'action' => $this->generateUrl('admin_user'),
             )
         );
         $form = $this->createFormBuilder($data)
