@@ -31,11 +31,10 @@ class UserLocaleListener
         
         if (get_class($user) == "Symfony\Component\Security\Core\User\User" ) 
         {
-            
+            $locale = "en";
+        } else {
+            $locale = $user->getLocale();
         }
-        
-        $locale = $user->getLocale();
-        
         if (null !== $locale) {
             $this->session->set('_locale', $locale);
         }
