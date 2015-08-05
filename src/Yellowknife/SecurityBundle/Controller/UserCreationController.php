@@ -20,7 +20,7 @@ class UserCreationController extends Controller {
         $data = array(
         );
         $option = array(
-            'action' => $this->generateUrl('admin_user_creation'),
+            'action' => $this->generateUrl('admin_user_creation_new'),
         );
         $form = $this->createFormBuilder($data, $option)
                 ->add('name', 'text', array('attr' => array('placeholder' => 'Name'), 'label' => false))
