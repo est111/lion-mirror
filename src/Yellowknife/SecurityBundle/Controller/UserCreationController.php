@@ -23,11 +23,12 @@ class UserCreationController extends Controller {
      */
     public function userCreationAction(Request $request) {
         $data = array(
-            array(
-                'action' => $this->generateUrl('admin_user'),
-            )
+                
+            );
+        $option = array(
+            'action' => $this->generateUrl('admin_user'),
         );
-        $form = $this->createFormBuilder($data)
+        $form = $this->createFormBuilder($data,$option)
                 ->add('name', 'text', array('attr' => array('placeholder' => 'Name'), 'label' => false))
                 ->add('surname', 'text', array('attr' => array('placeholder' => 'Surname'), 'label' => false))
                 ->add('email', 'email', array('attr' => array('placeholder' => 'E-mail'), 'label' => false))
