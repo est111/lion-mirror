@@ -129,5 +129,46 @@ class UserCreationController extends Controller {
       
         }
     }
+    
+    /**
+     * Reset user password
+     * 
+     * @Route("/resetPassword/{id}", name="admin_user_creation_resetpassword")
+     * @Method("GET")
+     */
+    public function resetPasswordAction($id) {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('YellowknifeSecurityBundle:User')->findOneBy(array(
+            'id' => $id
+        ));
+
+
+        $generator = new SecureRandom();
+        $password = bin2hex($generator->nextBytes(4));
+
+        $message = \Swift_Message::newInstance()
+                ->setSubject('Password Lion CRM')
+                ->setFrom('karol.gontarski@gmail.com')
+                ->setTo($entity->getEmail())
+                ->setBody('User: ' . $entity->getUsername() . '  Password: ' . $password, 'text/plain'
+        );
+
+
+        $this->container->get('mailer')->send($message);
+        $encoder = $this->container->get('security.password_encoder');
+        $encoded = $encoder->encodePassword($entity, $password);
+
+        $entity->setPassword($encoded);
+
+        $this->get('session')->getFlashBag()->add(
+                'notice', 'Password sent to: ' . $entity->getEmail()
+        );
+        $em->flush();
+        return $this->redirect($this->generateUrl('callcenter_show', array('id' => $entity->getCallcenter()->getId())));
+    }
+    
+    
 
 }
