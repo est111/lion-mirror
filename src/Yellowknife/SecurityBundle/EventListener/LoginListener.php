@@ -53,6 +53,7 @@ class LoginListener {
         $this->user = $event->getAuthenticationToken()->getUser();
         $this->locale = $this->user->getLocale();
         
+        $url = 'panel';
         
         if ($this->securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
             // user has just logged in
@@ -61,13 +62,19 @@ class LoginListener {
         if ($this->securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             // user has logged in using remember_me cookie
         }
+        
+        
+        
         if ($this->securityContext->isGranted('ROLE_ADMIN')) {
-            return $this->router->redirect('admin', array(), true);
+            $url = 'admin';
         }
         if ($this->securityContext->isGranted('ROLE_USER')) {
-            return $this->router->redirect('panel', array(), true);
+            $url = 'panel';
         }
-
+        
+        $response = new RedirectResponse($this->router->generate($url));
+            
+        return $response;
         // ...
     }
 
