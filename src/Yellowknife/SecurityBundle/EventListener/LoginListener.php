@@ -51,6 +51,8 @@ class LoginListener {
     public function onSecurityInteractiveLogin(InteractiveLoginEvent $event) {
         
         $this->user = $event->getAuthenticationToken()->getUser();
+        $this->locale = $this->user->getLocale();
+        
         
         if ($this->securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
             // user has just logged in
