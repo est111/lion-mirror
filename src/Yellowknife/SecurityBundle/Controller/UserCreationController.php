@@ -166,7 +166,7 @@ class UserCreationController extends Controller {
                 'notice', 'Password sent to: ' . $entity->getEmail()
         );
         $em->flush();
-        return $this->redirect($this->generateUrl('callcenter_show', array('id' => $entity->getCallcenter()->getId())));
+        return $this->redirect($this->generateUrl('admin_user'));
     }
     
     
