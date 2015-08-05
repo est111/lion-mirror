@@ -87,6 +87,16 @@ class UserCreationController extends Controller {
                 );
                 return $this->redirect($this->generateUrl('admin_user'));
             }
+            $user->setFirstname($data["name"]);
+            $user->setLastname($data["surname"]);
+
+            $user_check = $this->getDoctrine()
+                    ->getRepository('YellowknifeUserBundle:User')
+                    ->findBy(array(
+                'firstname' => $user->getFirstname(),
+                'lastname' => $user->getLastname()
+            ));
+
             $username = strtolower($user->getFirstname() . "." . $user->getLastname() . (count($user_check) > 0 ? count($user_check) : ''));
 
             $user->setUsername($username);
