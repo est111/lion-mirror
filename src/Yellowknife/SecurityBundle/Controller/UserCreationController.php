@@ -77,7 +77,7 @@ class UserCreationController extends Controller {
 
             $user->setEmail($data["email"]);
             $email_check = $this->getDoctrine()
-                    ->getRepository('YellowknifeSecureBundle:User')
+                    ->getRepository('YellowknifeSecurityBundle:User')
                     ->findBy(array(
                 'email' => $user->getEmail()
             ));
