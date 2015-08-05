@@ -15,35 +15,41 @@ use Symfony\Bundle\FrameworkBundle\Routing\Router;
  */
 class LoginListener {
 
-    /**
-     * @var string
-     */
-    protected $locale;
+    /** @var \Symfony\Component\Security\Core\SecurityContext */
+    private $securityContext;
+
+    /** @var \Doctrine\ORM\EntityManager */
+    private $em;
 
     /**
-     * Router
-     *
-     * @var Router
-     */
-    protected $router;
-
-    /**
-     * @var SecurityContext
-     */
-    protected $securityContext;
-
-    /**
+     * Constructor
+     * 
      * @param SecurityContext $securityContext
-     * @param Router $router The router
+     * @param Doctrine        $doctrine
      */
-    public function __construct(SecurityContext $securityContext, Router $router) {
+    public function __construct(SecurityContext $securityContext, Doctrine $doctrine) {
         $this->securityContext = $securityContext;
-        $this->router = $router;
+        $this->em = $doctrine->getEntityManager();
     }
 
-    public function handle(AuthenticationEvent $event) {
-        $token = $event->getAuthenticationToken();
-        $this->locale = $token->getUser()->getLocale();
+    /**
+     * Do the magic.
+     * 
+     * @param InteractiveLoginEvent $event
+     */
+    public function onSecurityInteractiveLogin(InteractiveLoginEvent $event) {
+        if ($this->securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
+            // user has just logged in
+        }
+
+        if ($this->securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            // user has logged in using remember_me cookie
+        }
+
+        // do some other magic here
+        $user = $event->getAuthenticationToken()->getUser();
+
+        // ...
     }
 
     public function onKernelResponse(FilterResponseEvent $event) {
