@@ -12,7 +12,8 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
 {
     protected 
         $router,
-        $security;
+        $security,
+        $locale;
     
     public function __construct(Router $router, SecurityContext $security)
     {
@@ -35,6 +36,9 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
         elseif($this->security->isGranted('ROLE_ADMIN')) {
             $url = 'admin';
         }
+        
+        
+        
         
         $response = new RedirectResponse($this->router->generate($url));
             
