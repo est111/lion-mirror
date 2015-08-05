@@ -54,12 +54,5 @@ class UserCreationController extends Controller {
         return array('form' => $form->createView());
     }
 
-    private function userForm(Consultants $entity) {
-        $form = $this->createForm(new ConsultantsType(), $entity, );
-
-        $form->add('submit', 'submit', array('label' => 'Update'));
-
-        return $form;
-    }
 
 }
