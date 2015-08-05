@@ -27,7 +27,13 @@ class UserLocaleListener
     public function onInteractiveLogin(InteractiveLoginEvent $event)
     {
         $user = $event->getAuthenticationToken()->getUser();
-
+        
+        dump(get_class($user));
+        
+        if (get_class($user) == "Symfony\Component\Security\Core\User\User" ) 
+        {
+            
+        }
         if (null !== $user->getLocale()) {
             $this->session->set('_locale', $user->getLocale());
         }
