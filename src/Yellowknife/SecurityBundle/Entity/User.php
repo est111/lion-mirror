@@ -22,7 +22,18 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=25, unique=true)
      */
     private $username;
-
+    
+    /**
+     * @ORM\Column(type="string", length=25)
+     */    
+    private $firstname;
+    
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    private $lastname;
+    
+    
     /**
      * @ORM\Column(type="string", length=64)
      */
