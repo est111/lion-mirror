@@ -1,5 +1,18 @@
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
 {% block body -%}
-    {{ form(form) }} 
+    <div class="row">
+        <div class="col-lg-3">
+            {{ form(form.name) }} 
+        </div>
+        <div class="col-lg-4">
+            {{ form(form.surname) }} 
+        </div>
+        <div class="col-lg-4">
+            {{ form(form.email) }} 
+        </div>
+        <div class="col-lg-1">
+            {{ form(form.locale) }} 
+        </div>
+    </div>
 
 {% endblock %}
