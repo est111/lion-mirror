@@ -51,6 +51,7 @@ class UserCreationController extends Controller {
             $data = $form->getData();
 
             dump($data);
+            return $this->redirect($this->generateUrl('admin_user'));
         }
 
         return array('form' => $form->createView());
