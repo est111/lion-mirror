@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Security\Core\Util\SecureRandom;
-use Yellowknife\SecurityBundle\Entity;
+use Yellowknife\SecurityBundle\Entity\User;
 
 
 /**
