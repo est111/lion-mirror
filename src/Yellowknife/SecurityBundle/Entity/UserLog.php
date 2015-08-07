@@ -39,9 +39,9 @@ class UserLog
     private $type;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", mappedBy="userLogs")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="userLogs")
      */
-    private $users;
+    private $user;
     
 
     /**

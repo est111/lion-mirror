@@ -66,7 +66,7 @@ class User implements UserInterface, \Serializable
     private $userRoles;
     
    /**
-     * @ORM\OneToMany(targetEntity="UserLog", inversedBy="users")
+     * @ORM\OneToMany(targetEntity="UserLog", mappedBy="user")
      * @ORM\JoinTable(name="user_logs")
      */
     private $userLogs;	
