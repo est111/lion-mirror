@@ -16,7 +16,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('admin_user_userlog_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.createdAt }}</td>
+                <td>{{ entity.createdAt|date('Y-m-d H:i') }}</td>
                 <td>{{ entity.type }}</td>
                 <td>
                 <ul>
