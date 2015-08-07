@@ -33,7 +33,7 @@
                                             <a class="btn btn-primary btn-xs" href="{{ path('admin_user_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-pencil"></i> edit</a>
                                         </td>
                                     </tr>
-                                    <tr style="min-height: 0px;">
+                                    <tr style="height: 0px;">
                                         <td colspan="6">
                                             <div class="collapse" id="user-{{ entity.id }}">
                                             {{ render(path('admin_user_show', { 'id': entity.id })) }}
