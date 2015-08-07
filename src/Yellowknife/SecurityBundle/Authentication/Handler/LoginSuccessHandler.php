@@ -12,17 +12,22 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
 {
     protected 
         $router,
-        $security;
+        $security,
+        $em;
     
-    public function __construct(Router $router, SecurityContext $security)
+    public function __construct(Router $router, SecurityContext $security,EntityManager $em)
     {
         $this->router = $router;
         $this->security = $security;
+        $this->em = $em;
     }
     
     public function onAuthenticationSuccess(Request $request, TokenInterface $token)
     {
-        new \Yellowknife\SecurityBundle\Entity\UserLog($this->security->getToken()->getUser());
+        $userlog = new \Yellowknife\SecurityBundle\Entity\UserLog($this->security->getToken()->getUser());
+        
+        
+        
         // URL for redirect the user to where they were before the login process begun if you want.
         // $referer_url = $request->headers->get('referer');
         
