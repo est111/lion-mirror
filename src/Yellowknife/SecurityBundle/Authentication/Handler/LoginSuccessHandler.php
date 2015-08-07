@@ -25,7 +25,7 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
     
     public function onAuthenticationSuccess(Request $request, TokenInterface $token)
     {
-        $userlog = new \Yellowknife\SecurityBundle\Entity\UserLog($this->security->getToken()->getUser());
+        $userlog = new \Yellowknife\SecurityBundle\Entity\UserLog($this->security->getToken()->getUser(),'login_success');
         $this->em->persist($userlog);
         $this->em->flush();
         
