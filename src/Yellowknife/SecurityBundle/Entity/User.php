@@ -37,7 +37,12 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="string", length=64)
      */
-    private $password;
+    private $password;    
+    
+    /**
+     * @ORM\Column(type="datatimez")
+     */
+    private $passwordChangedAt;
 
     /**
      * @ORM\Column(type="string", length=60, unique=true)
@@ -152,6 +157,8 @@ class User implements UserInterface, \Serializable
      */
     public function setPassword($password)
     {
+        $date = new \DateTime('NOW',new \DateTimeZone('UTC'));
+        $this->setPasswordChangedAt($date);
         $this->password = $password;
 
         return $this;
@@ -280,4 +287,15 @@ class User implements UserInterface, \Serializable
     {
         return $this->userRoles;
     }
+    
+    public function getPasswordChangedAt() {
+        return $this->passwordChangedAt;
+    }
+
+    public function setPasswordChangedAt($passwordChangedAt) {
+        $this->passwordChangedAt = $passwordChangedAt;
+        return $this;
+    }
+
+
 }
