@@ -21,7 +21,7 @@
                             <tbody>
                                 {% for entity in entities %}
                                     <tr class="bg-info clickable" data-toggle="collapse" data-target="#user-{{ entity.id }}">
-                                        <td>{{ entity.username }}</td>                                        
+                                        <td>{{ entity.firstname }} {{ entity.lastname }} <small>{{ entity.username }}</small></td>
                                         <td><a href="mailto:{{ entity.email }}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-send"></i>&nbsp;&nbsp;&nbsp;m@il </a></td>
                                         <td><b class="badge badge-success">{{ entity.locale }}</b></td>
                                         <td>     
