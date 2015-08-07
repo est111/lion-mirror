@@ -17,6 +17,7 @@ class UserLogType extends AbstractType
         $builder
             ->add('createdAt')
             ->add('type')
+            ->add('user')
         ;
     }
     
