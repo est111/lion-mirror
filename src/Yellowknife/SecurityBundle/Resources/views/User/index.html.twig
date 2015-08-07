@@ -16,7 +16,7 @@
                                     <th>Username</th>
                                     <th>Password</th>
                                     <th>Email</th>
-                                    <th>{% trans %}Lan{% endtrans %}</th>
+                                    <th>{% trans %}Language{% endtrans %}</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -26,11 +26,11 @@
                                         <td><a href="{{ path('admin_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                         <td>{{ entity.username }}</td>
                                         <td><a class="btn btn-danger btn-xs" href="{{ path('admin_user_creation_resetpassword', { 'id': entity.id }) }}">{% trans %}Change password{% endtrans %}</a>  <b class="label label-warning">{{ entity.passwordChangedAt|date('Y-m-d H:i') }}</b></td>
-                                        <td>{{ entity.email }}</td>
+                                        <td><a href="mailto:{{ entity.email }}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-send"></i> @ </a></td>
                                         <td><b class="badge">{{ entity.locale }}</b></td>
                                         <td>
-                                            <a class="btn btn-default btn-xs" href="{{ path('admin_user_show', { 'id': entity.id }) }}">show</a>
-                                            <a class="btn btn-primary btn-xs" href="{{ path('admin_user_edit', { 'id': entity.id }) }}">edit</a>
+                                            <a class="btn btn-default btn-xs" href="{{ path('admin_user_show', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-search"></i> show</a>
+                                            <a class="btn btn-primary btn-xs" href="{{ path('admin_user_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-pencil"></i> edit</a>
                                         </td>
                                     </tr>
                                 {% endfor %}
