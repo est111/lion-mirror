@@ -22,7 +22,7 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
     
     public function onAuthenticationSuccess(Request $request, TokenInterface $token)
     {
-        
+        new \Yellowknife\SecurityBundle\Entity\UserLog($this->security->getToken->getUser());
         // URL for redirect the user to where they were before the login process begun if you want.
         // $referer_url = $request->headers->get('referer');
         
