@@ -40,7 +40,7 @@ class User implements UserInterface, \Serializable
     private $password;    
     
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetimetz")
      */
     private $passwordChangedAt;
 
