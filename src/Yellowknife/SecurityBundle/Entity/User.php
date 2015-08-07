@@ -54,11 +54,20 @@ class User implements UserInterface, \Serializable
      */
     private $isActive;
 
+    
+    
+   /**
+     * @ORM\ManyToMany(targetEntity="Role", inversedBy="users")
+     * @ORM\JoinTable(name="user_roles")
+     */
+    private $userRoles;
+	
+	
     public function __construct()
     {
-        $this->isActive = true;
-        // may not be needed, see section on salt below
-        // $this->salt = md5(uniqid(null, true));
+        $this->isActive = true;		
+        $this->userRoles = new \Doctrine\Common\Collections\ArrayCollection();
+	
     }
 
     public function getUsername()
@@ -80,7 +89,8 @@ class User implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        return array('ROLE_ADMIN');
+        return $this->userRoles->toArray();
+
     }
 
     public function eraseCredentials()
