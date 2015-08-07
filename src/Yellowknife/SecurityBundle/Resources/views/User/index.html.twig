@@ -40,7 +40,7 @@
                                     </tr>
                                     <tr class="collapse" id="user-{{ entity.id }}">
                                         <td colspan="6">
-                                            {{ path('admin_user_show', { 'id': entity.id }) }}
+                                            {{ render(path('admin_user_show', { 'id': entity.id })) }}
                                         </td>
                                     </tr>
                                 {% endfor %}
