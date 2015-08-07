@@ -12,10 +12,21 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UserLog
 {
-    public function __construct() {        
+    public function __construct(User $user) {        
         $this->setCreatedAt( new \DateTime('NOW',new \DateTimeZone('UTC')) );
+        $this->setUser($user);
     }
-    /**
+    
+    public function getUser() {
+        return $this->user;
+    }
+
+    public function setUser($user) {
+        $this->user = $user;
+        return $this;
+    }
+
+        /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
