@@ -23,7 +23,7 @@
                                 {% for entity in entities %}
                                     <tr>
                                         <td>{{ entity.username }}</td>
-                                        <td><a class="btn btn-danger btn-xs" href="{{ path('admin_user_creation_resetpassword', { 'id': entity.id }) }}">{% trans %}Change password{% endtrans %}</a>  <b class="label label-warning">{{ entity.passwordChangedAt|date('Y-m-d H:i') }}</b></td>
+                                        
                                         <td><a href="mailto:{{ entity.email }}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-send"></i>&nbsp;&nbsp;&nbsp;m@il </a></td>
                                         <td><b class="badge badge-success">{{ entity.locale }}</b></td>
                                         <td>
