@@ -9,7 +9,7 @@
                         <strong>Poniższa lista zawiera wszystkich użytkowników: </strong>
                     </div>
                           <div class="panel-table"> 
-                        <table class="table table-bordered table-condensed">
+                        <table class="table table-bordered table-condensed table-hover">
                             <thead>
                                 <tr>
                                     <th>Username</th>
@@ -37,9 +37,11 @@
                                             <a class="btn btn-primary btn-xs" href="{{ path('admin_user_edit', { 'id': entity.id }) }}"><i class="glyphicon glyphicon-pencil"></i> edit</a>
                                         </td>
                                     </tr>
-                                    <tr style="display: block;" class="collapse" id="user-{{ entity.id }}">
+                                    <tr>
                                         <td colspan="6">
+                                            <div class="collapse" id="user-{{ entity.id }}">
                                             {{ render(path('admin_user_show', { 'id': entity.id })) }}
+                                            </div>
                                         </td>
                                     </tr>
                                 {% endfor %}
