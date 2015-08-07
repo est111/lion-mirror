@@ -22,6 +22,7 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
     
     public function onAuthenticationSuccess(Request $request, TokenInterface $token)
     {
+        
         // URL for redirect the user to where they were before the login process begun if you want.
         // $referer_url = $request->headers->get('referer');
         
