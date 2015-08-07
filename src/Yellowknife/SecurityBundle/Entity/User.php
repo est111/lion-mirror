@@ -246,4 +246,37 @@ class User implements UserInterface, \Serializable
     }
 
 
+
+    /**
+     * Add userRoles
+     *
+     * @param \Yellowknife\SecurityBundle\Entity\Role $userRoles
+     * @return User
+     */
+    public function addUserRole(\Yellowknife\SecurityBundle\Entity\Role $userRoles)
+    {
+        $this->userRoles[] = $userRoles;
+
+        return $this;
+    }
+
+    /**
+     * Remove userRoles
+     *
+     * @param \Yellowknife\SecurityBundle\Entity\Role $userRoles
+     */
+    public function removeUserRole(\Yellowknife\SecurityBundle\Entity\Role $userRoles)
+    {
+        $this->userRoles->removeElement($userRoles);
+    }
+
+    /**
+     * Get userRoles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUserRoles()
+    {
+        return $this->userRoles;
+    }
 }

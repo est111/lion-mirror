@@ -120,4 +120,27 @@ class Role implements RoleInterface
     }
         
      
+
+    /**
+     * Add users
+     *
+     * @param \Yellowknife\SecurityBundle\Entity\User $users
+     * @return Role
+     */
+    public function addUser(\Yellowknife\SecurityBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \Yellowknife\SecurityBundle\Entity\User $users
+     */
+    public function removeUser(\Yellowknife\SecurityBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+    }
 }
