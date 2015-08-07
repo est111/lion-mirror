@@ -7,8 +7,8 @@
                 <h2>{{ entity.firstname }} {{ entity.lastname }} <small>{{ entity.username }}  #{{ entity.id }}</small></h2>
                 <a class="btn btn-danger btn-xs" href="{{ path('admin_user_creation_resetpassword', { 'id': entity.id }) }}">{% trans %}Change password{% endtrans %}</a>  <b class="label label-warning">{{ entity.passwordChangedAt|date('Y-m-d H:i') }}</b><br/><br/>
                 
-                Język: <b class="badge badge-success">{{ entity.locale }}</b>
-                E-mail: <p><span class="label label-info">{{ entity.email }}</span></p>    
+                Język: <b class="badge badge-success">{{ entity.locale }}</b><br/><br/>
+                E-mail: <span class="label label-info">{{ entity.email }}</span><br/><br/>
                 
         
                            
