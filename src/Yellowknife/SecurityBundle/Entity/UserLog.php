@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UserLog
 {
+    public function __construct() {
+        
+        $this->setCreatedAt( new \DateTime('NOW',new \DateTimeZone('UTC')) );
+    }
     /**
      * @var integer
      *
