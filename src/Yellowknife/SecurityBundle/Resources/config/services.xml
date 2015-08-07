@@ -15,6 +15,7 @@
         <service id="yellowknife_security.login" class="Yellowknife\SecurityBundle\Authentication\Handler\LoginSuccessHandler">
             <argument type="service" id="router" />
             <argument type="service" id="security.context" />
+            <argument type="service" id="doctrine.orm.entity_manager" />
             <tag name="monolog.logger" channel="security" />
         </service>
         
