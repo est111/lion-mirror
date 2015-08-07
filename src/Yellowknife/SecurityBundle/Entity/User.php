@@ -244,7 +244,7 @@ class User implements UserInterface, \Serializable
     }
 
     public function __toString() {
-        return $this->getUsername();
+        return $this->getId();
     }
 
 }
