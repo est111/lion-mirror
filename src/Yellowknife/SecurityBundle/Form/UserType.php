@@ -19,6 +19,7 @@ class UserType extends AbstractType
             ->add('email')
             ->add('locale')
             ->add('isActive')
+			->add('userRoles')
         ;
     }
     
