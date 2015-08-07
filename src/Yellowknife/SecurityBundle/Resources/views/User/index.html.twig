@@ -26,7 +26,7 @@
                                     <tr>
                                         <td><a href="{{ path('admin_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                         <td>{{ entity.username }}</td>
-                                        <td><a class="btn btn-danger btn-xs" href="{{ path('admin_user_creation_resetpassword', { 'id': entity.id }) }}">{% trans %}Change password{% endtrans %}</a><b class="label label-warning">{{ entity.passwordChangedAt }}</b></td>
+                                        <td><a class="btn btn-danger btn-xs" href="{{ path('admin_user_creation_resetpassword', { 'id': entity.id }) }}">{% trans %}Change password{% endtrans %}</a><b class="label label-warning">{{ entity.passwordChangedAt|date('Y-m-d H:i') }}</b></td>
                                         <td>{{ entity.email }}</td>
                                         <td>{{ entity.locale }}</td>
                                         <td>{{ entity.isActive }}</td>
