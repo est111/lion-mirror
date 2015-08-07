@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Router;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface;
+use Doctrine\ORM\EntityManager;
  
 class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
 {
