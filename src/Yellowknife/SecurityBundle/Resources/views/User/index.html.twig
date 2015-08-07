@@ -17,7 +17,6 @@
                                     <th>Password</th>
                                     <th>Email</th>
                                     <th>Locale</th>
-                                    <th>Isactive</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -28,8 +27,7 @@
                                         <td>{{ entity.username }}</td>
                                         <td><a class="btn btn-danger btn-xs" href="{{ path('admin_user_creation_resetpassword', { 'id': entity.id }) }}">{% trans %}Change password{% endtrans %}</a>  <b class="label label-warning">{{ entity.passwordChangedAt|date('Y-m-d H:i') }}</b></td>
                                         <td>{{ entity.email }}</td>
-                                        <td>{{ entity.locale }}</td>
-                                        <td>{{ entity.isActive }}</td>
+                                        <td><b class="badge">{{ entity.locale }}</b></td>
                                         <td>
                                             <a class="btn btn-default btn-xs" href="{{ path('admin_user_show', { 'id': entity.id }) }}">show</a>
                                             <a class="btn btn-primary btn-xs" href="{{ path('admin_user_edit', { 'id': entity.id }) }}">edit</a>
